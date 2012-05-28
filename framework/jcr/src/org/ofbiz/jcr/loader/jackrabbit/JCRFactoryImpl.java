@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,21 +44,21 @@ import org.apache.jackrabbit.core.nodetype.xml.NodeTypeReader;
 import org.apache.jackrabbit.ocm.mapper.Mapper;
 import org.apache.jackrabbit.ocm.mapper.impl.annotation.AnnotationMapperImpl;
 import org.apache.jackrabbit.ocm.nodemanagement.impl.RepositoryUtil;
+import org.apache.jackrabbit.rmi.repository.URLRemoteRepository;
 import org.apache.jackrabbit.spi.QNodeTypeDefinition;
 import org.ofbiz.base.util.Debug;
 import org.ofbiz.base.util.UtilValidate;
 import org.ofbiz.base.util.UtilXml;
-import org.ofbiz.entity.Delegator;
 import org.ofbiz.jcr.loader.JCRFactory;
 import org.ofbiz.jcr.loader.JCRJndi;
 import org.ofbiz.jcr.orm.jackrabbit.data.JackrabbitArticle;
+import org.ofbiz.jcr.orm.jackrabbit.data.JackrabbitLocalizedContent;
+import org.ofbiz.jcr.orm.jackrabbit.data.JackrabbitNews;
+import org.ofbiz.jcr.orm.jackrabbit.data.JackrabbitUnstructured;
 import org.ofbiz.jcr.orm.jackrabbit.file.JackrabbitFile;
 import org.ofbiz.jcr.orm.jackrabbit.file.JackrabbitFolder;
 import org.ofbiz.jcr.orm.jackrabbit.file.JackrabbitHierarchyNode;
-import org.ofbiz.jcr.orm.jackrabbit.data.JackrabbitLocalizedContent;
-import org.ofbiz.jcr.orm.jackrabbit.data.JackrabbitNews;
 import org.ofbiz.jcr.orm.jackrabbit.file.JackrabbitResource;
-import org.ofbiz.jcr.orm.jackrabbit.data.JackrabbitUnstructured;
 import org.w3c.dom.Element;
 
 public class JCRFactoryImpl implements JCRFactory {
@@ -70,6 +71,8 @@ public class JCRFactoryImpl implements JCRFactory {
     private static String jackrabbitConfigFile = null;
     private static String CREDENTIALS_USERNAME = null;
     private static char[] CREDENTIALS_PASSWORD = null;
+    private static boolean jcrStandalone = false;
+    private static String jcrRmi = null;
 
     protected static Repository repository = null;
     protected Session session = null;
@@ -95,6 +98,11 @@ public class JCRFactoryImpl implements JCRFactory {
         CREDENTIALS_PASSWORD = UtilXml.elementAttribute(childElement, "password", null).toCharArray();
 
         jackrabbitConfigFile = UtilXml.childElementAttribute(configRootElement, "config-file-path", "path", "framework/jcr/config/jackrabbit.xml");
+        
+        Element standaloneElement = UtilXml.firstChildElement(configRootElement, "jcr-standalone"); 
+        jcrStandalone = "true".equalsIgnoreCase(UtilXml.elementAttribute(standaloneElement, "standalone", null));
+        jcrRmi = UtilXml.elementAttribute(standaloneElement, "rmi", null);
+
     }
 
     /*
@@ -106,7 +114,15 @@ public class JCRFactoryImpl implements JCRFactory {
     public void start() throws RepositoryException {
         // Transient repositories closes automatically when the last session is
         // closed
-        repository = new TransientRepository(jackrabbitConfigFile, homeDir);
+        if (!jcrStandalone) {
+        	repository = new TransientRepository(jackrabbitConfigFile, homeDir);
+        } else {
+        	try {
+				repository = new URLRemoteRepository(jcrRmi);
+			} catch (MalformedURLException e) {
+				Debug.logError(e, module);
+			}
+        }
         createSession();
 
         List<Class> classes = new ArrayList<Class>();
@@ -166,7 +182,8 @@ public class JCRFactoryImpl implements JCRFactory {
                 RepositoryUtil.setupSession(session);
                 try {
                     // register the cool new noteTypes
-                    registerNodeTypes(session);
+                	// TODO: figure how to register a new noteType in standalone jcr
+                    if (!jcrStandalone) registerNodeTypes(session);
                 } catch (InvalidNodeTypeDefException e) {
                     Debug.logError(e, module);
                 } catch (IOException e) {

@@ -41,6 +41,19 @@ public class JackrabbitRepositoryAccessor implements JcrRepositoryAccessor {
         this.session = JCRFactoryUtil.getSession();
         this.ocm = new ObjectContentManagerImpl(session, JCRFactoryImpl.getMapper());
     }
+    
+    /**
+     * Create a repository Access object without the userLogin.
+     *
+     */
+    
+    public JackrabbitRepositoryAccessor() {
+
+        this.userLogin = null;
+        // TODO pass the userLogin to the getSession() method and perform some
+        this.session = JCRFactoryUtil.getSession();
+        this.ocm = new ObjectContentManagerImpl(session, JCRFactoryImpl.getMapper());
+    }
 
     /*
      * (non-Javadoc)

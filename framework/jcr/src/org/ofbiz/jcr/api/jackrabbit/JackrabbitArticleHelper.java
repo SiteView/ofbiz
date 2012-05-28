@@ -60,6 +60,9 @@ public class JackrabbitArticleHelper extends JackrabbitAbstractHelper implements
         super(new JackrabbitRepositoryAccessor(userLogin));
     }
 
+    public JackrabbitArticleHelper() {
+        super(new JackrabbitRepositoryAccessor());
+    }
     /*
      * (non-Javadoc)
      *

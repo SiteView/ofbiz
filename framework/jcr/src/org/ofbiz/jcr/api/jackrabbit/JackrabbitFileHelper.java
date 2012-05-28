@@ -45,6 +45,10 @@ public class JackrabbitFileHelper extends JackrabbitAbstractHelper implements Jc
     public JackrabbitFileHelper(GenericValue userLogin) {
         super(new JackrabbitRepositoryAccessor(userLogin));
     }
+    
+    public JackrabbitFileHelper() {
+        super(new JackrabbitRepositoryAccessor());
+    }
 
     /*
      * (non-Javadoc)

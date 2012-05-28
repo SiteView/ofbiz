@@ -95,7 +95,7 @@ public class JCRContainer implements Container {
     public static String getConfigFilePath() {
         return configFilePath;
     }
-
+    
     private void readContainerConfig(String configFile) throws ContainerException {
         // get the container configuration
         ContainerConfig.Container cc = ContainerConfig.getContainer("jcr-container", configFile);

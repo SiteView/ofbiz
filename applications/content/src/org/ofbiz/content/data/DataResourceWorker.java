@@ -38,6 +38,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.jcr.PathNotFoundException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.xml.parsers.ParserConfigurationException;
@@ -50,12 +51,14 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.IOUtils;
 import org.apache.tika.Tika;
 import org.ofbiz.base.location.FlexibleLocation;
 import org.ofbiz.base.util.Debug;
 import org.ofbiz.base.util.FileUtil;
 import org.ofbiz.base.util.GeneralException;
 import org.ofbiz.base.util.StringUtil;
+import org.ofbiz.base.util.StringUtil.StringWrapper;
 import org.ofbiz.base.util.UtilGenerics;
 import org.ofbiz.base.util.UtilHttp;
 import org.ofbiz.base.util.UtilIO;
@@ -63,7 +66,6 @@ import org.ofbiz.base.util.UtilMisc;
 import org.ofbiz.base.util.UtilProperties;
 import org.ofbiz.base.util.UtilValidate;
 import org.ofbiz.base.util.UtilXml;
-import org.ofbiz.base.util.StringUtil.StringWrapper;
 import org.ofbiz.base.util.collections.MapStack;
 import org.ofbiz.base.util.template.FreeMarkerWorker;
 import org.ofbiz.base.util.template.XslTransform;
@@ -73,6 +75,13 @@ import org.ofbiz.entity.Delegator;
 import org.ofbiz.entity.GenericEntityException;
 import org.ofbiz.entity.GenericValue;
 import org.ofbiz.entity.util.EntityUtilProperties;
+import org.ofbiz.jcr.api.JcrDataHelper;
+import org.ofbiz.jcr.api.JcrFileHelper;
+import org.ofbiz.jcr.api.jackrabbit.JackrabbitArticleHelper;
+import org.ofbiz.jcr.api.jackrabbit.JackrabbitFileHelper;
+import org.ofbiz.jcr.orm.jackrabbit.data.JackrabbitArticle;
+import org.ofbiz.jcr.orm.jackrabbit.file.JackrabbitFile;
+import org.ofbiz.jcr.orm.jackrabbit.file.JackrabbitHierarchyNode;
 import org.ofbiz.service.GenericServiceException;
 import org.ofbiz.service.LocalDispatcher;
 import org.ofbiz.widget.screen.MacroScreenRenderer;
@@ -820,6 +829,84 @@ public class DataResourceWorker  implements org.ofbiz.widget.DataResourceWorkerI
             GenericValue electronicText = delegator.findOne("ElectronicText", UtilMisc.toMap("dataResourceId", dataResourceId), cache);
             String text = electronicText.getString("textData");
             writeText(dataResource, text, templateContext, mimeTypeId, locale, out);
+            // JCR article types
+//          TODO: what the content path looks like
+//          		
+          
+      } else if ("JCR_ARTICLE".equals(dataResourceTypeId))  {
+          	String text = null;
+              String contentPath = dataResource.getString("objectInfo");
+              
+              if (UtilValidate.isEmpty(contentPath)) {
+                  String msg = "A node path is missing, please pass the path to the node which should be read from the repository."; // TODO
+                  Debug.logError(msg, module);
+                  text = msg;
+              }
+              
+//              GenericValue userLogin = new GenericValue("admin");
+              JcrDataHelper articleHelper = new JackrabbitArticleHelper();
+              JackrabbitArticle ormArticle = null;
+              try {
+                  String version = (String) templateContext.get("version");
+                  if (UtilValidate.isEmpty(version)) {
+                      ormArticle = articleHelper.readContentFromRepository(contentPath, locale.getLanguage());
+                  } else {
+                      ormArticle = articleHelper.readContentFromRepository(contentPath, locale.getLanguage(), version);
+                  }
+              } catch (ClassCastException e) {
+                  Debug.logError(e, module);
+                  text = e.getMessage();
+              } catch (PathNotFoundException e) {
+                  Debug.logError(e, module);
+                  text = e.getMessage();
+              }
+              
+              text = ormArticle.getContent();
+              
+              out.append(text);
+//		JCR file type
+      } else if ("JCR_FILE".equals(dataResourceTypeId))  {
+      	String text = null;
+          String contentPath = dataResource.getString("objectInfo");
+          
+          if (UtilValidate.isEmpty(contentPath)) {
+              String msg = "A node path is missing, please pass the path to the node which should be read from the repository."; // TODO
+              Debug.logError(msg, module);
+              text = msg;
+          }
+          
+          JcrFileHelper fileHelper = new JackrabbitFileHelper();
+          JackrabbitHierarchyNode orm = null;
+          
+          try {
+              orm = fileHelper.getRepositoryContent(contentPath);
+          } catch (ClassCastException e1) {
+              Debug.logError(e1, module);
+              text = e1.getMessage();
+          } catch (PathNotFoundException e1) {
+              Debug.logError(e1, module);
+              text = e1.getMessage();
+          }
+          
+          if (fileHelper.isFileContent()) {
+              JackrabbitFile file = (JackrabbitFile) orm;
+              InputStream fileStream = file.getResource().getData();
+
+              String fileName = file.getPath();
+              if (fileName.indexOf("/") != -1) {
+                  fileName = fileName.substring(fileName.indexOf("/") + 1);
+              }
+              
+              String dataResourceMimeTypeId = file.getResource().getMimeType();
+
+              if (dataResourceMimeTypeId == null || dataResourceMimeTypeId.startsWith("text")) {
+              	text = file.getResource().toString();
+                  out.append(text);
+              } else {
+            	  throw new GeneralException("No text found for FILE type [" + dataResourceTypeId + "]; cannot render ["+ contentPath  +"] as text");
+              }
+          } 
+              
 
         // object types
         } else if (dataResourceTypeId.endsWith("_OBJECT")) {
@@ -1038,6 +1125,49 @@ public class DataResourceWorker  implements org.ofbiz.widget.DataResourceWorkerI
 
             return UtilMisc.toMap("stream", new ByteArrayInputStream(bytes), "length", Long.valueOf(bytes.length));
 
+            
+        // JCR file data
+            } else if ("JCR_FILE".equals(dataResourceTypeId)) {
+            	String text = null;
+                String contentPath = dataResource.getString("objectInfo");
+                
+                if (UtilValidate.isEmpty(contentPath)) {
+                    String msg = "A node path is missing, please pass the path to the node which should be read from the repository."; // TODO
+                    Debug.logError(msg, module);
+                    text = msg;
+                }
+                
+                JcrFileHelper fileHelper = new JackrabbitFileHelper();
+                JackrabbitHierarchyNode orm = null;
+                
+                try {
+                    orm = fileHelper.getRepositoryContent(contentPath);
+                } catch (ClassCastException e1) {
+                    Debug.logError(e1, module);
+                    text = e1.getMessage();
+                } catch (PathNotFoundException e1) {
+                    Debug.logError(e1, module);
+                    text = e1.getMessage();
+                }
+                
+                if (fileHelper.isFileContent()) {
+                    JackrabbitFile file = (JackrabbitFile) orm;
+                    InputStream fileStream = file.getResource().getData();
+
+                    String fileName = file.getPath();
+                    if (fileName.indexOf("/") != -1) {
+                        fileName = fileName.substring(fileName.indexOf("/") + 1);
+                    }
+                    
+                    String dataResourceMimeTypeId = file.getResource().getMimeType();
+                
+	                if (UtilValidate.isNotEmpty(contentPath)) {
+	                    return UtilMisc.toMap("stream",fileStream, "length", IOUtils.toByteArray(fileStream).length);
+	                } else {
+	                    throw new GeneralException("No objectInfo found for FILE type [" + dataResourceTypeId + "]; cannot stream");
+	                }            
+                }
+            
         // file data
         } else if (dataResourceTypeId.endsWith("_FILE") || dataResourceTypeId.endsWith("_FILE_BIN")) {
             String objectInfo = dataResource.getString("objectInfo");
@@ -1097,6 +1227,72 @@ public class DataResourceWorker  implements org.ofbiz.widget.DataResourceWorkerI
                 if (electronicText != null) {
                     String text = electronicText.getString("textData");
                     if (text != null) os.write(text.getBytes());
+                }
+            } else if  (dataResourceTypeId.equals("JCR_ARTICLE")) {
+            	String text = null;
+                String contentPath = dataResource.getString("objectInfo");
+                
+                if (UtilValidate.isEmpty(contentPath)) {
+                    String msg = "A node path is missing, please pass the path to the node which should be read from the repository."; // TODO
+                    Debug.logError(msg, module);
+                    text = msg;
+                }
+                
+                JcrDataHelper articleHelper = new JackrabbitArticleHelper();
+                JackrabbitArticle ormArticle = null;
+                try {
+                    String version = (String) dataResource.getString("version");
+                    if (UtilValidate.isEmpty(version)) {
+                        ormArticle = articleHelper.readContentFromRepository(contentPath, locale.getLanguage());
+                    } else {
+                        ormArticle = articleHelper.readContentFromRepository(contentPath, locale.getLanguage(), version);
+                    }
+                } catch (ClassCastException e) {
+                    Debug.logError(e, module);
+                    text = e.getMessage();
+                } catch (PathNotFoundException e) {
+                    Debug.logError(e, module);
+                    text = e.getMessage();
+                }
+                
+                text = ormArticle.getContent();                
+                if (text != null) os.write(text.getBytes());
+                
+            } else if (dataResourceTypeId.equals("JCR_FILE")) {
+            	String text = null;
+                String contentPath = dataResource.getString("objectInfo");
+                
+                if (UtilValidate.isEmpty(contentPath)) {
+                    String msg = "A node path is missing, please pass the path to the node which should be read from the repository."; // TODO
+                    Debug.logError(msg, module);
+                    text = msg;
+                }
+                
+                JcrFileHelper fileHelper = new JackrabbitFileHelper();
+                JackrabbitHierarchyNode orm = null;
+                
+                try {
+                    orm = fileHelper.getRepositoryContent(contentPath);
+                } catch (ClassCastException e1) {
+                    Debug.logError(e1, module);
+                    text = e1.getMessage();
+                } catch (PathNotFoundException e1) {
+                    Debug.logError(e1, module);
+                    text = e1.getMessage();
+                }
+                
+                if (fileHelper.isFileContent()) {
+                    JackrabbitFile file = (JackrabbitFile) orm;
+                    InputStream fileStream = file.getResource().getData();
+
+                    String fileName = file.getPath();
+                    if (fileName.indexOf("/") != -1) {
+                        fileName = fileName.substring(fileName.indexOf("/") + 1);
+                    }
+                    
+                    String dataResourceMimeTypeId = file.getResource().getMimeType();
+                    if (dataResourceMimeTypeId.startsWith("image")) 
+                    	os.write(IOUtils.toByteArray(fileStream));
                 }
             } else if (dataResourceTypeId.equals("IMAGE_OBJECT")) {
                 byte[] imageBytes = acquireImage(delegator, dataResource);

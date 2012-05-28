@@ -1590,6 +1590,31 @@
         <value xml:lang="zh">长文本</value>
         <value xml:lang="zh_TW">長文本</value>
     </property>
+    <property key="DataResourceType.description.JCR_ARTICLE">
+        <value xml:lang="da">JCR Artikel</value>
+        <value xml:lang="de">JCR Artikel</value>
+        <value xml:lang="en">JCR Article</value>
+        <value xml:lang="es">JCR Artículo</value>
+        <value xml:lang="fr">JCR Article</value>
+        <value xml:lang="it">JCR Articolo</value>
+        <value xml:lang="pt">JCR Artigo</value>
+        <value xml:lang="ro">JCR Articol</value>
+        <value xml:lang="th">JCR ข้อย่อย</value>
+        <value xml:lang="zh">JCR 文章</value>
+        <value xml:lang="zh_TW">JCR 文章</value>
+    </property>
+    <property key="DataResourceType.description.JCR_FILE">
+        <value xml:lang="da">JCR fil</value>
+        <value xml:lang="de">JCR Datei</value>
+        <value xml:lang="en">JCR File</value>
+        <value xml:lang="fr">Dossier JCR</value>
+        <value xml:lang="it">File JCR</value>
+        <value xml:lang="pt">Arquivo JCR</value>
+        <value xml:lang="ro">Fisier JCR</value>
+        <value xml:lang="th">JCR ที่อยู่ของไฟล์</value>
+        <value xml:lang="zh">JCR文件</value>
+        <value xml:lang="zh_TW">JCR文件</value>
+    </property>
     <property key="DataResourceType.description.IMAGE_OBJECT">
         <value xml:lang="da">Billede</value>
         <value xml:lang="de">Bild</value>
