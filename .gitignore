@@ -1,3 +1,4 @@
+hot-deploy/bigit/
 applications/*/build
 framework/*/build
 framework/base/lib/cobertura-*.jar

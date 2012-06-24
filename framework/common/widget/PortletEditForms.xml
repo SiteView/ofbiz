@@ -59,6 +59,17 @@ under the License.
         <field name="screenLocation" required-field="true"><text/></field>
         <field name="submit" widget-style="smallSubmit"><submit button-type="button"/></field>
     </form>
+    <form name="GenericScreenParam" extends="CommonPortletEdit">
+        <field name="screenName" required-field="true"><text/></field>
+        <field name="screenLocation" required-field="true"><text/></field>
+        <field name="submit" widget-style="smallSubmit"><submit button-type="button"/></field>
+    </form>
+    <form name="ContentScreenParam" extends="CommonPortletEdit">
+        <field name="contentId" required-field="true"><text/></field>
+        <field name="screenName" required-field="true"><text/></field>
+        <field name="screenLocation" required-field="true"><text/></field>
+        <field name="submit" widget-style="smallSubmit"><submit button-type="button"/></field>
+    </form>
     <form name="GenericScreenletAjaxWithMenuParam" extends="CommonPortletEdit">
         <field name="titleLabel" required-field="true"><text/></field>
         <field name="divIdRefresh"><text/></field>

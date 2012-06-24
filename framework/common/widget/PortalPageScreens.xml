@@ -169,6 +169,23 @@ under the License.
             </widgets>
         </section>
     </screen>
+    <screen name="GenericScreen">
+        <section>
+            <widgets>
+                <include-screen name="${screenName}" location="${screenLocation}"/>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="ContentScreen">
+        <section>
+            <actions>
+                <set field="contentRootId1" from-field="parameters.contentId"/>
+            </actions>
+            <widgets>
+                <include-screen name="${screenName}" location="${screenLocation}"/>
+            </widgets>
+        </section>
+    </screen>
     <screen name="GenericScreenletAjax">
         <section>
             <widgets>

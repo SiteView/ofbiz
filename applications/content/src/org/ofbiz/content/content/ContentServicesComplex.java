@@ -137,7 +137,8 @@ public class ContentServicesComplex {
         EntityConditionList<EntityExpr> assocExprList = EntityCondition.makeCondition(exprList, EntityOperator.AND);
         List<GenericValue> relatedAssocs = null;
         try {
-            relatedAssocs = delegator.findList(viewName, assocExprList, null,UtilMisc.toList("caFromDate"), null, false);
+//            relatedAssocs = delegator.findList(viewName, assocExprList, null,UtilMisc.toList("caFromDate"), null, false);
+            relatedAssocs = delegator.findList(viewName, assocExprList, null,UtilMisc.toList("caSequenceNum"), null, false);
         } catch (GenericEntityException e) {
             return ServiceUtil.returnError(e.getMessage());
         }

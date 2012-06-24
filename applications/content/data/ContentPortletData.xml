@@ -25,4 +25,10 @@
         screenName="ShowContentPortlet" screenLocation="component://content/widget/content/ContentScreens.xml"
         editFormName="EditShowContentPortlet" editFormLocation="component://content/widget/content/ContentForms.xml"/>
     <PortletPortletCategory portalPortletId="showContent" portletCategoryId="CONTENT"/>
+    <PortalPortlet portalPortletId="showContent2"
+        portletName="Show Content2" description="show the content, but the key is not contentId in portlet attrbiute to avoid conflict with the request paramter"
+        screenName="ShowContentPortlet2" screenLocation="component://content/widget/content/ContentScreens.xml"
+        editFormName="EditShowContentPortlet2" editFormLocation="component://content/widget/content/ContentForms.xml"/>
+    <PortletPortletCategory portalPortletId="showContent2" portletCategoryId="CONTENT"/>
+    
 </entity-engine-xml>

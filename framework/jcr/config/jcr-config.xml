@@ -22,6 +22,7 @@
 
     <!-- jcr workspace credentials -->
     <jcr-credentials username="system" password="ofbiz" />
+    <!--  jcr-credentials username="admin" password="admin" /> -->
     
     <!-- jcr standalone rmi, for default, need change the above username = "admin "and password = "admin"-->
     <jcr-standalone standalone="false" rmi="http://localhost:8888/rmi" />

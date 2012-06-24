@@ -168,7 +168,26 @@ under the License.
             </widgets>
         </section>
     </screen>
-    <screen name="ShowContent">
+    <screen name="ShowContentPortlet">
+        <section>
+            <actions>
+                <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CommonExtUiLabels" map-name="uiLabelMap" global="true"/>
+                <!-- <set field="contentId" from-field="parameters.contentId" default-value="${contentId}"/> -->
+                <set field="visualThemeId" from-field="userPreferences.VISUAL_THEME" global="true"/>
+                <service service-name="getVisualThemeResources">
+                    <field-map field-name="visualThemeId"/>
+                    <field-map field-name="themeResources" from-field="layoutSettings"/>
+                </service>
+                <set field="layoutSettings" from-field="themeResources" default-value="${layoutSettings}" global="true"/>
+            </actions>
+            <widgets>
+            	<!-- <label style="h2" text="contentId:${contentId}, parameters.contentId: ${parameters.contentId}"/> -->
+                <content content-id="${contentId}"/>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="ShowContentPortlet2">
         <section>
             <actions>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
@@ -182,13 +201,18 @@ under the License.
                 <set field="layoutSettings" from-field="themeResources" default-value="${layoutSettings}" global="true"/>
             </actions>
             <widgets>
+            	<label style="h2" text="contentId:${contentId}"/>
                 <content content-id="${contentId}"/>
             </widgets>
         </section>
     </screen>
-    <screen name="ShowContentPortlet">
+    <screen name="ShowContentPortlet0">
         <section>
+             <actions>
+                <set field="contentId" from-field="parameters.contentId" default-value="${contentId}"/>
+            </actions>
             <widgets>
+            	<!--label style="h2" text="contentId:${contentId}"/ -->
                 <content content-id="${contentId}"/>
             </widgets>
         </section>

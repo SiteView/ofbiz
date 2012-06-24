@@ -190,6 +190,7 @@ under the License.
                 <xs:restriction base="xs:token">
                     <xs:enumeration value="main"/>
                     <xs:enumeration value="secondary"/>
+                    <xs:enumeration value="public"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
