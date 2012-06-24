@@ -105,11 +105,11 @@ under the License.
     <ContentAssoc contentId="CMSS_PPOINT" contentIdTo="CMSS_DEMO_HOME" contentAssocTypeId="SUB_CONTENT" fromDate="2001-01-01 00:00:00" mapKey="demoHome"/>
     <WebSiteContent webSiteId="CmsSite" contentId="CMSS_DEMO_HOME" webSiteContentTypeId="DEFAULT_PAGE" fromDate="2001-01-01 00:00:00"/>
 
-    <!-- JCR based demo -->
+    <!-- JCR based demo 
     <DataResource dataResourceId="CMSS_DEMO_JCRPAGE1" dataResourceTypeId="JCR_ARTICLE" dataTemplateTypeId="FTL" localeString="en_US" objectInfo="/CMSS_DEMO/CMSS_DEMO_JCRPAGE1"/>
     <ContentAssoc contentId="CMSS_PPOINT" contentIdTo="CMSS_DEMO_JCRPAGE1" contentAssocTypeId="SUB_CONTENT" fromDate="2001-01-01 00:00:00" mapKey="demoJcrPage1"/>
     <Content contentId="CMSS_DEMO_JCRPAGE1" contentTypeId="DOCUMENT" decoratorContentId="CMSS_DEC" contentName="CMS Site JCR Demo Page 1" dataResourceId="CMSS_DEMO_JCRPAGE1"/>
-    <DataResource dataResourceId="CMSS_DEMO_JCRIMAGE1" dataResourceTypeId="JCR_FILE"/>
+    <DataResource dataResourceId="CMSS_DEMO_JCRIMAGE1" dataResourceTypeId="JCR_FILE"/> -->
 
     <!-- yet another demo page -->
     <DataResource dataResourceId="CMSS_DEMO_PAGE1" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL"/>

@@ -33,15 +33,21 @@
     <description>Show personal information in the system</description>
 
     <request-map uri="main">
-        <security https="true" auth="true"/>
+        <security https="false" auth="false"/>
         <response name="success" type="request" value="showPortalPage"/>
     </request-map>
     <request-map uri="newRegisterLogin">
-        <security https="true" auth="false"/>
+        <security https="false" auth="false"/>
         <response name="success" type="view" value="newRegisterLogin"/>
     </request-map>
+    <request-map uri="newGuestLogin">
+        <security https="false" auth="false"/>
+        <event type="simple" invoke="createGuestLogin" path="component://myportal/script/org/ofbiz/myportal/Events.xml"/>
+        <response name="error" type="view" value="login"/>
+        <response name="resultPage" type="view" value="main"/>
+    </request-map>
     <request-map uri="createRegister">
-        <security https="true" auth="false"/>
+        <security https="false" auth="false"/>
         <event type="simple" invoke="createRegister" path="component://myportal/script/org/ofbiz/myportal/Events.xml"/>
         <response name="error" type="view" value="newRegisterLogin"/>
         <response name="resultPage" type="view" value="newRegisterLogin"/>

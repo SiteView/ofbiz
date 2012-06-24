@@ -21,8 +21,9 @@ under the License.
 <#if (externalLoginKey)?exists><#assign externalKeyParam = "?externalLoginKey=" + requestAttributes.externalLoginKey?if_exists></#if>
 <#assign ofbizServerName = application.getAttribute("_serverId")?default("default-server")>
 <#assign contextPath = request.getContextPath()>
-<#assign displayApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "main")>
-<#assign displaySecondaryApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "secondary")>
+<#assign displayApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "main1")>
+<#assign displaySecondaryApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "public")>
+<#assign displayPublicApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "public")>
 
 <#if userLogin?has_content>
   <div id="main-navigation">
@@ -101,7 +102,7 @@ under the License.
     </#list>
     <#if appCount != 0>
       </li>
-      <li class="last"></li>
+      <li class="last">appCount: ${appCount}</li>
     </#if>
     </ul>
   </div>

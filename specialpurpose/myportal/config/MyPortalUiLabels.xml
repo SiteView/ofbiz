@@ -79,6 +79,30 @@
         <value xml:lang="zh">新注册</value>
         <value xml:lang="zh_TW">新的註冊</value>
     </property>
+    <property key="MyPortalGuestLogin">
+        <value xml:lang="en">Guest Auto Login</value>
+        <value xml:lang="fr">Nouvel enregistrement</value>
+        <value xml:lang="it">Nuovo utente</value>
+        <value xml:lang="th">ลงทะเบียน </value>
+        <value xml:lang="zh">访客自动登录</value>
+        <value xml:lang="zh_TW">访客自动登录</value>
+    </property>
+    <property key="MyPortalQQLogin">
+        <value xml:lang="en">QQ ID Login</value>
+        <value xml:lang="fr">Nouvel enregistrement</value>
+        <value xml:lang="it">Nuovo utente</value>
+        <value xml:lang="th">ลงทะเบียน </value>
+        <value xml:lang="zh">QQ账户登录</value>
+        <value xml:lang="zh_TW">QQ账户登录</value>
+    </property>
+    <property key="MyPortalWeiboLogin">
+        <value xml:lang="en">Sina Weibo ID Login</value>
+        <value xml:lang="fr">Nouvel enregistrement</value>
+        <value xml:lang="it">Nuovo utente</value>
+        <value xml:lang="th">ลงทะเบียน </value>
+        <value xml:lang="zh">新浪微博账户登录</value>
+        <value xml:lang="zh_TW">新浪微博账户登录</value>
+    </property>
     <property key="MyPortalPicCaptcha">
         <value xml:lang="en">Code Captcha</value>
         <value xml:lang="fr">Code captcha</value>

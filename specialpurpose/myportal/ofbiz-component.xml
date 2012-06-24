@@ -16,6 +16,7 @@
     KIND, either express or implied.  See the License for the
     specific language governing permissions and limitations
     under the License.
+    	base-permission="MYPORTALBASE"
 -->
 
 <ofbiz-component name="myportal"
@@ -30,6 +31,11 @@
 
     <service-resource type="model" loader="main" location="servicedef/services.xml"/>
 
-    <webapp name="myportal" title="MyPortal" app-bar-display="true" base-permission="MYPORTALBASE"
-        server="default-server" location="webapp/myportal" mount-point="/myportal"/>
+    <webapp name="myportal" 
+    	title="MyPortal" 
+    	app-bar-display="true" 
+        menu-name="public"
+        server="default-server" 
+        location="webapp/myportal" 
+        mount-point="/myportal"/>
 </ofbiz-component>

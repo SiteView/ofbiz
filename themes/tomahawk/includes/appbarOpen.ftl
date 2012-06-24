@@ -22,7 +22,7 @@ under the License.
 <#assign ofbizServerName = application.getAttribute("_serverId")?default("default-server")>
 <#assign contextPath = request.getContextPath()>
 <#assign displayApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "main")>
-<#assign displaySecondaryApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "secondary")>
+<#assign displaySecondaryApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "public")>
 
 <#assign appModelMenu = Static["org.ofbiz.widget.menu.MenuFactory"].getMenuFromLocation(applicationMenuLocation,applicationMenuName,delegator,dispatcher)>
 <#if appModelMenu.getModelMenuItemByName(headerItem)?exists>

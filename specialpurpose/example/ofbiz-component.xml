@@ -54,7 +54,7 @@ under the License.
     <!-- web applications; will be mounted when using the embedded container -->
     <webapp name="example"
         title="Example"
-        menu-name="secondary"
+        menu-name="public"
         server="default-server"
         location="webapp/example"
         base-permission="OFBTOOLS,EXAMPLE"

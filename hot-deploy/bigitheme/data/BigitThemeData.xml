@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity-engine-xml>
+    <VisualTheme visualThemeId="BIGIT_DEFAULT" visualThemeSetId="BACKOFFICE" description="BIGIT - Floating Layout, Sight-Impaired Accessible, Bidirectional"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_NAME" resourceValue="BIGIT_DEFAULT" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/bigittheme/maincss.css" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/bigittheme/javascript.css" sequenceId="02"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/bigittheme/screen.css" sequenceId="03"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_HELPSTYLESHEET" resourceValue="/bigittheme/help.css" sequenceId="01"/>    
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_DOCBOOKSTYLESHEET" resourceValue="/bigittheme/webapp/bigittheme/docbook.css" sequenceId="01"/>    
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_RTL_STYLESHEET" resourceValue="/bigittheme/mainrtl.css" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/bigittheme/js/application.js" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_SHORTCUT_ICON" resourceValue="/bigittheme/images/bigit.ico" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_HDR_IMAGE_URL" resourceValue="/bigittheme/images/bigit-logo.png" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_HDR_TMPLT_LOC" resourceValue="component://bigittheme/includes/header.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_MSG_TMPLT_LOC" resourceValue="component://common/webcommon/includes/messages.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_FTR_TMPLT_LOC" resourceValue="component://bigittheme/includes/footer.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_NAV_TMPLT_LOC" resourceValue="component://bigittheme/includes/appbar.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="BIGIT_DEFAULT" resourceTypeEnumId="VT_SCREENSHOT" resourceValue="/bigittheme/screenshot.jpg" sequenceId="01"/>
+</entity-engine-xml>

@@ -54,14 +54,17 @@ under the License.
           </#if>
           <tr>
             <td colspan="2" align="center">
-              <input type="submit" value="${uiLabelMap.CommonLogin}"/>
+              <input type="submit" value="${uiLabelMap.CommonLogin}"/>           
+              <input type="submit" value="${uiLabelMap.MyPortalQQLogin}"/>
+              <input type="submit" value="${uiLabelMap.MyPortalWeiboLogin}"/>
             </td>
           </tr>
         </table>
         <input type="hidden" name="JavaScriptEnabled" value="N"/>
         <br />
-        <a href="<@ofbizUrl>forgotPassword</@ofbizUrl>">${uiLabelMap.CommonForgotYourPassword}?</a>
         <a href="<@ofbizUrl>newRegisterLogin</@ofbizUrl>">${uiLabelMap.MyPortalNewRegistration}</a>
+        <a href="<@ofbizUrl>forgotPassword</@ofbizUrl>">${uiLabelMap.CommonForgotYourPassword}?</a>
+        <a href="<@ofbizUrl>newGuestLogin</@ofbizUrl>?USERNAME=Guest7&PASSWORD=bigit">${uiLabelMap.MyPortalGuestLogin}</a>
       </form>
     </div>
   </div>

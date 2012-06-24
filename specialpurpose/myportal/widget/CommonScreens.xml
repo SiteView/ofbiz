@@ -39,13 +39,15 @@ under the License.
                 <set field="layoutSettings.companySubtitle" from-field="uiLabelMap.PartyCompanySubtitle" global="true"/>
                 <set field="applicationMenuName" value="MyPortalAppBar" global="true"/>
                 <set field="applicationMenuLocation" value="component://myportal/widget/MyPortalMenus.xml" global="true"/>
-                <set field="parameters.parentPortalPageId" from-field="parameters.parentPortalPageId" default-value="MYPORTAL" global="true"/>
-                <script location="component://common/webcommon/WEB-INF/actions/includes/GetParentPortalPageId.groovy"/>
+                <set field="parameters.parentPortalPageId" from-field="parameters.parentPortalPageId" default-value="EXAMPLE" global="true"/>
+                <script location="component://common/webcommon/WEB-INF/actions/includes/GetParentPortalPageId2.groovy"/>
                 <set field="applicationTitle" value="${uiLabelMap.PageTitleMyPortalForNoLogin}"/>
                 <set field="my" value="My" global="true"/>
             </actions>
             <widgets>
-                <include-screen name="ApplicationDecorator" location="component://commonext/widget/CommonScreens.xml"/>
+                <!--  include-screen name="ApplicationDecorator2" location="component://commonext/widget/CommonScreens.xml"/ -->
+                <include-screen name="GlobalDecorator2" location="component://common/widget/CommonScreens.xml"/>
+                <label style="h2" text="parameters.parentPortalPageId: ${parameters.parentPortalPageId}"/>
             </widgets>
         </section>
     </screen>

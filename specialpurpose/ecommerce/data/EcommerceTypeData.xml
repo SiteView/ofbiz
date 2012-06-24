@@ -29,4 +29,5 @@ under the License.
     <VisualThemeResource visualThemeId="EC_DEFAULT" resourceTypeEnumId="VT_HDR_TMPLT_LOC" resourceValue="component://ecommerce/webapp/ecommerce/includes/header.ftl" sequenceId="06"/>
     <VisualThemeResource visualThemeId="EC_DEFAULT" resourceTypeEnumId="VT_FTR_TMPLT_LOC" resourceValue="component://ecommerce/webapp/ecommerce/includes/footer.ftl" sequenceId="07"/>
     <VisualThemeResource visualThemeId="EC_DEFAULT" resourceTypeEnumId="VT_SCREENSHOT" resourceValue="/images/ecdefaulttheme.jpg" sequenceId="08"/>
+
 </entity-engine-xml>

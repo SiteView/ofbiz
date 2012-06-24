@@ -40,9 +40,10 @@ under the License.
   <div class="screenlet-body">
     <ul class="browsecategorylist">
       <#assign count_1=0/>
-      <@loopSubContent contentId=contentRootId viewIndex=0 viewSize=9999 orderBy="contentName">
+      <@loopSubContent contentId=contentRootId viewIndex=0 viewSize=9999 orderBy="sequenceNum">
         <li class="browsecategorytext">
           <a href="<@ofbizUrl>showcontenttree?contentId=${subContentId}&amp;nodeTrailCsv=${subContentId}</@ofbizUrl>" class="browsecategorybutton">${content.contentName}</a>
+          
         </li>
         <#assign count_1=(count_1 + 1)/>
       </@loopSubContent>
