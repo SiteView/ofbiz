@@ -1,0 +1,52 @@
+/*--------- /css/common/bannerRotator_2012Q1.css ----------*/
+/* This file contains style definitions for the banner   */
+/* rotator                                               */
+/*-------------------------------------------------------*/
+
+#rotator-tooltip {display:none;}
+.bannerRotator { float:left; position:relative; }
+.bannerRotator .mask 
+{
+    background:url(http://content.solarwinds.com/web/images/2012q1/homepage/bannerRotatorMask_2012Q1.png) no-repeat 0 0;
+    width:606px;
+    height:298px;
+    position: absolute;
+    z-index: 7;
+    left: -5px;
+    top: -5px;
+}
+.bannerRotator .wt-rotator { position: relative; width: 597px; height: 289px; overflow: hidden; }
+.bannerRotator .wt-rotator .screen { position: relative; top: 0; left: 0; width: 597px; height: 289px; overflow: hidden; }
+.bannerRotator .wt-rotator .main-img { display: none; position: absolute; top: 0; left: 0; z-index: 0; border: 0; }
+.bannerRotator .wt-rotator .thumbnails { display: inline; position: relative; float: left; overflow: hidden; }
+.bannerRotator .wt-rotator .c-panel { position: absolute; top: 0; z-index: 7; }
+.bannerRotator .wt-rotator .c-panel ul { display:block; position: relative; }
+.bannerRotator .wt-rotator .c-panel ul li.curr-thumb { background:url(http://content.solarwinds.com/web/images/2012q1/buttons/bannerRotator.png) no-repeat -18px 0; }
+.bannerRotator .wt-rotator .c-panel ul li
+{
+    position: relative;
+    display: inline;
+    float: left;
+    overflow: hidden;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    background:url(http://content.solarwinds.com/web/images/2012q1/buttons/bannerRotator.png) no-repeat 0 0;
+    cursor: pointer;
+}
+
+/*------------------- Category Page Banner Rotator -------------------*/
+.categoryPageContent .bannerRotator { margin:5px 0 20px; }
+.categoryPageContent .bannerRotator .mask  
+{
+    background:url(http://content.solarwinds.com/web/images/2012q1/Products/Category/bannerRotatorMask.png) no-repeat 0 0; 
+    width:900px; 
+    height: 171px; 
+    top:-3px; 
+    left:-3px; 
+}
+.categoryPageContent .bannerRotator .wt-rotator { width: 895px; height: 165px; }
+.categoryPageContent .bannerRotator .wt-rotator .screen { width: 895px; height: 165px; }
+/*--------------- end Category Page Banner Rotator -------------------*/
+
+/*------- end /css/common/bannerRotator_2012Q1.css -------------------*/

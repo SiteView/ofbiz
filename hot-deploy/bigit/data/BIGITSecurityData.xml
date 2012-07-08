@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityPermission description="View operations in the BIGIT Component." permissionId="BIGIT_VIEW"/>
+    <SecurityPermission description="Create operations in the BIGIT Component." permissionId="BIGIT_CREATE"/>
+    <SecurityPermission description="Update operations in the BIGIT Component." permissionId="BIGIT_UPDATE"/>
+    <SecurityPermission description="Delete operations in the BIGIT Component." permissionId="BIGIT_DELETE"/>
+    <SecurityPermission description="ALL operations in the BIGIT Component." permissionId="BIGIT_ADMIN"/>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="BIGIT_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="BIGIT_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="BIGIT_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="BIGIT_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="BIGIT_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="BIGIT_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="BIGIT_ADMIN"/>
+</entity-engine-xml>

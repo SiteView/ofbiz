@@ -1,0 +1,548 @@
+<entity-engine-xml>
+    <WebSite webSiteId="BigitWeb" siteName="BIGIT.COM Web Site"/>
+    <Content contentId="BIGIT_PPOINT" contentTypeId="WEB_SITE_PUB_PT" contentName="BIGIT.COM Site Publish Point" description="BIGIT.COM Site Publish Point"/>
+    <WebSiteContent webSiteId="BigitWeb" contentId="BIGIT_PPOINT" webSiteContentTypeId="PUBLISH_POINT" fromDate="2001-01-01 00:00:00"/>
+
+    <DataResource dataResourceId="BIGIT_DEC" dataResourceTypeId="JCR_ARTICLE" localeString="zh_CN" dataTemplateTypeId="FTL" objectInfo="/BIGIT/MainDecorator"/>
+    <Content contentId="BIGIT_DEC" contentTypeId="DECORATOR" contentName="BIGIT.COM Site Main Decorator" dataResourceId="BIGIT_DEC"/>
+    <ContentPurpose contentId="BIGIT_DEC" contentPurposeTypeId="SECTION"/>
+
+    <DataResource dataResourceId="BIGIT_HHEAD" dataResourceTypeId="JCR_ARTICLE" localeString="zh_CN" dataTemplateTypeId="FTL" objectInfo="/BIGIT/HtmlHead"/>
+    <Content contentId="BIGIT_HHEAD" contentTypeId="DOCUMENT" contentName="BIGIT.COM Site HTML Head" dataResourceId="BIGIT_HHEAD"/>
+    <ContentPurpose contentId="BIGIT_HHEAD" contentPurposeTypeId="SECTION"/>
+
+    <DataResource dataResourceId="BIGIT_HEADER" dataResourceTypeId="URL_RESOURCE" localeString="zh_CN" dataTemplateTypeId="FTL" 
+    	objectInfo="component://bigit/template/cms/headerHead.ftl"/>
+    <Content contentId="BIGIT_HEADER" contentTypeId="DOCUMENT" contentName="BIGIT.COM Site Header" dataResourceId="BIGIT_HEADER"/>
+    <ContentPurpose contentId="BIGIT_HEADER" contentPurposeTypeId="SECTION"/>
+    
+    <DataResource dataResourceId="BIGIT_HDR_L_BAR" dataResourceTypeId="JCR_ARTICLE" localeString="zh_CN" dataTemplateTypeId="FTL" objectInfo="/BIGIT/Header"/>
+    <Content contentId="BIGIT_HDR_L_BAR" contentTypeId="DOCUMENT" contentName="BIGIT.COM Site Header Left Bar" dataResourceId="BIGIT_HDR_L_BAR"/>
+    <ContentPurpose contentId="BIGIT_HEADER" contentPurposeTypeId="SECTION"/>
+    
+
+    <DataResource dataResourceId="BIGIT_FOOTER" dataResourceTypeId="JCR_ARTICLE" localeString="zh_CN" dataTemplateTypeId="FTL" objectInfo="/BIGIT/Footer"/>
+    <Content contentId="BIGIT_FOOTER" contentTypeId="DOCUMENT" contentName="BIGIT.COM Site Header" dataResourceId="BIGIT_FOOTER"/>
+    <ContentPurpose contentId="BIGIT_FOOTER" contentPurposeTypeId="SECTION"/>
+
+    <ContentAssoc contentId="BIGIT_DEC" contentIdTo="BIGIT_HHEAD" contentAssocTypeId="SUB_CONTENT" mapKey="htmlHead" fromDate="2001-01-01 00:00:00"/>
+    <ContentAssoc contentId="BIGIT_DEC" contentIdTo="BIGIT_HEADER" contentAssocTypeId="SUB_CONTENT" mapKey="header" fromDate="2001-01-01 00:00:00"/>
+    <ContentAssoc contentId="BIGIT_DEC" contentIdTo="BIGIT_FOOTER" contentAssocTypeId="SUB_CONTENT" mapKey="footer" fromDate="2001-01-01 00:00:00"/>
+
+    <!-- home page -->
+    <DataResource dataResourceId="BIGIT_HOME" dataResourceTypeId="JCR_ARTICLE" localeString="zh_CN" dataTemplateTypeId="FTL" objectInfo="/BIGIT/Home"/>
+    <Content contentId="BIGIT_HOME" contentTypeId="DOCUMENT" decoratorContentId="BIGIT_DEC"
+        contentName="BIGIT.COM Site Home Page" dataResourceId="BIGIT_HOME"/>
+    <ContentPurpose contentId="BIGIT_HOME" contentPurposeTypeId="SECTION"/>
+    <ContentAssoc contentId="BIGIT_PPOINT" contentIdTo="BIGIT_HOME" contentAssocTypeId="SUB_CONTENT" fromDate="2001-01-01 00:00:00" mapKey="home"/>
+    <ContentAssoc contentId="BIGIT_HDR_L_BAR" contentIdTo="BIGIT_HOME" contentAssocTypeId="SUB_CONTENT" fromDate="2001-01-01 00:00:00" mapKey="home"/>   
+    <WebSiteContent webSiteId="BigitWeb" contentId="BIGIT_HOME" webSiteContentTypeId="DEFAULT_PAGE" fromDate="2001-01-01 00:00:00"/>
+
+    <!-- navigation menue item for BIGIT_HDR_L_BAR -->
+    <DataResource dataResourceId="JCR_DEMO" dataResourceTypeId="JCR_ARTICLE" dataTemplateTypeId="FTL" localeString="zh_CN" objectInfo="/BIGIT/Products"/>
+    <Content contentId="JCR_DEMO" contentTypeId="DOCUMENT" decoratorContentId="BIGIT_DEC" contentName="JCR Demo pages" dataResourceId="JCR_DEMO"/>
+    
+ 
+    
+    <!-- Specific Error Pages -->
+    <DataResource dataResourceId="BIGIT_ERROR_ROOT" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL"/>
+    <ElectronicText dataResourceId="BIGIT_ERROR_ROOT">
+        <textData><![CDATA[<html><head><title>Status Code : ${statusCode?if_exists}</title></head><body>Error ${statusCode?if_exists}</body></html>]]></textData>
+    </ElectronicText>
+    <Content contentId="BIGIT_ERROR_ROOT" contentTypeId="DOCUMENT"
+        contentName="CMS Site Error Page Container" dataResourceId="BIGIT_ERROR_ROOT"/>
+    <WebSiteContent webSiteId="BigitWeb" contentId="BIGIT_ERROR_ROOT" webSiteContentTypeId="ERROR_ROOT" fromDate="2001-01-01 00:00:00"/>
+    <DataResource dataResourceId="BIGIT_ERROR_404" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL"/>
+    <ElectronicText dataResourceId="BIGIT_ERROR_404">
+        <textData><![CDATA[<html><head><title>BIGIT.COM : Page not found</title></head><body>BIGIT.COM : ${statusCode?if_exists} Not Found</body></html>]]></textData>
+    </ElectronicText>
+    <Content contentId="BIGIT_ERROR_404" contentTypeId="DOCUMENT" contentName="Specific CMS 404 Page Not Found For BIGIT.COM" dataResourceId="BIGIT_ERROR_404"/>
+    <ContentAssoc contentId="BIGIT_ERROR_ROOT" contentIdTo="BIGIT_ERROR_404" contentAssocTypeId="TREE_CHILD" fromDate="2001-01-01 00:00:00" mapKey="404"/>
+    
+    <DataResource dataResourceId="BIGIT_PRODUCTS" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_PRODUCTS" contentName="云中心运营支撑系统" contentTypeId="DOCUMENT" dataResourceId="BIGIT_PRODUCTS" description="统一的IT资源和业务管理，将数据中心升级为云中心"/>
+    <ElectronicText dataResourceId="BIGIT_PRODUCTS">
+        <textData><![CDATA[This the main page for BIGIT_PRODUCTS.]]></textData>
+    </ElectronicText>
+    <ContentAttribute attrName="title" attrValue="云中心运营支撑系统" contentId="BIGIT_PRODUCTS"/> 
+	
+    <DataResource dataResourceId="BIGIT_VM" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_VM" contentName="虚拟机管理" contentTypeId="DOCUMENT" dataResourceId="BIGIT_VM" description="BIGIT Virtual Machine Management"/>
+    <ElectronicText dataResourceId="BIGIT_VM">
+        <textData><![CDATA[This the main page for BIGIT_VM.]]></textData>
+    </ElectronicText>
+
+    <DataResource dataResourceId="BIGIT_CMDB" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB" contentName="可视化资产库(CMDB)" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB" description="自动搜索、IT资产生命周期管理，图形化展示资产的拓扑关系"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB">
+        <textData><![CDATA[This the main page for BIGIT_CMDB.]]></textData>
+    </ElectronicText>
+    <ContentAttribute attrName="title" attrValue="可视化资产库(Visual CMDB)" contentId="BIGIT_CMDB"/> 
+
+    <DataResource dataResourceId="BIGIT_MONITOR" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_MONITOR" contentName="故障和性能监测" contentTypeId="DOCUMENT" dataResourceId="BIGIT_MONITOR" description="BIGIT Fault and Performance Monitoring"/>
+    <ElectronicText dataResourceId="BIGIT_MONITOR">
+        <textData><![CDATA[This the main page for BIGIT_MONITOR.]]></textData>
+    </ElectronicText>
+
+    <DataResource dataResourceId="BIGIT_SERV_CATALOG" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_SERV_CATALOG" contentName="自定义服务目录" contentTypeId="DOCUMENT" dataResourceId="BIGIT_SERV_CATALOG" description="BIGIT Service Catalog"/>
+    <ElectronicText dataResourceId="BIGIT_SERV_CATALOG">
+        <textData><![CDATA[This the main page for BIGIT_SERV_CATALOG.]]></textData>
+    </ElectronicText>
+
+    <DataResource dataResourceId="BIGIT_INCIDENT" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_INCIDENT" contentName="故障和工单管理" contentTypeId="DOCUMENT" dataResourceId="BIGIT_INCIDENT" description="BIGIT Incidence management"/>
+    <ElectronicText dataResourceId="BIGIT_INCIDENT">
+        <textData><![CDATA[This the main page for BIGIT_INCIDENT.]]></textData>
+    </ElectronicText>
+
+    <DataResource dataResourceId="BIGIT_BIZ_USER" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_BIZ_USER" contentName="用户信息管理" contentTypeId="DOCUMENT" dataResourceId="BIGIT_BIZ_USER" description="BIGIT Business User Management"/>
+    <ElectronicText dataResourceId="BIGIT_BIZ_USER">
+        <textData><![CDATA[This the main page for BIGIT_BIZ_USER.]]></textData>
+    </ElectronicText>
+
+    <DataResource dataResourceId="BIGIT_BIZ_BILLING" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_BIZ_BILLING" contentName="计费和在线支付" contentTypeId="DOCUMENT" dataResourceId="BIGIT_BIZ_BILLING" description="BIGIT Business Billing"/>
+    <ElectronicText dataResourceId="BIGIT_BIZ_BILLING">
+        <textData><![CDATA[This the main page for BIGIT_BIZ_BILLING.]]></textData>
+    </ElectronicText>
+
+	<ContentAssoc contentId="BIGIT_PRODUCTS" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB" sequenceNum="10" mapKey="cmdb" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_PRODUCTS" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_VM" sequenceNum="20" mapKey="vm" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_PRODUCTS" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_MONITOR" sequenceNum="30" mapKey="monitor" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_PRODUCTS" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_SERV_CATALOG" sequenceNum="40" mapKey="serv_catalog" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_PRODUCTS" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_INCIDENT" sequenceNum="50" mapKey="incident" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_PRODUCTS" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_BIZ_USER" sequenceNum="60" mapKey="biz_user" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_PRODUCTS" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_BIZ_BILLING" sequenceNum="70" mapKey="biz_billing" fromDate="2001-01-01 00:00:00"/> 
+	
+
+	<DataResource dataResourceId="BIGIT_CONTACTS" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CONTACTS" contentName="Contacts" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CONTACTS" description="BIGIT Contact Us" />
+    <ElectronicText dataResourceId="BIGIT_CONTACTS">
+        <textData><![CDATA[This the main page for BIGIT_CONTACTS.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_CASES" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CASES" contentName="Cases" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CASES" description="BIGIT Successful Stories"/>
+    <ElectronicText dataResourceId="BIGIT_CASES">
+        <textData><![CDATA[This the main page for BIGIT_CASES.]]></textData>
+    </ElectronicText>
+    
+	<DataResource dataResourceId="BIGIT_SUPPORTS" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_SUPPORTS" contentName="Supports" contentTypeId="DOCUMENT" dataResourceId="BIGIT_SUPPORTS" description="BIGIT Supports"/>
+    <ElectronicText dataResourceId="BIGIT_SUPPORTS">
+        <textData><![CDATA[This the main page for BIGIT_SUPPORTS.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_SOLUTIONS" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_SOLUTIONS" contentName="Solutions" contentTypeId="DOCUMENT" dataResourceId="BIGIT_SOLUTIONS" description="BIGIT Solutions"/>
+    <ElectronicText dataResourceId="BIGIT_SOLUTIONS">
+        <textData><![CDATA[This the main page for BIGIT_SOLUTIONS.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_DOWNLOADS" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_DOWNLOADS" contentName="Downloads" contentTypeId="DOCUMENT" dataResourceId="BIGIT_DOWNLOADS" description="BIGIT Downloads"/>
+    <ElectronicText dataResourceId="BIGIT_DOWNLOADS">
+        <textData><![CDATA[This the main page for BIGIT_DOWNLOADS.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_NOTEWORTHY" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_NOTEWORTHY" contentName="Noteworthy" contentTypeId="DOCUMENT" dataResourceId="BIGIT_NOTEWORTHY" description="BIGIT New and Noteworthy"/>
+    <ElectronicText dataResourceId="BIGIT_NOTEWORTHY">
+        <textData><![CDATA[This the main page for BIGIT_NOTEWORTHY.]]></textData>
+    </ElectronicText>
+    
+    
+	<!-- BIGIT_CMDB -->
+	<DataResource dataResourceId="BIGIT_CMDB_SUM" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_SUM" contentName="概要介绍" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_SUM" description="BIGIT CMDB Summary" />
+    <ElectronicText dataResourceId="BIGIT_CMDB_SUM">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_SUM.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_CMDB_FEATURE" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_FEATURE" contentName="功能、好处和优势" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_FEATURE" description="BIGIT CMDB FEATURE" />
+    <ElectronicText dataResourceId="BIGIT_CMDB_FEATURE">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_FEATURE.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_CMDB_DOC" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_DOC" contentName="技术文档库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_DOC" description="BIGIT CMDB Documents"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB_DOC">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_DOC.]]></textData>
+    </ElectronicText>
+    
+	<DataResource dataResourceId="BIGIT_CMDB_SCREEN" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_SCREEN" contentName="屏幕截图和录像" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_SCREEN" description="BIGIT CMDB Screenshots"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB_SCREEN">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_SCREEN.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_CMDB_DEMO" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_DEMO" contentName="下载和在线试用" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_DEMO" description="BIGIT CMDB Demos"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB_DEMO">
+        <textData><![CDATA[This the main page for BIGIT_SOLUTIONS.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_CMDB_KB" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_KB" contentName="常见问题和知识库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_KB" description="BIGIT CMDB Knowledge base"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB_KB">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_KB.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_CMDB_SUPPORT" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_SUPPORT" contentName="技术支持服务" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_SUPPORT" description="BIGIT CMDB Support"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB_SUPPORT">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_SUPPORT.]]></textData>
+    </ElectronicText>
+
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUMMARY" contentIdTo="BIGIT_CMDB_SUM" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_FEATURE" sequenceNum="10" mapKey="feature" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_DOC" sequenceNum="20" mapKey="doc" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_SCREEN" sequenceNum="30" mapKey="screenshot" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_DEMO" sequenceNum="40" mapKey="demo" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_KB" sequenceNum="50" mapKey="kb" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_SUPPORT" sequenceNum="60" mapKey="support" fromDate="2001-01-01 00:00:00"/>
+	
+	<!-- BIGIT_VM -->
+		<DataResource dataResourceId="BIGIT_VM_SUM" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_VM_SUM" contentName="概要介绍" contentTypeId="DOCUMENT" dataResourceId="BIGIT_VM_SUM" description="BIGIT VM Summary" />
+    <ElectronicText dataResourceId="BIGIT_VM_SUM">
+        <textData><![CDATA[This the main page for BIGIT_VM_SUM.]]></textData>
+    </ElectronicText>
+    
+	<DataResource dataResourceId="BIGIT_VM_FEATURE" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_VM_FEATURE" contentName="功能、好处和优势" contentTypeId="DOCUMENT" dataResourceId="BIGIT_VM_FEATURE" description="BIGIT VM FEATURE" />
+    <ElectronicText dataResourceId="BIGIT_VM_FEATURE">
+        <textData><![CDATA[This the main page for BIGIT_VM_FEATURE.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_VM_DOC" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_VM_DOC" contentName="技术文档库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_VM_DOC" description="BIGIT VM Documents"/>
+    <ElectronicText dataResourceId="BIGIT_VM_DOC">
+        <textData><![CDATA[This the main page for BIGIT_VM_DOC.]]></textData>
+    </ElectronicText>
+    
+	<DataResource dataResourceId="BIGIT_VM_SCREEN" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_VM_SCREEN" contentName="屏幕截图和录像" contentTypeId="DOCUMENT" dataResourceId="BIGIT_VM_SCREEN" description="BIGIT VM Screenshots"/>
+    <ElectronicText dataResourceId="BIGIT_VM_SCREEN">
+        <textData><![CDATA[This the main page for BIGIT_VM_SCREEN.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_VM_DEMO" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_VM_DEMO" contentName="下载和在线试用" contentTypeId="DOCUMENT" dataResourceId="BIGIT_VM_DEMO" description="BIGIT VM Demos"/>
+    <ElectronicText dataResourceId="BIGIT_VM_DEMO">
+        <textData><![CDATA[This the main page for BIGIT_SOLUTIONS.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_VM_KB" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_VM_KB" contentName="常见问题和知识库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_VM_KB" description="BIGIT VM Knowledge base"/>
+    <ElectronicText dataResourceId="BIGIT_VM_KB">
+        <textData><![CDATA[This the main page for BIGIT_VM_KB.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_VM_SUPPORT" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_VM_SUPPORT" contentName="技术支持服务" contentTypeId="DOCUMENT" dataResourceId="BIGIT_VM_SUPPORT" description="BIGIT VM Support"/>
+    <ElectronicText dataResourceId="BIGIT_VM_SUPPORT">
+        <textData><![CDATA[This the main page for BIGIT_VM_SUPPORT.]]></textData>
+    </ElectronicText>
+
+	<ContentAssoc contentId="BIGIT_VM" contentAssocTypeId="SUMMARY" contentIdTo="BIGIT_VM_SUM" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_VM" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_VM_FEATURE" sequenceNum="10" mapKey="feature" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_VM" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_VM_DOC" sequenceNum="20" mapKey="doc" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_VM" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_VM_SCREEN" sequenceNum="30" mapKey="screenshot" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_VM" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_VM_DEMO" sequenceNum="40" mapKey="demo" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_VM" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_VM_KB" sequenceNum="50" mapKey="kb" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_VM" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_VM_SUPPORT" sequenceNum="60" mapKey="support" fromDate="2001-01-01 00:00:00"/>	 
+	
+	<!-- BIGIT_MONITOR -->
+	<DataResource dataResourceId="BIGIT_MON_SUM" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_MON_SUM" contentName="概要介绍" contentTypeId="DOCUMENT" dataResourceId="BIGIT_MON_SUM" description="BIGIT Monitor Summary" />
+    <ElectronicText dataResourceId="BIGIT_MON_SUM">
+        <textData><![CDATA[This the main page for BIGIT_MON_SUM.]]></textData>
+    </ElectronicText>
+    	
+	<DataResource dataResourceId="BIGIT_MON_FEATURE" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_MON_FEATURE" contentName="功能、好处和优势" contentTypeId="DOCUMENT" dataResourceId="BIGIT_MON_FEATURE" description="BIGIT MONITOR FEATURE" />
+    <ElectronicText dataResourceId="BIGIT_MON_FEATURE">
+        <textData><![CDATA[This the main page for BIGIT_MON_FEATURE.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_MON_DOC" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_MON_DOC" contentName="技术文档库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_MON_DOC" description="BIGIT MONITOR Documents"/>
+    <ElectronicText dataResourceId="BIGIT_MON_DOC">
+        <textData><![CDATA[This the main page for BIGIT_MON_DOC.]]></textData>
+    </ElectronicText>
+    
+	<DataResource dataResourceId="BIGIT_MON_SCREEN" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_MON_SCREEN" contentName="屏幕截图和录像" contentTypeId="DOCUMENT" dataResourceId="BIGIT_MON_SCREEN" description="BIGIT MONITOR Screenshots"/>
+    <ElectronicText dataResourceId="BIGIT_MON_SCREEN">
+        <textData><![CDATA[This the main page for BIGIT_MON_SCREEN.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_MON_DEMO" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_MON_DEMO" contentName="下载和在线试用" contentTypeId="DOCUMENT" dataResourceId="BIGIT_MON_DEMO" description="BIGIT MONITOR Demos"/>
+    <ElectronicText dataResourceId="BIGIT_MON_DEMO">
+        <textData><![CDATA[This the main page for BIGIT_SOLUTIONS.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_MON_KB" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_MON_KB" contentName="常见问题和知识库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_MON_KB" description="BIGIT MONITOR Knowledge base"/>
+    <ElectronicText dataResourceId="BIGIT_MON_KB">
+        <textData><![CDATA[This the main page for BIGIT_MON_KB.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_MON_SUPPORT" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_MON_SUPPORT" contentName="技术支持服务" contentTypeId="DOCUMENT" dataResourceId="BIGIT_MON_SUPPORT" description="BIGIT MONITOR Support"/>
+    <ElectronicText dataResourceId="BIGIT_MON_SUPPORT">
+        <textData><![CDATA[This the main page for BIGIT_MON_SUPPORT.]]></textData>
+    </ElectronicText>
+
+	<ContentAssoc contentId="BIGIT_MONITOR" contentAssocTypeId="SUMMARY" contentIdTo="BIGIT_MON_SUM" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_MONITOR" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_MON_FEATURE" sequenceNum="10" mapKey="feature" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_MONITOR" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_MON_DOC" sequenceNum="20" mapKey="doc" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_MONITOR" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_MON_SCREEN" sequenceNum="30" mapKey="screenshot" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_MONITOR" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_MON_DEMO" sequenceNum="40" mapKey="demo" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_MONITOR" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_MON_KB" sequenceNum="50" mapKey="kb" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_MONITOR" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_MON_SUPPORT" sequenceNum="60" mapKey="support" fromDate="2001-01-01 00:00:00"/>
+
+	<!-- BIGIT_SERV_CATALOG -->
+	<DataResource dataResourceId="BIGIT_SRV_CAT_SUM" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_SRV_CAT_SUM" contentName="概要介绍" contentTypeId="DOCUMENT" dataResourceId="BIGIT_SRV_CAT_SUM" description="BIGIT CMDB Summary" />
+    <ElectronicText dataResourceId="BIGIT_SRV_CAT_SUM">
+        <textData><![CDATA[This the main page for BIGIT_SRV_CAT_SUM.]]></textData>
+    </ElectronicText>
+	
+	<DataResource dataResourceId="BIGIT_SRV_CAT_FEAT" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_SRV_CAT_FEAT" contentName="功能、好处和优势" contentTypeId="DOCUMENT" dataResourceId="BIGIT_SRV_CAT_FEAT" description="BIGIT SERVICE CATALOG FEATURE" />
+    <ElectronicText dataResourceId="BIGIT_SRV_CAT_FEAT">
+        <textData><![CDATA[This the main page for BIGIT_SRV_CAT_FEAT.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_SRV_CAT_DOC" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_SRV_CAT_DOC" contentName="技术文档库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_SRV_CAT_DOC" description="BIGIT SERVICE CATALOG Documents"/>
+    <ElectronicText dataResourceId="BIGIT_SRV_CAT_DOC">
+        <textData><![CDATA[This the main page for BIGIT_SRV_CAT_DOC.]]></textData>
+    </ElectronicText>
+    
+	<DataResource dataResourceId="BIGIT_SRV_CAT_SCREEN" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_SRV_CAT_SCREEN" contentName="屏幕截图和录像" contentTypeId="DOCUMENT" dataResourceId="BIGIT_SRV_CAT_SCREEN" description="BIGIT SERVICE CATALOG Screenshots"/>
+    <ElectronicText dataResourceId="BIGIT_SRV_CAT_SCREEN">
+        <textData><![CDATA[This the main page for BIGIT_SRV_CAT_SCREEN.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_SRV_CAT_DEMO" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_SRV_CAT_DEMO" contentName="下载和在线试用" contentTypeId="DOCUMENT" dataResourceId="BIGIT_SRV_CAT_DEMO" description="BIGIT SERVICE CATALOG Demos"/>
+    <ElectronicText dataResourceId="BIGIT_SRV_CAT_DEMO">
+        <textData><![CDATA[This the main page for BIGIT_SOLUTIONS.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_SRV_CAT_KB" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_SRV_CAT_KB" contentName="常见问题和知识库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_SRV_CAT_KB" description="BIGIT SERVICE CATALOG Knowledge base"/>
+    <ElectronicText dataResourceId="BIGIT_SRV_CAT_KB">
+        <textData><![CDATA[This the main page for BIGIT_SRV_CAT_KB.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_SRV_CAT_SUP" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_SRV_CAT_SUP" contentName="技术支持服务" contentTypeId="DOCUMENT" dataResourceId="BIGIT_SRV_CAT_SUP" description="BIGIT SERVICE CATALOG Support"/>
+    <ElectronicText dataResourceId="BIGIT_SRV_CAT_SUP">
+        <textData><![CDATA[This the main page for BIGIT_SRV_CAT_SUP.]]></textData>
+    </ElectronicText>
+
+	<ContentAssoc contentId="BIGIT_SERV_CATALOG" contentAssocTypeId="SUMMARY" contentIdTo="BIGIT_SRV_CAT_SUM" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_SERV_CATALOG" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_SRV_CAT_FEAT" sequenceNum="10" mapKey="feature" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_SERV_CATALOG" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_SRV_CAT_DOC" sequenceNum="20" mapKey="doc" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_SERV_CATALOG" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_SRV_CAT_SCREEN" sequenceNum="30" mapKey="screenshot" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_SERV_CATALOG" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_SRV_CAT_DEMO" sequenceNum="40" mapKey="demo" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_SERV_CATALOG" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_SRV_CAT_KB" sequenceNum="50" mapKey="kb" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_SERV_CATALOG" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_SRV_CAT_SUP" sequenceNum="60" mapKey="support" fromDate="2001-01-01 00:00:00"/>
+
+	<!-- BIGIT_INCIDENT -->
+
+	<DataResource dataResourceId="BIGIT_INC_SUM" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_INC_SUM" contentName="概要介绍" contentTypeId="DOCUMENT" dataResourceId="BIGIT_INC_SUM" description="BIGIT Incident Summary" />
+    <ElectronicText dataResourceId="BIGIT_INC_SUM">
+        <textData><![CDATA[This the main page for BIGIT_INC_SUM.]]></textData>
+    </ElectronicText>
+    	
+	<DataResource dataResourceId="BIGIT_INC_FEATURE" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_INC_FEATURE" contentName="功能、好处和优势" contentTypeId="DOCUMENT" dataResourceId="BIGIT_INC_FEATURE" description="BIGIT INCIDENT FEATURE" />
+    <ElectronicText dataResourceId="BIGIT_INC_FEATURE">
+        <textData><![CDATA[This the main page for BIGIT_INC_FEATURE.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_INC_DOC" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_INC_DOC" contentName="技术文档库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_INC_DOC" description="BIGIT INCIDENT Documents"/>
+    <ElectronicText dataResourceId="BIGIT_INC_DOC">
+        <textData><![CDATA[This the main page for BIGIT_INC_DOC.]]></textData>
+    </ElectronicText>
+    
+	<DataResource dataResourceId="BIGIT_INC_SCREEN" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_INC_SCREEN" contentName="屏幕截图和录像" contentTypeId="DOCUMENT" dataResourceId="BIGIT_INC_SCREEN" description="BIGIT INCIDENT Screenshots"/>
+    <ElectronicText dataResourceId="BIGIT_INC_SCREEN">
+        <textData><![CDATA[This the main page for BIGIT_INC_SCREEN.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_INC_DEMO" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_INC_DEMO" contentName="下载和在线试用" contentTypeId="DOCUMENT" dataResourceId="BIGIT_INC_DEMO" description="BIGIT INCIDENT Demos"/>
+    <ElectronicText dataResourceId="BIGIT_INC_DEMO">
+        <textData><![CDATA[This the main page for BIGIT_SOLUTIONS.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_INC_KB" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_INC_KB" contentName="常见问题和知识库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_INC_KB" description="BIGIT INCIDENT Knowledge base"/>
+    <ElectronicText dataResourceId="BIGIT_INC_KB">
+        <textData><![CDATA[This the main page for BIGIT_INC_KB.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_INC_SUPPORT" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_INC_SUPPORT" contentName="技术支持服务" contentTypeId="DOCUMENT" dataResourceId="BIGIT_INC_SUPPORT" description="BIGIT INCIDENT Support"/>
+    <ElectronicText dataResourceId="BIGIT_INC_SUPPORT">
+        <textData><![CDATA[This the main page for BIGIT_INC_SUPPORT.]]></textData>
+    </ElectronicText>
+
+	<ContentAssoc contentId="BIGIT_INCIDENT" contentAssocTypeId="SUMMARY" contentIdTo="BIGIT_INC_SUM" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_INCIDENT" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_INC_FEATURE" sequenceNum="10" mapKey="feature" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_INCIDENT" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_INC_DOC" sequenceNum="20" mapKey="doc" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_INCIDENT" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_INC_SCREEN" sequenceNum="30" mapKey="screenshot" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_INCIDENT" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_INC_DEMO" sequenceNum="40" mapKey="demo" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_INCIDENT" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_INC_KB" sequenceNum="50" mapKey="kb" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_INCIDENT" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_INC_SUPPORT" sequenceNum="60" mapKey="support" fromDate="2001-01-01 00:00:00"/>
+
+	<!-- BIGIT_BIZ_USER -->
+	<DataResource dataResourceId="BIGIT_USER_SUM" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_USER_SUM" contentName="概要介绍" contentTypeId="DOCUMENT" dataResourceId="BIGIT_USER_SUM" description="BIGIT Business User Summary" />
+    <ElectronicText dataResourceId="BIGIT_USER_SUM">
+        <textData><![CDATA[This the main page for BIGIT_USER_SUM.]]></textData>
+    </ElectronicText>
+    	
+	<DataResource dataResourceId="BIGIT_USER_FEATURE" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_USER_FEATURE" contentName="功能、好处和优势" contentTypeId="DOCUMENT" dataResourceId="BIGIT_USER_FEATURE" description="BIGIT BIZ USER FEATURE" />
+    <ElectronicText dataResourceId="BIGIT_USER_FEATURE">
+        <textData><![CDATA[This the main page for BIGIT_USER_FEATURE.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_USER_DOC" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_USER_DOC" contentName="技术文档库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_USER_DOC" description="BIGIT BIZ USER Documents"/>
+    <ElectronicText dataResourceId="BIGIT_USER_DOC">
+        <textData><![CDATA[This the main page for BIGIT_USER_DOC.]]></textData>
+    </ElectronicText>
+    
+	<DataResource dataResourceId="BIGIT_USER_SCREEN" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_USER_SCREEN" contentName="屏幕截图和录像" contentTypeId="DOCUMENT" dataResourceId="BIGIT_USER_SCREEN" description="BIGIT BIZ USER Screenshots"/>
+    <ElectronicText dataResourceId="BIGIT_USER_SCREEN">
+        <textData><![CDATA[This the main page for BIGIT_USER_SCREEN.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_USER_DEMO" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_USER_DEMO" contentName="下载和在线试用" contentTypeId="DOCUMENT" dataResourceId="BIGIT_USER_DEMO" description="BIGIT BIZ USER Demos"/>
+    <ElectronicText dataResourceId="BIGIT_USER_DEMO">
+        <textData><![CDATA[This the main page for BIGIT_SOLUTIONS.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_USER_KB" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_USER_KB" contentName="常见问题和知识库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_USER_KB" description="BIGIT BIZ USER Knowledge base"/>
+    <ElectronicText dataResourceId="BIGIT_USER_KB">
+        <textData><![CDATA[This the main page for BIGIT_USER_KB.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_USER_SUPPORT" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_USER_SUPPORT" contentName="技术支持服务" contentTypeId="DOCUMENT" dataResourceId="BIGIT_USER_SUPPORT" description="BIGIT BIZ USER Support"/>
+    <ElectronicText dataResourceId="BIGIT_USER_SUPPORT">
+        <textData><![CDATA[This the main page for BIGIT_USER_SUPPORT.]]></textData>
+    </ElectronicText>
+
+	<ContentAssoc contentId="BIGIT_BIZ_USER" contentAssocTypeId="SUMMARY" contentIdTo="BIGIT_USER_SUM" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_USER" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_USER_FEATURE" sequenceNum="10" mapKey="feature" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_USER" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_USER_DOC" sequenceNum="20" mapKey="doc" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_USER" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_USER_SCREEN" sequenceNum="30" mapKey="screenshot" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_USER" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_USER_DEMO" sequenceNum="40" mapKey="demo" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_USER" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_USER_KB" sequenceNum="50" mapKey="kb" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_USER" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_USER_SUPPORT" sequenceNum="60" mapKey="support" fromDate="2001-01-01 00:00:00"/>
+
+	<!-- BIGIT_BIZ_BILLING -->
+	<DataResource dataResourceId="BIGIT_BILL_SUM" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_BILL_SUM" contentName="概要介绍" contentTypeId="DOCUMENT" dataResourceId="BIGIT_BILL_SUM" description="BIGIT Business Billing Summary" />
+    <ElectronicText dataResourceId="BIGIT_BILL_SUM">
+        <textData><![CDATA[This the main page for BIGIT_BILL_SUM.]]></textData>
+    </ElectronicText>
+	
+	<DataResource dataResourceId="BIGIT_BILL_FEATURE" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_BILL_FEATURE" contentName="功能、好处和优势" contentTypeId="DOCUMENT" dataResourceId="BIGIT_BILL_FEATURE" description="BIGIT BIZ BILLING FEATURE" />
+    <ElectronicText dataResourceId="BIGIT_BILL_FEATURE">
+        <textData><![CDATA[This the main page for BIGIT_BILL_FEATURE.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_BILL_DOC" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_BILL_DOC" contentName="技术文档库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_BILL_DOC" description="BIGIT BIZ BILLING Documents"/>
+    <ElectronicText dataResourceId="BIGIT_BILL_DOC">
+        <textData><![CDATA[This the main page for BIGIT_BILL_DOC.]]></textData>
+    </ElectronicText>
+    
+	<DataResource dataResourceId="BIGIT_BILL_SCREEN" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_BILL_SCREEN" contentName="屏幕截图和录像" contentTypeId="DOCUMENT" dataResourceId="BIGIT_BILL_SCREEN" description="BIGIT BIZ BILLING Screenshots"/>
+    <ElectronicText dataResourceId="BIGIT_BILL_SCREEN">
+        <textData><![CDATA[This the main page for BIGIT_BILL_SCREEN.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_BILL_DEMO" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_BILL_DEMO" contentName="下载和在线试用" contentTypeId="DOCUMENT" dataResourceId="BIGIT_BILL_DEMO" description="BIGIT BIZ BILLING Demos"/>
+    <ElectronicText dataResourceId="BIGIT_BILL_DEMO">
+        <textData><![CDATA[This the main page for BIGIT_SOLUTIONS.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_BILL_KB" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_BILL_KB" contentName="常见问题和知识库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_BILL_KB" description="BIGIT BIZ BILLING Knowledge base"/>
+    <ElectronicText dataResourceId="BIGIT_BILL_KB">
+        <textData><![CDATA[This the main page for BIGIT_BILL_KB.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_BILL_SUPPORT" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_BILL_SUPPORT" contentName="技术支持服务" contentTypeId="DOCUMENT" dataResourceId="BIGIT_BILL_SUPPORT" description="BIGIT BIZ BILLING Support"/>
+    <ElectronicText dataResourceId="BIGIT_BILL_SUPPORT">
+        <textData><![CDATA[This the main page for BIGIT_BILL_SUPPORT.]]></textData>
+    </ElectronicText>
+
+	<ContentAssoc contentId="BIGIT_BIZ_BILLING" contentAssocTypeId="SUMMARY" contentIdTo="BIGIT_BILL_SUM" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_BILLING" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_BILL_FEATURE" sequenceNum="10" mapKey="feature" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_BILLING" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_BILL_DOC" sequenceNum="20" mapKey="doc" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_BILLING" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_BILL_SCREEN" sequenceNum="30" mapKey="screenshot" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_BILLING" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_BILL_DEMO" sequenceNum="40" mapKey="demo" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_BILLING" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_BILL_KB" sequenceNum="50" mapKey="kb" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_BIZ_BILLING" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_BILL_SUPPORT" sequenceNum="60" mapKey="support" fromDate="2001-01-01 00:00:00"/>	
+				
+    <DataResource dataResourceId="BIGIT_PROD_IMG" dataResourceTypeId="OFBIZ_FILE_BIN" dataTemplateTypeId="NONE" statusId="CTNT_PUBLISHED" mimeTypeId="image/jpeg" objectInfo="hot-deploy/bigit/webapp/bigit/images/explore_jviews_530x120.jpg" isPublic="Y"/>
+    <Content contentId="BIGIT_PROD_IMG" contentTypeId="DOCUMENT"  dataResourceId="BIGIT_PROD_IMG" statusId="CTNT_PUBLISHED" contentName="BIGIT Product Main Image " description="The main big image for BIGIT_PRODUCT, shown on the content of top."/>
+	<ContentAssoc contentId="BIGIT_PRODUCTS" contentAssocTypeId="IMAGE_THUMBNAIL" contentIdTo="BIGIT_PROD_IMG" sequenceNum="10" mapKey="main" fromDate="2001-01-01 00:00:00"/>	
+
+
+    <DataResource dataResourceId="BIGIT_CMDB_SUM_IMG" dataResourceTypeId="OFBIZ_FILE_BIN" dataTemplateTypeId="NONE" statusId="CTNT_PUBLISHED" mimeTypeId="image/jpeg" objectInfo="hot-deploy/bigit/webapp/bigit/images/BIGIT_CMDB_SUM_IMG_140x78.jpg" isPublic="Y"/>
+    <Content contentId="BIGIT_CMDB_SUM_IMG" contentTypeId="DOCUMENT"  dataResourceId="BIGIT_CMDB_SUM_IMG" statusId="CTNT_PUBLISHED" contentName="BIGIT CMDB Summary Image " description="The summary image for BIGIT_CMDB."/>
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="IMAGE_THUMBNAIL" contentIdTo="BIGIT_CMDB_SUM_IMG" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/>	
+
+    <DataResource dataResourceId="BIGIT_VM_SUM_IMG" dataResourceTypeId="OFBIZ_FILE_BIN" dataTemplateTypeId="NONE" statusId="CTNT_PUBLISHED" mimeTypeId="image/jpeg" objectInfo="hot-deploy/bigit/webapp/bigit/images/BIGIT_VM_SUM_IMG_140x78.jpg" isPublic="Y"/>
+    <Content contentId="BIGIT_VM_SUM_IMG" contentTypeId="DOCUMENT"  dataResourceId="BIGIT_VM_SUM_IMG" statusId="CTNT_PUBLISHED" contentName="BIGIT CMDB Summary Image " description="The summary image for BIGIT_VM."/>
+	<ContentAssoc contentId="BIGIT_VM" contentAssocTypeId="IMAGE_THUMBNAIL" contentIdTo="BIGIT_VM_SUM_IMG" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/>
+
+    <DataResource dataResourceId="BIGIT_MON_SUM_IMG" dataResourceTypeId="OFBIZ_FILE_BIN" dataTemplateTypeId="NONE" statusId="CTNT_PUBLISHED" mimeTypeId="image/jpeg" objectInfo="hot-deploy/bigit/webapp/bigit/images/BIGIT_MON_SUM_IMG_140x78.jpg" isPublic="Y"/>
+    <Content contentId="BIGIT_MON_SUM_IMG" contentTypeId="DOCUMENT"  dataResourceId="BIGIT_MON_SUM_IMG" statusId="CTNT_PUBLISHED" contentName="BIGIT CMDB Summary Image " description="The summary image for BIGIT_MON."/>
+	<ContentAssoc contentId="BIGIT_MONITOR" contentAssocTypeId="IMAGE_THUMBNAIL" contentIdTo="BIGIT_MON_SUM_IMG" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/>	
+
+    <DataResource dataResourceId="BIGIT_SRV_SUM_IMG" dataResourceTypeId="OFBIZ_FILE_BIN" dataTemplateTypeId="NONE" statusId="CTNT_PUBLISHED" mimeTypeId="image/jpeg" objectInfo="hot-deploy/bigit/webapp/bigit/images/BIGIT_SRV_SUM_IMG_140x78.jpg" isPublic="Y"/>
+    <Content contentId="BIGIT_SRV_SUM_IMG" contentTypeId="DOCUMENT"  dataResourceId="BIGIT_SRV_SUM_IMG" statusId="CTNT_PUBLISHED" contentName="BIGIT CMDB Summary Image " description="The summary image for BIGIT_SRV."/>
+	<ContentAssoc contentId="BIGIT_SERV_CATALOG" contentAssocTypeId="IMAGE_THUMBNAIL" contentIdTo="BIGIT_SRV_SUM_IMG" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/>	
+
+    <DataResource dataResourceId="BIGIT_INC_SUM_IMG" dataResourceTypeId="OFBIZ_FILE_BIN" dataTemplateTypeId="NONE" statusId="CTNT_PUBLISHED" mimeTypeId="image/jpeg" objectInfo="hot-deploy/bigit/webapp/bigit/images/BIGIT_INC_SUM_IMG_140x78.jpg" isPublic="Y"/>
+    <Content contentId="BIGIT_INC_SUM_IMG" contentTypeId="DOCUMENT"  dataResourceId="BIGIT_INC_SUM_IMG" statusId="CTNT_PUBLISHED" contentName="BIGIT CMDB Summary Image " description="The summary image for BIGIT_INC."/>
+	<ContentAssoc contentId="BIGIT_INCIDENT" contentAssocTypeId="IMAGE_THUMBNAIL" contentIdTo="BIGIT_INC_SUM_IMG" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/>	
+
+    <DataResource dataResourceId="BIGIT_USER_SUM_IMG" dataResourceTypeId="OFBIZ_FILE_BIN" dataTemplateTypeId="NONE" statusId="CTNT_PUBLISHED" mimeTypeId="image/jpeg" objectInfo="hot-deploy/bigit/webapp/bigit/images/BIGIT_USER_SUM_IMG_140x78.jpg" isPublic="Y"/>
+    <Content contentId="BIGIT_USER_SUM_IMG" contentTypeId="DOCUMENT"  dataResourceId="BIGIT_USER_SUM_IMG" statusId="CTNT_PUBLISHED" contentName="BIGIT CMDB Summary Image " description="The summary image for BIGIT_USER."/>
+	<ContentAssoc contentId="BIGIT_BIZ_USER" contentAssocTypeId="IMAGE_THUMBNAIL" contentIdTo="BIGIT_USER_SUM_IMG" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/>	
+
+    <DataResource dataResourceId="BIGIT_BILL_SUM_IMG" dataResourceTypeId="OFBIZ_FILE_BIN" dataTemplateTypeId="NONE" statusId="CTNT_PUBLISHED" mimeTypeId="image/jpeg" objectInfo="hot-deploy/bigit/webapp/bigit/images/BIGIT_BILL_SUM_IMG_140x78.jpg" isPublic="Y"/>
+    <Content contentId="BIGIT_BILL_SUM_IMG" contentTypeId="DOCUMENT"  dataResourceId="BIGIT_BILL_SUM_IMG" statusId="CTNT_PUBLISHED" contentName="BIGIT CMDB Summary Image " description="The summary image for BIGIT_BILL."/>
+	<ContentAssoc contentId="BIGIT_BIZ_BILLING" contentAssocTypeId="IMAGE_THUMBNAIL" contentIdTo="BIGIT_BILL_SUM_IMG" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/>	
+</entity-engine-xml>

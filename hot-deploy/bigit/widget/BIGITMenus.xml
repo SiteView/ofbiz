@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-menu.xsd">
+    <menu name="MainAppBar" title="" extends="CommonAppBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
+        <menu-item name="portalPage" parent-portal-page-value="${webSiteId}"/>
+        <menu-item name="Dashboard" title="${uiLabelMap.BIGITMenuSetting}" align-style="opposed">
+            <condition>
+               <if-has-permission permission="BIGIT_ADMIN"/>
+            </condition>
+            <link target="ManagePortalPages">
+                <parameter param-name="parentPortalPageId" value="${webSiteId}"/>
+            </link>
+        </menu-item>
+        <menu-item name="CreateWebSite" title="CreateWebSite:${webSiteId}" align-style="opposed">
+            <condition>
+               <if-has-permission permission="BIGIT_ADMIN"/>
+            </condition>
+            <link target="CreateWebSite"> </link>
+        </menu-item>
+    </menu>
+</menus>

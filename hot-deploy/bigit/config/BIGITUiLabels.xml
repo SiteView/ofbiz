@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <property key="BIGITApplication">
+        <value xml:lang="en">BIGIT Application</value>
+        <value xml:lang="zh">BIGIT应用程序</value>
+    </property>
+    <property key="BIGITCompanyName">
+        <value xml:lang="en">BIGIT</value>
+    </property>
+    <property key="BIGITCompanySubtitle">
+        <value xml:lang="en">BIGIT</value>
+        <value xml:lang="zh">BIGIT</value>
+    </property>
+    <property key="BIGITViewPermissionError">
+        <value xml:lang="en">You are not allowed to view this page.</value>
+        <value xml:lang="zh">不允许你浏览这个页面。</value>
+    </property>
+    <property key="BIGITMenuSetting">
+        <value xml:lang="en">Setting</value>
+        <value xml:lang="zh">设置</value>
+    </property>
+</resource>

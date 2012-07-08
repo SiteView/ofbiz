@@ -1,0 +1,120 @@
+    <!-- PortalPortlet Seed Data: products pages -->    
+    <PortalPage portalPageId="BIGIT_PRODUCTS" description="BIGIT Products" ownerUserLoginId="_NA_" parentPortalPageId="BIGIT" portalPageName="功能模块" rootContentId="BIGIT_PRODUCTS" sequenceNum="100"/> 
+    <PortalPageColumn portalPageId="BIGIT_PRODUCTS" columnSeqId="left" columnWidthPixels="180"/>
+    <PortalPageColumn portalPageId="BIGIT_PRODUCTS" columnSeqId="mainarea"/> 
+    
+    <PortalPagePortlet portalPageId="BIGIT_PRODUCTS" columnSeqId="left" portalPortletId="GenericScreen" portletSeqId="left01" sequenceNum="10"/> 
+    <PortalPagePortlet portalPageId="BIGIT_PRODUCTS" columnSeqId="left" portalPortletId="GenericScreen" portletSeqId="left02" sequenceNum="20"/> 
+    <PortletAttribute portalPageId="BIGIT_PRODUCTS" portalPortletId="GenericScreen" portletSeqId="left01" attrName="screenLocation" attrValue="component://bigit/widget/ContentScreens.xml" /> 
+    <PortletAttribute portalPageId="BIGIT_PRODUCTS" portalPortletId="GenericScreen" portletSeqId="left01" attrName="screenName" attrValue="subPortalPageList" /> 
+    <PortletAttribute portalPageId="BIGIT_PRODUCTS" portalPortletId="GenericScreen" portletSeqId="left02" attrName="screenLocation" attrValue="component://bigit/widget/ForumScreens.xml" /> 
+    <PortletAttribute portalPageId="BIGIT_PRODUCTS" portalPortletId="GenericScreen" portletSeqId="left02" attrName="screenName" attrValue="forums" /> 
+    
+    <PortalPagePortlet portalPageId="BIGIT_PRODUCTS" columnSeqId="mainarea" portalPortletId="GenericScreen" portletSeqId="main01" sequenceNum="10"/> 
+    <PortletAttribute portalPageId="BIGIT_PRODUCTS" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenLocation" attrValue="component://bigit/widget/ContentScreens.xml" /> 
+    <PortletAttribute portalPageId="BIGIT_PRODUCTS" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenName" attrValue="subPortalPageHead" /> 
+    <PortalPagePortlet portalPageId="BIGIT_PRODUCTS" columnSeqId="mainarea" portalPortletId="GenericPortalPage" portletSeqId="main02" sequenceNum="20"/> 
+    <PortletAttribute portalPageId="BIGIT_PRODUCTS" portalPortletId="GenericPortalPage" portletSeqId="main02" attrName="portalPageId" attrValue="BIGIT_PRODUCTS_SUB" /> 
+    
+    <PortalPage portalPageId="BIGIT_PRODUCTS_SUB" description="BIGIT Products main content" ownerUserLoginId="_NA_" parentPortalPageId="" portalPageName="功能模块" rootContentId="BIGIT_PRODUCTS" sequenceNum="100"/> 
+    <PortalPageColumn portalPageId="BIGIT_PRODUCTS_SUB" columnSeqId="mainarea"/> 
+    <PortalPageColumn portalPageId="BIGIT_PRODUCTS_SUB" columnSeqId="right" columnWidthPixels="170"/>
+    
+    <PortalPagePortlet portalPageId="BIGIT_PRODUCTS_SUB" columnSeqId="mainarea" portalPortletId="GenericScreen" portletSeqId="main01" sequenceNum="8"/> 
+    <PortletAttribute portalPageId="BIGIT_PRODUCTS_SUB" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenLocation" attrValue="component://bigit/widget/ContentScreens.xml" /> 
+    <PortletAttribute portalPageId="BIGIT_PRODUCTS_SUB" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenName" attrValue="subPortalPageOverview" /> 
+    
+    <PortalPagePortlet portalPageId="BIGIT_PRODUCTS_SUB" columnSeqId="right" portalPortletId="GenericScreen" portletSeqId="right01" sequenceNum="8"/>     
+    <PortletAttribute portalPageId="BIGIT_PRODUCTS_SUB" portalPortletId="GenericScreen" portletSeqId="right01" attrName="screenLocation" attrValue="component://bigit/widget/ForumScreens.xml" /> 
+    <PortletAttribute portalPageId="BIGIT_PRODUCTS_SUB" portalPortletId="GenericScreen" portletSeqId="right01" attrName="screenName" attrValue="forums" /> 
+         
+	<!-- PortalPortlet Seed Data: cmdb pages -->    
+    <PortalPage portalPageId="BIGIT_CMDB" description="BIGIT Visual CMDB" ownerUserLoginId="_NA_" parentPortalPageId="BIGIT_PRODUCTS" portalPageName="可视化资产库(CMDB)" rootContentId="BIGIT_CMDB" sequenceNum="100"/> 
+    <PortalPageColumn portalPageId="BIGIT_CMDB" columnSeqId="left" columnWidthPixels="180"/>
+    <PortalPageColumn portalPageId="BIGIT_CMDB" columnSeqId="mainarea"/> 
+    <PortalPageColumn portalPageId="BIGIT_CMDB" columnSeqId="right" columnWidthPixels="170"/> 
+
+    <PortalPagePortlet portalPageId="BIGIT_CMDB" columnSeqId="left" portalPortletId="GenericScreen" portletSeqId="left01" sequenceNum="10"/> 
+    <PortalPagePortlet portalPageId="BIGIT_CMDB" columnSeqId="left" portalPortletId="GenericScreen" portletSeqId="left02" sequenceNum="20"/> 
+    <PortletAttribute portalPageId="BIGIT_CMDB" portalPortletId="GenericScreen" portletSeqId="left01" attrName="screenLocation" attrValue="component://bigit/widget/ContentScreens.xml" /> 
+    <PortletAttribute portalPageId="BIGIT_CMDB" portalPortletId="GenericScreen" portletSeqId="left01" attrName="screenName" attrValue="portalPageContentList" /> 
+    <PortletAttribute portalPageId="BIGIT_CMDB" portalPortletId="GenericScreen" portletSeqId="left02" attrName="screenLocation" attrValue="component://bigit/widget/ForumScreens.xml" /> 
+    <PortletAttribute portalPageId="BIGIT_CMDB" portalPortletId="GenericScreen" portletSeqId="left02" attrName="screenName" attrValue="forums" /> 
+
+
+    <PortalPagePortlet portalPageId="BIGIT_CMDB" columnSeqId="mainarea" portalPortletId="GenericScreen" portletSeqId="main01" sequenceNum="10"/> 
+    <PortletAttribute portalPageId="BIGIT_CMDB" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenLocation" attrValue="component://bigit/widget/ContentScreens.xml" /> 
+     <PortletAttribute portalPageId="BIGIT_CMDB" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenName" attrValue="subPortalPageHead" /> 
+	 
+	 <!-- -------- -->
+	<DataResource dataResourceId="BIGIT_PRODUCTS" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_PRODUCTS" contentName="云中心运营支撑系统" contentTypeId="DOCUMENT" dataResourceId="BIGIT_PRODUCTS" description="统一的IT资源和业务管理，将数据中心升级为云中心"/>
+    <ElectronicText dataResourceId="BIGIT_PRODUCTS">
+        <textData><![CDATA[This the main page for BIGIT_PRODUCTS.]]></textData>
+    </ElectronicText>
+    <ContentAttribute attrName="title" attrValue="云中心运营支撑系统" contentId="BIGIT_PRODUCTS"/> 
+	
+    <DataResource dataResourceId="BIGIT_CMDB" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB" contentName="可视化资产库(CMDB)" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB" description="自动搜索、IT资产生命周期管理，图形化展示资产的拓扑关系"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB">
+        <textData><![CDATA[This the main page for BIGIT_CMDB.]]></textData>
+    </ElectronicText>
+    <ContentAttribute attrName="title" attrValue="可视化资产库(Visual CMDB)" contentId="BIGIT_CMDB"/> 
+	
+	<ContentAssoc contentId="BIGIT_PRODUCTS" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB" sequenceNum="10" mapKey="cmdb" fromDate="2001-01-01 00:00:00"/> 
+	 
+	<!-- BIGIT_CMDB -->
+	<DataResource dataResourceId="BIGIT_CMDB_SUM" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_SUM" contentName="概要介绍" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_SUM" description="BIGIT CMDB Summary" />
+    <ElectronicText dataResourceId="BIGIT_CMDB_SUM">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_SUM.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_CMDB_FEATURE" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_FEATURE" contentName="功能、好处和优势" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_FEATURE" description="BIGIT CMDB FEATURE" />
+    <ElectronicText dataResourceId="BIGIT_CMDB_FEATURE">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_FEATURE.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_CMDB_DOC" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_DOC" contentName="技术文档库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_DOC" description="BIGIT CMDB Documents"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB_DOC">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_DOC.]]></textData>
+    </ElectronicText>
+    
+	<DataResource dataResourceId="BIGIT_CMDB_SCREEN" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_SCREEN" contentName="屏幕截图和录像" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_SCREEN" description="BIGIT CMDB Screenshots"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB_SCREEN">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_SCREEN.]]></textData>
+    </ElectronicText>
+
+	<DataResource dataResourceId="BIGIT_CMDB_DEMO" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_DEMO" contentName="下载和在线试用" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_DEMO" description="BIGIT CMDB Demos"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB_DEMO">
+        <textData><![CDATA[This the main page for BIGIT_SOLUTIONS.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_CMDB_KB" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_KB" contentName="常见问题和知识库" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_KB" description="BIGIT CMDB Knowledge base"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB_KB">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_KB.]]></textData>
+    </ElectronicText>    
+
+	<DataResource dataResourceId="BIGIT_CMDB_SUPPORT" dataResourceTypeId="ELECTRONIC_TEXT" dataTemplateTypeId="FTL" isPublic="Y"/>  
+    <Content contentId="BIGIT_CMDB_SUPPORT" contentName="技术支持服务" contentTypeId="DOCUMENT" dataResourceId="BIGIT_CMDB_SUPPORT" description="BIGIT CMDB Support"/>
+    <ElectronicText dataResourceId="BIGIT_CMDB_SUPPORT">
+        <textData><![CDATA[This the main page for BIGIT_CMDB_SUPPORT.]]></textData>
+    </ElectronicText>
+
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUMMARY" contentIdTo="BIGIT_CMDB_SUM" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_FEATURE" sequenceNum="10" mapKey="feature" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_DOC" sequenceNum="20" mapKey="doc" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_SCREEN" sequenceNum="30" mapKey="screenshot" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_DEMO" sequenceNum="40" mapKey="demo" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_KB" sequenceNum="50" mapKey="kb" fromDate="2001-01-01 00:00:00"/> 
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="SUB_CONTENT" contentIdTo="BIGIT_CMDB_SUPPORT" sequenceNum="60" mapKey="support" fromDate="2001-01-01 00:00:00"/>	 
+
+    <DataResource dataResourceId="BIGIT_CMDB_SUM_IMG" dataResourceTypeId="OFBIZ_FILE_BIN" dataTemplateTypeId="NONE" statusId="CTNT_PUBLISHED" mimeTypeId="image/jpeg" objectInfo="hot-deploy/bigit/webapp/bigit/images/BIGIT_CMDB_SUM_IMG_140x78.jpg" isPublic="Y"/>
+    <Content contentId="BIGIT_CMDB_SUM_IMG" contentTypeId="DOCUMENT"  dataResourceId="BIGIT_CMDB_SUM_IMG" statusId="CTNT_PUBLISHED" contentName="BIGIT CMDB Summary Image " description="The summary image for BIGIT_CMDB."/>
+	<ContentAssoc contentId="BIGIT_CMDB" contentAssocTypeId="IMAGE_THUMBNAIL" contentIdTo="BIGIT_CMDB_SUM_IMG" sequenceNum="10" mapKey="summary" fromDate="2001-01-01 00:00:00"/>	
+	

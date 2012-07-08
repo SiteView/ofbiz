@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+
+    <screen name="ExamplePortlet1">
+        <section>
+            <actions>
+                <property-map resource="ExampleUiLabels" map-name="uiLabelMap" global="true"/>
+            </actions>
+            <widgets>
+                <screenlet title="${uiLabelMap.ExamplePortletFirst}">
+                    <section>
+                        <condition>
+                            <not><if-empty field="SpecificTitle"/></not>
+                        </condition>
+                        <widgets>
+                            <label style="h2">${SpecificTitle}</label>
+                        </widgets>
+                        <fail-widgets>
+                            <label style="h2">${uiLabelMap.ExampleNoAttributeSet}</label>
+                        </fail-widgets>
+                    </section>
+                </screenlet>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="ExamplePortlet2">
+        <section>
+            <actions>
+                <property-map resource="ExampleUiLabels" map-name="uiLabelMap" global="true"/>   
+                <set field="nextPortalPageId" from-field="nextPortalPageId" default-value=""/>
+                <set field="nextParentPortalPageId" from-field="nextParentPortalPageId" default-value="EXAMPLE"/>             
+            </actions>
+            <widgets>
+                <screenlet title="${uiLabelMap.ExamplePortletSecond}">
+                    <section>
+                        <condition><not><if-empty field="nextPortalPageId"/></not></condition>
+                       <widgets>
+                           <link target="showPortalPage" text="${uiLabelMap.ExamplePortletGoToConfiguredPortalPage} : ${nextPortalPageId} ${uiLabelMap.CommonOf} ${nextParentPortalPageId}" >
+                               <parameter param-name="portalPageId" from-field="nextPortalPageId"/>
+                               <parameter param-name="parentPortalPageId" from-field="nextParentPortalPageId"/>
+                               <image src="${iconsLocation}/application_go.png"/>
+                           </link>
+                       </widgets>
+                       <fail-widgets>
+                           <link target="editPortalPortletAttributes" text="${uiLabelMap.ExamplePortletAttributNeedToBeDefineClickHere}" >
+                               <parameter param-name="portalPageId" from-field="parameters.portalPageId"/>
+                               <parameter param-name="portalPortletId" value="EXAMPLE_2"/>
+                               <parameter param-name="portletSeqId" value="00001"/>
+                               <image src="${iconsLocation}/wrench_orange.png"/>
+                           </link>
+                       </fail-widgets>
+                    </section>
+                </screenlet>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="ExamplePortlet3">
+        <section>
+            <actions>
+                <property-map resource="ExampleUiLabels" map-name="uiLabelMap" global="true"/>
+            </actions>
+            <widgets>
+                <screenlet title="${uiLabelMap.ExamplePortletThird}">
+                    <container style="leftclear">
+                        <label style="h1" text="${uiLabelMap.ExamplePortletThird}"/>
+                    </container>
+                    <container style="leftclear">
+                        <label style="h2" text="${uiLabelMap.ExamplePortletSpecificTitle}: ${SpecificTitle}"/>
+                    </container>
+                    <container style="leftclear">
+                        <label style="h2" text="${uiLabelMap.ExamplePortletSpecificSubTitle}: ${SpecificSubTitle}"/>
+                    </container>
+                </screenlet>
+            </widgets>
+        </section>
+    </screen>
+</screens>

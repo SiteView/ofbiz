@@ -1,0 +1,37 @@
+/*------------ /css/home/leftNav_2012Q1.css -------------*/
+/* This file contains style definitions for the left     */
+/* navigation menu                                       */
+/*-------------------------------------------------------*/
+
+.leftNavBannerRotatorContainer { float:left; margin: 22px 0 26px 0; }
+.leftNav { float: left; width: 298px; }
+.leftNav li { margin: 7px 11px 0 0; border-bottom: 1px solid #EBEBEB; padding: 0 0 9px 0; float:left;width:100%; }
+.leftNav li a { text-decoration:none; }
+.leftNav li a .categoryTitle
+{
+    font-size: 17px;
+    line-height: 17px;
+    color: #666666; 
+    font-family: 'OpenSansRegular',sans-serif; 
+    padding: 0 2px 0 36px; 
+    display:block;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+.leftNav li a .description { font-size: 12px; color: #AAA; font-family: 'OpenSansRegular',sans-serif; display: block; padding-top: 2px; }
+.leftNav li a:hover .categoryTitle, .leftNav li a:hover .description { color:#48a8d1; }
+.leftNav li a img { float:left; margin: 4px 0 0 0; }
+.leftNav li.last { border: none; }
+.leftNav a.notSure  
+{
+    float: left; 
+    padding: 9px 0 0 0; 
+    border-bottom: 1px dashed #DDDDDD; 
+    text-decoration:none; 
+    position:relative; 
+    left:35px; 
+    font-family: 'OpenSansSemiBold', Sans-Serif; 
+}
+.leftNav a.notSure:hover { border-bottom: 1px solid #48a8d1; color:#48a8d1; }
+
+/*---------- end /css/home/leftNav_2012Q1.css -----------*/

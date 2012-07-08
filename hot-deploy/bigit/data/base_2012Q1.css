@@ -1,0 +1,530 @@
+/*---------------- /css/common/base_2012Q1.css ----------------*/
+/* This file contains base style definitions for the           */
+/* site                                                        */
+/*-------------------------------------------------------------*/
+
+/*----------------- Global css reset --------------------------*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,
+blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
+em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,
+var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,
+tbody,tfoot,thead,tr,th,td { border:0;vertical-align:baseline;margin:0;padding:0;letter-spacing:0; }
+body{font-family:'OpenSansRegular', sans-serif;font-weight:normal;}
+table{border-collapse:separate;border-spacing:0;}
+caption,th,td{text-align:left;font-weight:normal;}
+blockquote:before,blockquote:after,q:before,q:after{content:"";}
+* html .cf,* html .o,* html .sidebar{height:1%;overflow:visible;}
+*+html .cf,*+html .o,*+html .sidebar{min-height:1%;}
+.cf:after,.o:after,.sidebar:after{clear:both;content:".";display:block;height:0;visibility:hidden;font-size:0;}
+li.specialClear, br.specialClear
+{
+	display:block !important;
+	clear:both !important;
+	height:0 !important;
+	font:0/0 sans-serif !important;
+	float:none !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+/*---------------- end Global css reset -----------------------*/
+
+/*-------------------- Generic classes ------------------------*/
+@-moz-document url-prefix(http), url-prefix(file) 
+{
+	img:-moz-broken
+	{
+		-moz-force-broken-image-icon:1;
+		width:24px;
+		height:24px;
+	}
+}
+
+
+.pageTitle{color:#666;font-size:27px; font-weight:normal; font-family:'OpenSansRegular',sans-serif;}
+p{font-size:11px;font-style:normal;line-height:1.2em;color:#666;padding:10px 0;}
+a{font-size:11px;color:#359ac0;text-decoration:underline;}
+a:hover{text-decoration:none;}
+ul li h3 a{font-size:12px;}
+.clearfix{clear:both;}
+/*---------------- ie hacks ------------------------------------*/
+div#leftSideContent.leftSideContent div.cpBrowseProductsSection > div.clearfix { padding-top: 1px\0/; }
+div#leftSideContent.leftSideContent div.cpBrowseProductsSection > div.clearfix { *margin-top: -15px; }
+
+/*---------------- end Generic classes ------------------------*/
+
+/*-------------- Default styles -----------------*/
+.defaultStyles ol, .defaultStyles ol li
+{
+    list-style-type: decimal;
+}
+.defaultStyles ul, .defaultStyles ul li
+{
+    list-style-type: disc;
+}
+.defaultStyles p
+{
+    padding-top:10px;
+}
+/*-------------- end Default styles -------------*/
+
+.wrapper{background:url(http://content.solarwinds.com/web/images/2012q1/header/wrapper-bg.jpg) repeat-x left top;}
+.container_12{margin-left:auto;margin-right:auto;width:895px;position: relative;}
+
+/*-------------------- Top tabs -------------------------------*/
+.toptabs{font-size:11px;color:#666 !important;height:25px;position:relative;z-index:151;}
+.toptabs a{text-decoration:none;color:#666;font-size:11px; font-family:'OpenSansSemibold',sans-serif;line-height:15px;}
+.toptabs .leftTabs li{list-style-type:none;float:left;padding-bottom:7px;}
+.toptabs .leftTabs{float:left;position:relative;top:3px;padding-bottom:7px;line-height:15px;margin:0;}
+.toptabs .leftTabs li
+{
+	margin-left:6px;
+	padding-right:8px;
+	background: url("http://content.solarwinds.com/web/images/2012q1/header/toptabsSeperator.jpg") no-repeat right 18%;
+}
+.toptabs .leftTabs li.lastChild{background:none; }
+.toptabs .rightTabs{float:right;position: relative;margin:0;}
+.toptabs .rightTabs li{position:relative;}
+.toptabs .rightTabs .login {float:left;z-index:1001;}
+.toptabs .rightTabs .login .title
+{
+	background:url(http://content.solarwinds.com/web/images/2012q1/header/downArrow.png) no-repeat 0 10px;
+	padding: 5px 8px 5px 15px;
+	cursor: pointer;
+	cursor: hand;
+	float: left;
+	position:relative;
+	z-index:1003;
+}
+.toptabs .rightTabs .login .title.hover{ color:#48a8d1; background-position:0 -14px; }
+.toptabs .rightTabs .info {float:left;}
+.toptabs .rightTabs .info .iconContainer 
+{
+	background:url(http://content.solarwinds.com/web/images/2012q1/header/info.png) no-repeat 50% 50%;
+	width: 13px;
+	padding: 0 4px;
+	cursor: pointer;
+	cursor: hand;
+	float: left;
+	height: 25px; 
+	position:relative; 
+}
+.toptabs .leftTabs li a.activeTab
+{
+	color:#fff;
+	background:url(http://content.solarwinds.com/web/images/2012q1/header/whiteupArrow.jpg) no-repeat 38% 100%;
+	zoom:1;
+	padding-bottom:7px;
+}
+.modalLogin
+{
+	width: 117px; 
+	border: 1px #bbb solid; 
+	border-top: 0px; 
+	background:#fff;
+	padding:24px 2px 0 2px;
+	position: absolute;
+	z-index: 1002;
+	display:none;
+	clear: both;
+	top: 0px;
+	right: -56px;
+}
+.modalLogin li{padding:13px 0;font-size:11px;color:#666;}
+.modalLogin li a{font-family:'OpenSansSemibold',sans-serif;font-size:11px;color:#666;padding-left:10px;text-decoration:none;}
+.modalLogin li:hover{background-color:#359ac0;border-top:1px #c9c9c9 solid;border-bottom:1px #c9c9c9 solid;padding:12px 0;}
+.modalLogin li:hover a{color:#fff;}
+.modalInfo  
+{
+	display:none; 
+	width: 202px; 
+	position: absolute; 
+	background: #FFF; 
+	border: 1px solid #d3d3d3; 
+	border-top: 1px solid #a8a8a8;  
+	z-index: 1002; 
+	top: 24px; 
+	right: -3px; 
+	font-family:'OpenSansBold',sans-serif;
+}
+.modalInfo .iconBg  
+{
+	background: #FFF url(http://content.solarwinds.com/web/images/2012q1/header/info.png) no-repeat 50% 50%; 
+	width: 25px; 
+	height: 25px; 
+	position: absolute; 
+	top: -25px; 
+	right: -1px; 
+	border-right: 1px solid #A2A2A2; 
+	border-left: 1px solid #ABABAB 
+}
+.modalInfo p {font-size: 9px;}
+.modalInfo .infoTitle {color: #F99D1C; float: left; border-bottom: 1px solid #c9c9c9; margin: 0 10px; padding: 9px 0;}
+.modalInfo .title {color:#333;padding:0 0 2px 0;font-size: 10px;font-family: 'OpenSansSemibold',Sans-Serif;}
+.modalInfo .description {padding:0; font-family:'OpenSansRegular',sans-serif;}
+.modalInfo ul {float:left; padding:8px 10px 2px 10px;}
+.modalInfo li {padding: 0 0 10px 0;}
+/*-------------------- end Top tabs ---------------------------*/
+
+/*-------------------- Footer styles --------------------------*/
+.wrapperFooter{height:204px;background-color:#eee;line-height:1em;font-size:11px; font-family:'OpenSansRegular',sans-serif;clear:both;}
+.wrapperFooter .footer{width:895px;margin:0 auto;}
+.wrapperFooter .footer .viewFooter{margin:-20px 0 0 17px; text-align:left; float:left;}
+.wrapperFooter .footerHelp h1,.wrapperFooter .footerHelp h2,.wrapperFooter .footerHelp h3,
+.wrapperFooter .footerHelp h4,.wrapperFooter .footerHelp h5,.wrapperFooter .footerHelp p 
+{
+	margin-bottom:16px;
+	color:inherit;
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;}
+.wrapperFooter .footerHelp h1 a,.wrapperFooter .footerHelp h2 a,.wrapperFooter .footerHelp h3 a,
+.wrapperFooter .footerHelp h4 a,.wrapperFooter .footerHelp h5 a,.wrapperFooter .footerHelp p a
+{
+	font-size:12px; 
+	color:#359ac0; 
+	font-family:'OpenSansRegular',sans-serif; 
+	font-weight:normal; 
+	text-decoration:none; 
+	border-bottom:1px dashed #dddddd; 
+}
+.wrapperFooter .footerHelp h1 a:hover,.wrapperFooter .footerHelp h2 a:hover,.wrapperFooter .footerHelp h3 a:hover,
+.wrapperFooter .footerHelp h4 a:hover,.wrapperFooter .footerHelp h5 a:hover,.wrapperFooter .footerHelp p a:hover
+{ 
+	color:#48a8d1; 
+	border-bottom:1px solid #48a8d1; 
+}
+.wrapperFooter .footer .footerDisclaimer{width:750px;font-size:10px;color:#888;margin-top:2px;}
+.wrapperFooter .footer .footerDisclaimer a 
+{
+	font-size: inherit; 
+	color:#359ac0; 
+	font-weight:normal; 
+	text-decoration:none; 
+	border-bottom:1px dashed #dddddd;
+}
+.wrapperFooter .footerHelp h2{
+	padding:0;
+	letter-spacing:0;
+}
+.wrapperFooter .footer .footerDisclaimer a:hover{ color:#48a8d1; border-bottom:1px solid #48a8d1; }
+/*.wrapperFooter .footer .footerDisclaimer a:active{ border:2px solid #359ac0; }*/
+.wrapperFooter .addthisWidget{width: 375px; line-height:16px; float:right; margin:21px 19px 0 0;position:relative;z-index:1;}
+.wrapperFooter .addthisWidget .addthis_separator{color: #888; font-size:12px; font-family:'OpenSansSemibold',sans-serif;margin:0px 4px;}
+.wrapperFooter .addthisWidget .addthis_button_compact .at300bs{margin-right:7px;}
+.wrapperFooter .addthisWidget .followUS{font-size:11px;color:#888888;margin:0px 6px 0px 4px;}
+.wrapperFooter .addthisWidget .followUS,.wrapperFooter .addthisWidget .addthis_default_style{display: inline; float:left; }
+.wrapperFooter .addthisWidget .addthis_default_style a img {vertical-align:middle;}
+.wrapperFooter .footerLinks li, .wrapperFooter .footerPortals li, 
+.wrapperFooter .footerSites li, .wrapperFooter .footerLegal li
+{
+	float:left;
+	padding-bottom:2px;
+	color:#888888;
+	margin-right:5px;
+	background: url(http://content.solarwinds.com/web/images/2012q1/header/footerListBG.jpg) no-repeat right 60%;
+}
+.wrapperFooter .footer li.pad{padding-right:6px;margin-right:0px;background:none;font-size:10px;}
+.wrapperFooter .footerLinks li a, .wrapperFooter .footerPortals li a, 
+.wrapperFooter .footerSites li a, .wrapperFooter .footerLegal li a{padding-right:5px;color:#888888;font-size:10px;}
+.wrapperFooter .footer li.nobg{background:none !important;margin-right:0px;}
+.wrapperFooter .footerDisclaimer{clear:both;margin-top:13px;font-family:'OpenSansSemibold',sans-serif;font-size:10px;color:#888888;}
+.wrapperFooter .footerDisclaimer p{color:#888888;font-size:10px;text-align:left;}
+.wrapperFooter .footer li.clearfix{display:block !important;float:none !important;clear:both;background:none;}
+.wrapperFooter .footer li a{font-family:'OpenSansSemibold',sans-serif;}
+*+html .wrapperFooter .footer li.clearfix{display:inline !important;float:none !important;clear:both;background:none;}
+.wrapperFooter .footerLinks, .wrapperFooter .footerPortals, .wrapperFooter .footerSites, .wrapperFooter .footerLegal{margin-bottom:11px;}
+/*-------------------- end Footer styles ----------------------*/
+
+/*-------------------- Header styles --------------------------*/
+.headerContent{height:107px;clear:both;}
+.headerContent .companyLogo {width:198px;height:107px;float:left;}
+.headerContent .companyLogo img{margin-top:22px;margin-left:1px;}
+.headerContent .topRightNav{float:left;width: 696px;}
+.headerContent .topRightNav .horiRightNav{margin-top:24px;float: right;}
+.headerContent .topRightNav .horiRightNav ul li
+{
+	float:left;
+	display:inline;
+	list-style-type:none; 
+	margin-right:7px;
+	background:url(http://content.solarwinds.com/web/images/2012q1/header/topRightNav-bg.jpg) no-repeat right 70%;font-size:10px;}
+.headerContent .topRightNav .horiRightNav ul li.final{margin-right:0;background:none;}
+.headerContent .topRightNav .horiRightNav ul li.final a{padding-right:0;}
+.headerContent .topRightNav ul li a{font-size:10px;text-decoration:none;color:#a1a1a1;padding-bottom:2px;padding-right:8px;}
+.headerContent .topRightNav ul li a:hover{color:#359ac0;text-decoration:underline;}
+.viewFooter .footerLinks ul li a:hover{color:#359ac0;text-decoration:underline;}
+.viewFooter .footerPortalsul li a:hover, .viewFooter .footerPortals ul li a:hover, .viewFooter .footerSites ul li a:hover, .viewFooter .footerLegal  ul li a:hover{color:#359ac0;text-decoration:underline;}
+
+.searchField{clear:both;padding-top:14px;}
+*+html .searchField{padding-top:8px;}
+.searchFieldText{width:294px;height:19px;border:2px #bbb solid;padding-left:6px;color:#aaa;font-size:11px; font-family:'OpenSansRegular', sans-serif;float: right;}
+.searchFieldBtn{width:54px;height:20px;cursor:pointer; cursor:hand;float: right;
+	background-color: #BBBBBB;
+	color: #FFFFFF;
+	font-family:'OpenSansExtrabold', sans-serif;
+	text-transform:uppercase;
+	font-size:11px;
+	padding-top:3px;
+	padding-left:9px;
+	zoom:1;
+}
+/*-------------------- end Header styles ----------------------*/
+
+/*------------------------ Mega menu --------------------------*/
+#megamenu { z-index:100; position:relative; }
+ul#topnav .hidden{display:none;}
+ul#topnav li.topnavList .firstTab{margin-left:0px !important;}
+ul#topnav
+{
+	float:left;
+	width:895px;
+	list-style:none;
+	font-size:12px;
+	background:#fff url(http://content.solarwinds.com/web/images/2012q1/megamenu/topnavBG.jpg);
+	font-family:'OpenSansRegular', sans-serif;
+	margin:0;
+	padding:0;
+}
+ul#topnav .topnavList{float:left;position:relative;margin:0;padding:0;}
+ul#topnav a.megaButton {float:left;text-indent:-9999px;height:37px;color:#333;margin-left:2px;cursor:pointer;}
+ul#topnav a.megaButton.selected{background-position:0 -76px; }
+ul#topnav a.megaButton:hover, ul#topnav a.megaButton.hover {background-position:0 -38px; }
+.megaMenuDropDownCommon
+{
+	position:absolute;
+	top:37px;
+	z-index:999;
+	border-left:#ccc 1px solid;
+	border-bottom:#ccc 1px solid;
+	border-right:#ccc 1px solid;
+	border-top:0 solid #9A9A9A;
+	float:left;
+	color:#ddd;
+	-moz-box-shadow:4px 4px 10px -5px #aaaaaa;
+	-webkit-box-shadow:4px 4px 10px -5px #aaaaaa;
+	box-shadow:4px 4px 10px -5px #aaaaaa;
+	display:none;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color='#dfdfdf', Direction=135, Strength=4);
+	margin: 0;
+	padding: 0;
+}
+.megaMenuDropDownCommon{background:#f6f6f6 url(http://content.solarwinds.com/web/images/2012q1/megamenu/megaSubMiddleBG.jpg) repeat-x left bottom;}
+.megaMenuDropDownCommon a{text-indent:0 !important;text-decoration:none;border-bottom:1px dashed #dddddd;}
+.megaSubTop{background:url(http://content.solarwinds.com/web/images/2012q1/megamenu/megaSubTopBG.jpg) repeat-x;height:26px;}
+.megaSubTop h2,.megaSubTop h3{float:left;display:inline;margin:0;padding:0;}
+.megaSubTop h2{margin-left:20px;color:#ffffff;font-size:13px;margin-top:4px;font-family:'OpenSansSemiBold', sans-serif;}
+.megaSubTop h3
+{
+	position:relative;
+	top:5px;
+	float:none;
+	margin-left:7px;
+	padding:0 0 1px 0;
+	color:#ffffff;
+	font-size:12px; 
+	font-family:'OpenSansSemiBold', sans-serif;
+}
+.megaSubTop h3 a
+{
+	color:#ffffff;
+	font-size:12px; 
+	font-family:'OpenSansSemiBold', sans-serif;
+	text-decoration:none;
+	border-bottom:1px dashed #FFF;
+}
+.megaSubTop h3 a:hover {color:#eeeeee;border-color:#eeeeee;}
+.megaSubMiddleBox{border:0 solid red;width:250px;float:left!important;margin:17px 9px 0 21px;}
+.megaSubMiddleContentBox{border-top:1px #ccc solid;margin-top:4px;margin-bottom:22px;}
+.megaSubMiddleContent{margin-left:7px;}
+.megaSubMiddleContent .categoryTitle
+{
+	padding:0;
+	margin-top:2px;
+	margin-bottom: 5px; 
+	text-transform:uppercase;
+	font-size:11px; 
+	font-family:'OpenSansSemiBold', sans-serif;
+	font-weight:normal;
+	color:#666;
+	border:0 none;
+}
+.megaSubMiddleContent .categoryTitle a
+{
+	font-size:11px; 
+	font-family:'OpenSansSemiBold', sans-serif;
+	color:#666;
+	padding-right:8px;
+	text-decoration:none;
+	border:none;
+}
+.megaSubMiddleContent .categoryTitle a:hover {color:#48a8d1;}
+.megaSubBottom{height:44px;background-color:#fff;border-bottom:2px solid #eee;border-top:1px solid #c4c4c4;}
+.megaSubMiddleContent ul li{font-size:11px;color:#aaa;margin-bottom: 11px;}
+.megaSubMiddleContent ul li a{font-size:11px;height:auto!important;color:#777; text-decoration:none; border-bottom:1px dashed #dddddd;}
+.megaSubMiddleContent ul li a:hover{color:#48a8d1; border-bottom:1px solid #48a8d1; text-decoration:none;}
+.megaSubMiddleContent ul li a.MenuItemHighlighted{color:#359AC0; text-decoration:none; border:none;}
+.megaSubMiddleContent ul li a.MenuItemHighlighted:hover{color:#48a8d1; border:none; text-decoration:none;}
+.megaSubMiddleContent ul li p{padding:2px 0 0 0;color:#aaa;font-size:10px;margin:0px;line-height:12px;}
+.megaSubMiddleBox_last
+{
+	padding-top:16px;
+	width:249px;
+	float:left!important;
+	border-left: #ccc 2px solid;
+	margin:0px 0px 0px 29px;
+	background:#ffffff url(http://content.solarwinds.com/web/images/2012q1/megamenu/bg_megaSubMiddleContentlast.png) repeat-x left top;
+}
+.megaSubMiddleContent_last{margin-top:0px;padding:0;}
+.megaSubMiddleContent_last ul{margin-top: 4px;}
+.megaSubMiddleContent_last .categoryTitle{font-size:14px; font-family:'OpenSansSemiBold', sans-serif;padding:0;margin:0;display:inline;color: #555;}
+.megaSubMiddleContent_last li a{font-size:11px;color:#666;padding:0;margin:0;}
+.megaSubMiddleContent_last li a.highlighted, .megaSubMiddleContent li a.highlighted{ color:#777;font-family:'OpenSansBold'; }
+.megaSubMiddleContent_last li{margin-bottom: 5px;}
+.megaSubMiddleContentBox_last{padding-left: 21px;margin-bottom: 27px;}
+.megaSubMiddle .itemWithoutDescription{margin-bottom:5px;}
+.megaSubMiddle .itemWithoutDescription a:hover{color:#359ac0;border-color: #359AC0;border-style: solid;}
+
+
+.megaSubMiddleBox_last .columnTitle{margin-bottom: 10px;margin-left: 15px;}
+.megaSubMiddle .columnTitle{font-size:14px;margin:0;padding:0;font-family:'OpenSansSemiBold', sans-serif;color: #555;}
+.megaSubBottom .left{display:inline;float:left;margin-top:13px;margin-left:24px;}
+.megaSubBottom .right{display:inline;float:right;margin-top:6px;margin-right:24px;text-align:right;}
+.megaSubBottom a { font-size: 11px; border: 0; font-weight: normal; font-family: 'OpenSansSemibold', sans-serif;}
+.megaSubBottom a:hover { color: #48a8d1; }
+a.colorBlues{color:#359ac0 !important;border:0 none !important;}
+.colorBlue a{color:#359ac0 !important;}
+.recommend a {font-family:'OpenSansBold', sans-serif;}
+/*-------------------- end Mega menu --------------------------*/
+
+input,.wrapperFooter ul,.wrapperFooter li,.wrapperFooter p,
+.wrapperFooter a,.wrapperFooter div,.wrapperFooter span,
+.megaSubMiddleContent ul,.megaSubMiddleContent li,.megaSubMiddleContent a{margin:0;padding:0;}
+ul,li,ol,.wrapperFooter ul li{list-style-type:none;}
+.prodTable2col .cellData ul li {list-style-type: disc;margin-left: 15px;}
+.prodTable2col .cellData .cellContainer ul li {list-style-type: none;margin-left: 0px;}
+.mainContent { margin: 15px 0 0 0;}
+.mainContent .mainBlock ul li{ list-style-type: disc;}
+
+/*--------------- Bread crumbs & Social networks --------------*/
+.navigationContainer {width:100%; float:left;}
+.navigationContainer .socialNetwork{width: 274px; float:right;}
+.navigationContainer .socialNetwork span.addthis_separator{color:#666666;}
+.navigationContainer .breadCrumb{float:left; margin-top:2px; }
+.navigationContainer .breadCrumb ul li {margin: 0 4px 7px 0;}
+.navigationContainer .breadCrumb ul li h4,
+.breadCrumb ul li{display:inline;font-size:11px;font-family: 'OpenSansRegular', sans-serif;font-weight: normal; color: #666;float:left;}
+.navigationContainer .breadCrumb ul li a{padding:0; margin:0 6px 0 0; border-bottom: 1px dashed #DDD; text-decoration:none; }
+.navigationContainer .breadCrumb ul li a:hover {border-bottom: 1px solid #48a8d1; color: #48a8d1;}
+/*------------- end Bread crumbs & Social networks ------------*/
+
+/*------------------------ AJAX calls -------------------------*/
+.ajaxIndicator { position: relative; left: 10px; top: 10px;	display: none; }
+.ajaxErrorPlaceholder {	display: none; }
+/*--------------------- end AJAX calls ------------------------*/
+
+/*--------------------- Container header ----------------------*/
+.containerHeader { background: #eeeeee; padding: 0; margin: 0; float:left; width:100%; }
+.containerHeader .title
+{
+	font-family:'OpenSansSemibold',sans-serif; 
+	font-size: 11px; 
+	color: #888; 
+	padding:0 8px 0 15px; 
+	margin:0; 
+	text-transform: uppercase; 
+	line-height:38px; 
+}
+li.column .containerHeader
+{
+	margin-bottom: 9px;
+}
+/*----------------- end Container header ----------------------*/
+
+/*------------------------ Buttons ----------------------------*/
+
+/*--------- Button Download Free Trial -----------*/
+.btnDownload {
+	background:url(http://content.solarwinds.com/web/images/2012q1/buttons/download_left.png) no-repeat 1px 0;
+	height: 34px;
+	float:left;
+	clear:both;
+	text-decoration:none;
+	border:none;
+}
+.btnDownload:hover, .btnDownload:active 
+{
+	border:none;
+}
+.btnDownload span {
+	background:url(http://content.solarwinds.com/web/images/2012q1/buttons/download_right.png) no-repeat 100% 0;
+	height: 28px;
+	float:left;
+	font-size:13px;
+	color:#FFF;
+	min-width:158px;
+	font-family:'OpenSansExtrabold', sans-serif;
+	text-transform:uppercase;
+	margin:0 0 0 35px;
+	padding: 0 12px 6px 3px;
+	text-shadow: 0px 0px 5px #087502;
+	line-height: 34px;
+	white-space: nowrap;
+}
+span.btnDescription {
+	clear:both;
+	color:#169f10;
+	float:left;
+	font-size:10px;
+	width:100%;
+	text-align: center;
+}
+div.cpBrowseProductsSection div.cpProductList div.cpProductItem div.cpProductItemDescription div.cpProductOptions a {cursor: pointer;}
+/*--------- end Button Download Free Trial -------*/
+
+/*------------- Button TestDrive ----------------*/
+.btnTestDrive {
+background:url(http://content.solarwinds.com/web/images/2012q1/buttons/btn_testDriveLeft.png) no-repeat 0 0;
+height:35px;
+float:left;
+clear:both;
+text-decoration:none;
+}
+.btnTestDrive span {
+background:url(http://content.solarwinds.com/web/images/2012q1/buttons/btn_testDriveRight.png) no-repeat top right;
+height:26px;
+font-family:'OpenSansExtrabold', sans-serif;
+float:left;
+font-size:12px;
+color:#FFF;
+width:130px;
+text-transform:uppercase;
+margin:0 0 0 34px;
+padding:9px 0 0 3px;
+}
+/*--------- end Button TestDrive ----------------*/
+
+/*------------- Button Learn More (Gray Button) ---------------*/
+.btnLearnMore, .grayBtn {
+	background: url(http://content.solarwinds.com/web/images/2012q1/buttons/btn_learnMoreLeft.png) no-repeat 1px -2px;
+	height: 30px;
+	float:left;
+	clear:both;
+	text-decoration:none;
+}
+
+.btnLearnMore span, .grayBtn span
+{   
+	background:url(http://content.solarwinds.com/web/images/2012q1/Solutions/Details/btnLearnMoreRight.jpg) no-repeat 100% 40%;
+	height:30px;
+	line-height:30px;
+	font-family:'OpenSansExtrabold', sans-serif;
+	float:left;
+	font-size:13px;
+	color:#FFF;
+	text-transform:uppercase;
+	margin:0 0 0 11px;
+	padding:0 24px 0 3px;
+	cursor:pointer;
+}
+/*--------- end Button Learn More ---------------*/
+/*------------- end /css/common/base_2012Q1.css ---------------*/
