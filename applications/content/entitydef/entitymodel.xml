@@ -1641,6 +1641,7 @@ under the License.
     <extend-entity entity-name="PortalPage">
         <field name="helpContentId" type="id"><description>Used to give contentId which will be shown when help on this page will be called</description></field>
         <field name="rootContentId" type="id"><description>Used to give contentId which will be the root content for the this portal page</description></field>
+        <field name="superPortalPageId" type="id"><description>Used to give extend an existing portal page by supplying different PortalAttributes</description></field>
         <relation type="one" fk-name="PORTPAL_HELP_CONT" rel-entity-name="Content">
             <key-map field-name="helpContentId" rel-field-name="contentId"/>
         </relation>

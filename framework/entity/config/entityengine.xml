@@ -737,9 +737,9 @@ access. For a detailed description see the core/docs/entityconfig.html file.
         <read-data reader-name="ext"/>
         <inline-jdbc
                 jdbc-driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-                jdbc-uri="jdbc:sqlserver://localhost:1791;databaseName=ofbiz;SelectMethod=cursor;"
-                jdbc-username="ofbiz"
-                jdbc-password="ofbiz"
+                jdbc-uri="jdbc:sqlserver://THINKPAD/SOLARWINDS_ORION:1791;databaseName=SolarWinds;SelectMethod=cursor;"
+                jdbc-username="SolarWindsOrionDatabaseUser"
+                jdbc-password="1nFr4A5460"
                 isolation-level="ReadCommitted"
                 pool-minsize="2"
                 pool-maxsize="250"

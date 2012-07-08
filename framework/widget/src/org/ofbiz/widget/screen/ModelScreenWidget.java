@@ -1600,6 +1600,7 @@ public abstract class ModelScreenWidget extends ModelWidget {
         protected FlexibleStringExpander idExdr;
         protected FlexibleStringExpander confModeExdr;
         protected String originalPortalPageId;
+        protected String superPortalPageId;
         protected String actualPortalPageId;
         protected Boolean usePrivate;
 
@@ -1615,8 +1616,10 @@ public abstract class ModelScreenWidget extends ModelWidget {
             try {
                 Delegator delegator = (Delegator) context.get("delegator");
                 GenericValue portalPage = null;
+                GenericValue superPortalPage = null;
                 List<GenericValue> portalPageColumns = null;
                 List<GenericValue> portalPagePortlets = null;
+                List<GenericValue> childPortalPagePortlets = null;
                 List<GenericValue> portletAttributes = null;
 
                 String expandedPortalPageId = getId(context);
@@ -1635,7 +1638,25 @@ public abstract class ModelScreenWidget extends ModelWidget {
                     } else {
                         actualPortalPageId = portalPage.getString("portalPageId");
                         originalPortalPageId = portalPage.getString("originalPortalPageId");
-                        portalPageColumns = delegator.findByAnd("PortalPageColumn", UtilMisc.toMap("portalPageId", actualPortalPageId), UtilMisc.toList("columnSeqId"), true);
+                        superPortalPageId = portalPage.getString("superPortalPageId");
+                        
+                        if (UtilValidate.isEmpty(superPortalPageId)) {
+                        	portalPageColumns = delegator.findByAnd("PortalPageColumn", UtilMisc.toMap("portalPageId", actualPortalPageId), UtilMisc.toList("columnSeqId"), true);
+                        } else {
+                        	portalPageColumns = delegator.findByAnd("PortalPageColumn", UtilMisc.toMap("portalPageId", superPortalPageId), UtilMisc.toList("columnSeqId"), true);
+                        	
+                            if (usePrivate) {
+                                superPortalPage = PortalPageWorker.getPortalPage(superPortalPageId, context);
+                            } else {
+                            	superPortalPage = delegator.findOne("PortalPage", UtilMisc.toMap("portalPageId", superPortalPageId), true);
+                            }
+                            
+                            if (superPortalPage == null) {
+                                String errMsg = "Could not find PortalPage with portalPageId [" + superPortalPageId + "] ";
+                                Debug.logError(errMsg, module);
+                                throw new RuntimeException(errMsg);
+                            }
+                        }
                     }
                 } else {
                     String errMsg = "portalPageId is empty.";
@@ -1652,14 +1673,46 @@ public abstract class ModelScreenWidget extends ModelWidget {
                 // Iterates through the PortalPage columns
                 ListIterator <GenericValue>columnsIterator = portalPageColumns.listIterator();
                 while(columnsIterator.hasNext()) {
+                	List<GenericValue> combinedPortalPagePortlets = FastList.newInstance();
                     GenericValue columnValue = columnsIterator.next();
                     String columnSeqId = columnValue.getString("columnSeqId");
+                    ListIterator <GenericValue>portletsIterator = null;
+                    ListIterator <GenericValue>childPortletsIterator = null;
                     
                     // Renders the portalPageColumn header
                     screenStringRenderer.renderPortalPageColumnBegin(writer, context, this, columnValue);
 
                     // Get the Portlets located in the current column
-                    portalPagePortlets = delegator.findByAnd("PortalPagePortletView", UtilMisc.toMap("portalPageId", portalPage.getString("portalPageId"), "columnSeqId", columnSeqId), UtilMisc.toList("sequenceNum"), false);
+                    
+                    
+                    if (UtilValidate.isEmpty(superPortalPageId)) {
+                    	portalPagePortlets = delegator.findByAnd("PortalPagePortletView", UtilMisc.toMap("portalPageId", portalPage.getString("portalPageId"), "columnSeqId", columnSeqId), UtilMisc.toList("sequenceNum"), false);
+                    	portletsIterator = portalPagePortlets.listIterator();
+                    } else {
+                    //override the superPortalPagePortlet.portletId info with the one from portalPagePortlet, thus allowing different portlet for child portal page, portletId is a 'property'
+                    	portalPagePortlets = delegator.findByAnd("PortalPagePortletView", UtilMisc.toMap("portalPageId", portalPage.getString("superPortalPageId"), "columnSeqId", columnSeqId), UtilMisc.toList("sequenceNum"), false);                        
+                    	childPortalPagePortlets = delegator.findByAnd("PortalPagePortletView", UtilMisc.toMap("portalPageId", portalPage.getString("portalPageId"), "columnSeqId", columnSeqId), UtilMisc.toList("sequenceNum"), false);
+                    	portletsIterator = portalPagePortlets.listIterator();
+                    	childPortletsIterator = childPortalPagePortlets.listIterator();
+                    	while(portletsIterator.hasNext() && childPortalPagePortlets.size()>0) {
+                    		GenericValue portletValue = portletsIterator.next();
+                    		combinedPortalPagePortlets.add(portletValue);
+                            while(childPortletsIterator.hasNext()) {
+                                GenericValue childPortletValue = childPortletsIterator.next();
+                                if (portletValue.get("portalPageId").toString().equalsIgnoreCase(childPortletValue.get("portalPageId").toString())) { 
+                                	combinedPortalPagePortlets.remove(portletValue);
+                                	portletValue.put("portalPortletId", childPortletValue.get("portalPortletId"));
+                                	portletValue.put("portalPageId", childPortletValue.get("portalPageId"));
+                                	combinedPortalPagePortlets.add(portletValue);
+                                }
+                            }
+                    	}
+                    	if (childPortalPagePortlets.size() > 0) { 
+                    		portletsIterator = combinedPortalPagePortlets.listIterator();
+//                    		combinedPortalPagePortlets.clear();
+                    	}
+                    }
+                    
                     
                     // First Portlet in a Column has no previous Portlet
                     String prevPortletId = "";
@@ -1672,7 +1725,6 @@ public abstract class ModelScreenWidget extends ModelWidget {
                     }
                     
                     // Iterates through the Portlets in the Column
-                    ListIterator <GenericValue>portletsIterator = portalPagePortlets.listIterator();
                     while(portletsIterator.hasNext()) {
                         GenericValue portletValue = portletsIterator.next();
 
@@ -1693,15 +1745,39 @@ public abstract class ModelScreenWidget extends ModelWidget {
                         context.put("nextColumnSeqId", nextColumnSeqId);
                        
                         // Get portlet's attributes
-                        portletAttributes = delegator.findList("PortletAttribute",
-                            EntityCondition.makeCondition(UtilMisc.toMap("portalPageId", portletValue.get("portalPageId"), "portalPortletId", portletValue.get("portalPortletId"), "portletSeqId", portletValue.get("portletSeqId"))),
-                            null, null, null, false);
-                        ListIterator <GenericValue>attributesIterator = portletAttributes.listIterator();
-                        while (attributesIterator.hasNext()) {
-                            GenericValue attribute = attributesIterator.next();
-                            context.put(attribute.getString("attrName"), attribute.getString("attrValue"));
+                        ListIterator <GenericValue>attributesIterator = null;
+                        if (UtilValidate.isEmpty(superPortalPageId)) {
+	                        portletAttributes = delegator.findList("PortletAttribute",
+	                            EntityCondition.makeCondition(UtilMisc.toMap("portalPageId", portletValue.get("portalPageId"), "portalPortletId", portletValue.get("portalPortletId"), "portletSeqId", portletValue.get("portletSeqId"))),
+	                            null, null, null, false);
+	                        attributesIterator = portletAttributes.listIterator();
+	                        while (attributesIterator.hasNext()) {
+	                            GenericValue attribute = attributesIterator.next();
+	                            context.put(attribute.getString("attrName"), attribute.getString("attrValue"));
+	                        }
+                        } else { //portletAttributes are 'property', specific for each child
+                        	// first add the generic superPortalPage attributes
+                        	portletAttributes = delegator.findList("PortletAttribute",
+    	                            EntityCondition.makeCondition(UtilMisc.toMap("portalPageId", superPortalPageId, "portalPortletId", portletValue.get("portalPortletId"), "portletSeqId", portletValue.get("portletSeqId"))),
+    	                            null, null, null, false);
+    	                    attributesIterator = portletAttributes.listIterator();
+    	                    Debug.logInfo(portletAttributes.toString(), module);
+    	                    while (attributesIterator.hasNext()) {
+    	                    	GenericValue attribute = attributesIterator.next();
+    	                        context.put(attribute.getString("attrName"), attribute.getString("attrValue"));
+    	                    }
+                        	// then override the superPortalPage attributes with the child portalPage attributes      	                    
+                        	portletAttributes = delegator.findList("PortletAttribute",
+    	                            EntityCondition.makeCondition(UtilMisc.toMap("portalPageId", actualPortalPageId, "portalPortletId", portletValue.get("portalPortletId"), "portletSeqId", portletValue.get("portletSeqId"))),
+    	                            null, null, null, false);
+    	                    attributesIterator = portletAttributes.listIterator();
+    	                    Debug.logInfo(portletAttributes.toString(), module);
+    	                    while (attributesIterator.hasNext()) {
+    	                    	GenericValue attribute = attributesIterator.next();
+    	                        context.put(attribute.getString("attrName"), attribute.getString("attrValue"));
+    	                    }
                         }
-                        
+	                        
                         // Renders the portalPagePortlet
                         screenStringRenderer.renderPortalPagePortletBegin(writer, context, this, portletValue);
                         screenStringRenderer.renderPortalPagePortletBody(writer, context, this, portletValue);

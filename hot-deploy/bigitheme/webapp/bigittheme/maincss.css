@@ -613,7 +613,6 @@ display: inline;
 
 .screenlet-title-bar ul a {
 color: #222;
-display: block;
 }
 
 .screenlet-title-bar ul a:visited {
@@ -621,8 +620,8 @@ color: #222;
 }
 
 .screenlet-title-bar ul a:hover {
-color: #ffffff;
-text-decoration: none;
+text-decoration: underline;
+font-size: 1.1em;
 }
 
 .screenlet-title-bar ul .disabled {
