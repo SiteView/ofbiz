@@ -1,0 +1,35 @@
+<entity-engine-xml>
+
+	<!-- The IBM 3 colume portal page layout, the right side is a 2-columns sub portal page -->	
+	<PortalPage portalPageId="IBM3COL" description="IBM Three Column Page Layout" ownerUserLoginId="_NA_" parentPortalPageId="" portalPageName="IBM3COL" rootContentId="" sequenceNum=""/> 
+    <PortalPageColumn portalPageId="IBM3COL" columnSeqId="left" columnWidthPixels="180"/>
+    <PortalPageColumn portalPageId="IBM3COL" columnSeqId="mainarea"/> 
+    
+    <PortalPagePortlet portalPageId="IBM3COL" columnSeqId="left" portalPortletId="GenericScreen" portletSeqId="left01" sequenceNum="10"/> 
+    <PortalPagePortlet portalPageId="IBM3COL" columnSeqId="left" portalPortletId="GenericScreen" portletSeqId="left02" sequenceNum="20"/> 
+    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="left01" attrName="screenLocation" attrValue="component://cms/widget/ContentScreens.xml" /> 
+    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="left01" attrName="screenName" attrValue="subPortalPageList" /> 
+    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="left02" attrName="screenLocation" attrValue="component://cms/widget/ForumScreens.xml" /> 
+    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="left02" attrName="screenName" attrValue="forums" /> 
+    
+    <PortalPagePortlet portalPageId="IBM3COL" columnSeqId="mainarea" portalPortletId="GenericScreen" portletSeqId="main01" sequenceNum="10"/> 
+    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenLocation" attrValue="component://cms/widget/ContentScreens.xml" /> 
+    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenName" attrValue="subPortalPageHead" /> 
+    <PortalPagePortlet portalPageId="IBM3COL" columnSeqId="mainarea" portalPortletId="GenericPortalPage" portletSeqId="main02" sequenceNum="20"/> 
+    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericPortalPage" portletSeqId="main02" attrName="portalPageId" attrValue="IBM3COL_SUB" /> 
+    
+    <PortalPage portalPageId="IBM3COL_SUB" description="The right portion of the IBM Three Column Page Layout." ownerUserLoginId="_NA_" parentPortalPageId="" portalPageName="IBM3COL" rootContentId="" sequenceNum=""/> 
+    <PortalPageColumn portalPageId="IBM3COL_SUB" columnSeqId="mainarea"/> 
+    <PortalPageColumn portalPageId="IBM3COL_SUB" columnSeqId="right" columnWidthPixels="170"/>
+    
+    <PortalPagePortlet portalPageId="IBM3COL_SUB" columnSeqId="mainarea" portalPortletId="GenericScreen" portletSeqId="main01" sequenceNum="8"/> 
+    <PortletAttribute portalPageId="IBM3COL_SUB" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenLocation" attrValue="component://cms/widget/ContentScreens.xml" /> 
+    <PortletAttribute portalPageId="IBM3COL_SUB" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenName" attrValue="subPortalPageOverview" /> 
+    
+    <PortalPagePortlet portalPageId="IBM3COL_SUB" columnSeqId="right" portalPortletId="GenericScreen" portletSeqId="right01" sequenceNum="8"/>     
+    <PortletAttribute portalPageId="IBM3COL_SUB" portalPortletId="GenericScreen" portletSeqId="right01" attrName="screenLocation" attrValue="component://cms/widget/ForumScreens.xml" /> 
+    <PortletAttribute portalPageId="IBM3COL_SUB" portalPortletId="GenericScreen" portletSeqId="right01" attrName="screenName" attrValue="forums" />     
+
+	<!-- The home page's portal page layout-->	
+	
+</entity-engine-xml>

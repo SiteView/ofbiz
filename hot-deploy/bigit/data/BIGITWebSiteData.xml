@@ -36,12 +36,12 @@
 	<SubMenuContent subMenuId="eim" contentName="技术支持服务" contentId="support" description="description" sequenceNum="60"/>   
 	
 	<SubMenu menuId="products" subMenuId="ecc" menuName="ECC: 综合系统管理" title="ECC：综合系统管理" description="面向业务的监测平台，全面监测网络设备、服务器、软件应用和业务系统" sequenceNum="10"/>
-	<SubMenu menuId="products" subMenuId="nnm" menuName="NNN: 网络节点管理" title="NNM: 网络节点管理" description="自动发现网络拓扑图" sequenceNum="20"/>
-	<SubMenu menuId="products" subMenuId="itsm" menuName="ITSM: IT服务管理" title="ITSM: IT服务管理" description="高可配置性、符合ITILv3标准的服务管理" sequenceNum="30"/>
-	<SubMenu menuId="products" subMenuId="dm" menuName="DM: 桌面终端管理" title="DM: 桌面终端管理" description="全面管控终端，中央自动部署和分发软件" sequenceNum="40"/>
-	<SubMenu menuId="products" subMenuId="eim" menuName="EIM: 上网行为管理" title="EIM: 上网行为管理" description="把控接入网关，提升带宽使用效率" sequenceNum="50"/>
+	<SubMenu menuId="products" subMenuId="nnm" menuName="NNN: 网络节点管理" title="NNM: 网络节点管理" description="自动发现网络拓扑图,展示全网物理拓扑图和网络流量" sequenceNum="20"/>
+	<SubMenu menuId="products" subMenuId="itsm" menuName="ITSM: IT服务管理" title="ITSM: IT服务管理" description="符合ITILv3标准的服务管理，高可配置性，实现个性化管理流程" sequenceNum="30"/>
+	<SubMenu menuId="products" subMenuId="dm" menuName="DM: 桌面终端管理" title="DM: 桌面终端管理" description="全面管控终端，建立资产库，集中自动部署软件，实现远程技术支持" sequenceNum="40"/>
+	<SubMenu menuId="products" subMenuId="eim" menuName="EIM: 上网行为管理" title="EIM: 上网行为管理" description="把控互联网接入网关，提升带宽使用效率" sequenceNum="50"/>
 	
-    <Menu menuId="products" menuName="产品" description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" sequenceNum="20"/>
+    <Menu menuId="products" menuName="产品" description="覆盖网络设备、服务器、软件应用、桌面终端、和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" sequenceNum="20"/>
     <Menu menuId="home" menuName="首页"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="10"/>
     <Menu menuId="solutions" menuName="解决方案"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="30"/>
     <Menu menuId="cases" menuName="成功案例"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="40"/>
@@ -49,22 +49,5 @@
 	<Menu menuId="downloads" menuName="免费下载"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="60"/>
     <Menu menuId="news" menuName="新闻动态"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="70"/>
 	<Menu menuId="aboutus" menuName="关于我们"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="80"/>
-	
-	<PortalPage portalPageId="IBM3COL" description="IBM Three Column Page Layout" ownerUserLoginId="_NA_" parentPortalPageId="" portalPageName="IBM3COL" rootContentId="" sequenceNum=""/> 
-    <PortalPageColumn portalPageId="IBM3COL" columnSeqId="left" columnWidthPixels="180"/>
-    <PortalPageColumn portalPageId="IBM3COL" columnSeqId="mainarea"/> 
-    
-    <PortalPagePortlet portalPageId="IBM3COL" columnSeqId="left" portalPortletId="GenericScreen" portletSeqId="left01" sequenceNum="10"/> 
-    <PortalPagePortlet portalPageId="IBM3COL" columnSeqId="left" portalPortletId="GenericScreen" portletSeqId="left02" sequenceNum="20"/> 
-    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="left01" attrName="screenLocation" attrValue="component://bigit/widget/ContentScreens.xml" /> 
-    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="left01" attrName="screenName" attrValue="subPortalPageList" /> 
-    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="left02" attrName="screenLocation" attrValue="component://bigit/widget/ForumScreens.xml" /> 
-    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="left02" attrName="screenName" attrValue="forums" /> 
-    
-    <PortalPagePortlet portalPageId="IBM3COL" columnSeqId="mainarea" portalPortletId="GenericScreen" portletSeqId="main01" sequenceNum="10"/> 
-    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenLocation" attrValue="component://bigit/widget/ContentScreens.xml" /> 
-    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericScreen" portletSeqId="main01" attrName="screenName" attrValue="subPortalPageHead" /> 
-    <PortalPagePortlet portalPageId="IBM3COL" columnSeqId="mainarea" portalPortletId="GenericPortalPage" portletSeqId="main02" sequenceNum="20"/> 
-    <PortletAttribute portalPageId="IBM3COL" portalPortletId="GenericPortalPage" portletSeqId="main02" attrName="portalPageId" attrValue="IBM3COL_SUB" /> 
-	
+		
 </entity-engine-xml>

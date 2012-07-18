@@ -621,7 +621,7 @@ color: #222;
 
 .screenlet-title-bar ul a:hover {
 text-decoration: underline;
-font-size: 1.1em;
+font-size: 1.0em;
 }
 
 .screenlet-title-bar ul .disabled {

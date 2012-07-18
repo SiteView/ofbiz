@@ -76,12 +76,10 @@
                      </container>
                      
                      <container id="mainarea">
-                        <!-- by default will render left-bar only if left/rightbarScreenName value not empty -->
-                        <container id="div1" style="left"><include-screen name="${leftbarScreenName}" location="${leftbarScreenLocation}"/></container>
-                        <container id="div2" style="right"><include-screen name="${rightbarScreenName}" location="${rightbarScreenLocation}"/></container>
+
 
                         <container id="div3" style="${MainColumnStyle}">
-                           <!-- render messages -->
+                           <!-- render messages ??? -->
                         <platform-specific><html><html-template location="component://common/webcommon/includes/messages.ftl"/></html></platform-specific>
                            <decorator-section-include name="body"/>
                         </container>
@@ -121,94 +119,11 @@
         </section>
     </screen>
     
-    <!-- Side Columns -->
-    <screen name="leftbar">
-        <section>
-            <widgets>
-                    <include-screen name="choosecatalog" location="component://bigit/widget/CatalogScreens.xml"/>
-                    <include-screen name="keywordsearchbox" location="component://bigit/widget/CatalogScreens.xml"/>
-                    <!--include-screen name="sidedeepcategory" location="component://ecommerce/widget/CatalogScreens.xml"/-->
-                    <include-screen name="productCategories" location="component://bigit/widget/CatalogScreens.xml"/>
-                    <include-screen name="LayeredNavBar" location="component://bigit/widget/CatalogScreens.xml"/>
-                    <include-screen name="minireorderprods" location="component://bigit/widget/CatalogScreens.xml"/>
-                    <include-screen name="signupforcontactlist" location="component://bigit/widget/EmailContactListScreens.xml"/>
-                    <include-screen name="minipoll" location="component://bigit/widget/ContentScreens.xml"/>
-                    <include-screen name="forums" location="component://bigit/widget/ForumScreens.xml"/>
-                    <include-screen name="portalpage_contents" location="component://bigit/widget/ContentScreens.xml"/>
-                    <include-screen name="blogs" location="component://bigit/widget/blog/BlogScreens.xml"/>
-                    <!-- sub-content content-id="WebStoreCONTENT" map-key="policies"/>
-                    <sub-content content-id="WebStoreCONTENT" map-key="policies2"/ -->
-            </widgets>
-        </section>
-    </screen>
-    <screen name="rightbar">
-        <section>
-            <widgets>
-                    <include-screen name="language"/>
-                    <include-screen name="minicart" location="component://ecommerce/widget/CartScreens.xml"/>
-                    <include-screen name="compareproductslist" location="component://order/widget/ordermgr/OrderEntryCatalogScreens.xml"/>
-                    <include-screen name="minipromotext" location="component://ecommerce/widget/CartScreens.xml"/>
-                    <include-screen name="miniassocprods" location="component://ecommerce/widget/CatalogScreens.xml"/>
-                    <include-screen name="factoids" location="component://ecommerce/widget/ContentScreens.xml"/>
-                    <include-screen name="minilastviewedcategories" location="component://ecommerce/widget/CatalogScreens.xml"/>
-                    <include-screen name="minilastviewedproducts" location="component://ecommerce/widget/CatalogScreens.xml"/>
-                    <include-screen name="minilastproductsearches" location="component://ecommerce/widget/CatalogScreens.xml"/>
-                    <include-screen name="recentlyviewed" location="component://ecommerce/widget/ContentScreens.xml"/>
-                    <include-screen name="populartags" location="component://ecommerce/widget/CatalogScreens.xml"/>
-            </widgets>
-        </section>
-    </screen>
 
     <!-- Common Decorators -->
     <screen name="CommonEmptyDecorator">
         <section>
             <actions>
-                <set field="MainColumnStyle" value="center"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="CommonLeftDecorator">
-        <section>
-            <actions>
-                <set field="leftbarScreenName" value="leftbar"/>
-                <set field="MainColumnStyle" value="center"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="CommonRightDecorator">
-        <section>
-            <actions>
-                <set field="rightbarScreenName" value="rightbar"/>
-                <set field="MainColumnStyle" value="center"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="CommonLeftRightDecorator">
-        <section>
-            <actions>
-                <set field="leftbarScreenName" value="leftbar"/>
-                <set field="rightbarScreenName" value="rightbar"/>
                 <set field="MainColumnStyle" value="center"/>
             </actions>
             <widgets>
@@ -307,15 +222,6 @@
         </section>
     </screen>
 
-    <!-- Column Included Screens -->
-    <screen name="language">
-        <section>
-            <widgets>
-                <platform-specific><html><html-template location="component://ecommerce/webapp/ecommerce/includes/language.ftl"/></html></platform-specific>
-            </widgets>
-        </section>
-    </screen>
-
     <!-- Top Level Screens -->
     <screen name="main">
         <section>
@@ -360,55 +266,7 @@
             </widgets>
         </section>
     </screen>
-    <screen name="requirePasswordChange">
-        <section>
-            <actions>
-                <set field="titleProperty" value="PageTitleLogin"/>
-                <set field="headerItem" value="login"/>
-                <script location="component://ecommerce/webapp/ecommerce/WEB-INF/actions/Login.groovy"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
-                    <decorator-section name="body">
-                        <platform-specific>
-                            <html><html-template location="component://ecommerce/webapp/ecommerce/requirePasswordChange.ftl"/></html>
-                        </platform-specific>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="responseTreeLine">
-        <section>
-            <actions>
-                <service service-name="getPublicForumMessage" result-map="contentData">
-                    <field-map field-name="contentId" from-field="rsp.contentId"/>
-                </service>
-                <set field="textData" from-field="contentData.resultData.electronicText.textData"/>
-            </actions>
-            <widgets>
-                <section>
-                    <condition>
-                        <if-compare-field field="responseContentId" operator="equals" to-field="rsp.contentId"/>
-                    </condition>
-                    <widgets>
-                        <container style="responseSelected">
-                            <container style="responsetext">
-                                <platform-specific><html><html-template location="component://ecommerce/webapp/ecommerce/forum/messageDisplay.ftl"/></html></platform-specific>
-                            </container>
-                        </container>
-                    </widgets>
-                    <fail-widgets>
-                        <container>
-                            <container style="responsetext">
-                                <platform-specific><html><html-template location="component://ecommerce/webapp/ecommerce/forum/messageDisplay.ftl"/></html></platform-specific>
-                            </container>
-                        </container>
-                    </fail-widgets>
-                </section>
-            </widgets>
-        </section>
-    </screen>
+
 
     <screen name="policies">
         <section>

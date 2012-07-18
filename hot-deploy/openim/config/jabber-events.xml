@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<jabber-events>
+    <event name="http://etherx.jabber.org/streams:stream" class="org.ofbiz.openim.jabber.StreamsImpl"/>
+    <event name="http://etherx.jabber.org/streams:error" class="org.ofbiz.openim.jabber.ErrorImpl"/>
+    <event name="http://jabber.org/protocol/disco#info:query" class="org.ofbiz.openim.jabber.iq.disco.InfoImpl"/>
+    <event name="http://jabber.org/protocol/disco#items:query" class="org.ofbiz.openim.jabber.iq.disco.ItemsImpl"/>
+    <event name="http://jabber.org/protocol/caps:c" class="org.ofbiz.openim.jabber.iq.caps.CapsImpl"/>
+    <event name="http://jabber.org/protocol/pubsub:pubsub" class="org.ofbiz.openim.jabber.iq.pubsub.PubSubImpl"/>
+    <event name="http://jabber.org/protocol/pubsub:publish" class="org.ofbiz.openim.jabber.iq.pubsub.PublishImpl"/>
+    <event name="http://jabber.org/protocol/pubsub:items" class="org.ofbiz.openim.jabber.iq.pubsub.ItemsImpl"/>
+    <event name="http://jabber.org/protocol/pubsub:item" class="org.ofbiz.openim.jabber.iq.pubsub.ItemImpl"/>
+    <event name="http://jabber.org/protocol/nick:nick" class="org.ofbiz.openim.jabber.iq.nick.NickImpl"/>
+    <event name="http://jabber.org/protocol/chatstates:active" class="org.ofbiz.openim.jabber.iq.chatstates.ActiveImpl"/>
+    <event name="http://jabber.org/protocol/chatstates:composing" class="org.ofbiz.openim.jabber.iq.chatstates.ComposingImpl"/>
+    <event name="http://jabber.org/protocol/chatstates:paused" class="org.ofbiz.openim.jabber.iq.chatstates.PausedImpl"/>
+    <event name="http://jabber.org/protocol/muc:x" class="org.ofbiz.openim.jabber.iq.muc.XImpl"/>
+    <event name="http://jabber.org/protocol/muc:password" class="org.ofbiz.openim.jabber.iq.muc.MucImpl"/>
+    <event name="http://jabber.org/protocol/muc#owner:query" class="org.ofbiz.openim.jabber.iq.muc.QueryImpl"/>
+    <event name="http://jabber.org/protocol/bytestreams:query" class="org.ofbiz.openim.jabber.iq.bytestreams.QueryImpl"/>
+    <event name="http://laptop.org/xmpp/activities:activities" class="org.ofbiz.openim.jabber.iq.xmpp.ActivitiesImpl"/>
+    <event name="http://laptop.org/xmpp/activity-properties:activities" class="org.ofbiz.openim.jabber.iq.xmpp.ActivityPropertiesImpl"/>
+    <event name="urn:xmpp:ping:ping" class="org.ofbiz.openim.jabber.iq.xmpp.PingImpl"/>
+    <event name="jabber:client:iq" class="org.ofbiz.openim.jabber.server.IqImpl"/>
+    <event name="jabber:client:message" class="org.ofbiz.openim.jabber.client.MessageImpl"/>
+    <event name="jabber:client:presence" class="org.ofbiz.openim.jabber.client.PresenceImpl"/>
+    <event name="jabber:client:priority" class="org.ofbiz.openim.jabber.client.PriorityImpl"/>
+    <event name="jabber:client:show" class="org.ofbiz.openim.jabber.client.ShowImpl"/>
+    <event name="jabber:client:status" class="org.ofbiz.openim.jabber.client.StatusImpl"/>
+    <event name="jabber:client:subject" class="org.ofbiz.openim.jabber.client.SubjectImpl"/>
+    <event name="jabber:client:body" class="org.ofbiz.openim.jabber.client.BodyImpl"/>
+    <event name="jabber:client:thread" class="org.ofbiz.openim.jabber.client.ThreadImpl"/>
+    <event name="jabber:iq:auth:query" class="org.ofbiz.openim.jabber.iq.auth.QueryImpl"/>
+    <event name="jabber:iq:auth:digest" class="org.ofbiz.openim.jabber.iq.auth.DigestImpl"/>
+    <event name="jabber:iq:auth:password" class="org.ofbiz.openim.jabber.iq.auth.PasswordImpl"/>
+    <event name="jabber:iq:auth:resource" class="org.ofbiz.openim.jabber.iq.auth.ResourceImpl"/>
+    <event name="jabber:iq:auth:username" class="org.ofbiz.openim.jabber.iq.auth.UsernameImpl"/>
+    <event name="jabber:iq:browse:query" class="org.ofbiz.openim.jabber.iq.browse.QueryImpl"/>
+    <event name="jabber:iq:search:query" class="org.ofbiz.openim.jabber.iq.search.QueryImpl"/>
+    <event name="jabber:iq:oob:query" class="org.ofbiz.openim.jabber.iq.oob.QueryImpl"/>
+    <event name="jabber:iq:private:query" class="org.ofbiz.openim.jabber.iq.jprivate.QueryImpl"/>
+    <event name="vcard-temp:vCard" class="org.ofbiz.openim.jabber.iq.vcardtemp.VCardImpl"/>
+    <event name="vcard-temp:x:update:x" class="org.ofbiz.openim.jabber.iq.vcardtemp.UpdateImpl"/>
+    <event name="vcard-temp:x:update:photo" class="org.ofbiz.openim.jabber.iq.vcardtemp.PhotoImpl"/>
+    <event name="jabber:iq:register:query" class="org.ofbiz.openim.jabber.iq.register.QueryImpl"/>
+    <event name="jabber:iq:register:username" class="org.ofbiz.openim.jabber.iq.register.UsernameImpl"/>
+    <event name="jabber:iq:register:password" class="org.ofbiz.openim.jabber.iq.register.PasswordImpl"/>
+    <event name="jabber:iq:register:remove" class="net.java.dev.openim.jabber.iq.register.RemoveImpl"/>
+    <event name="jabber:iq:roster:query" class="org.ofbiz.openim.jabber.iq.roster.QueryImpl"/>
+    <event name="jabber:iq:roster:item" class="org.ofbiz.openim.jabber.iq.roster.ItemImpl"/>
+    <event name="jabber:iq:roster:group" class="org.ofbiz.openim.jabber.iq.roster.GroupImpl"/>
+    <event name="jabber:x:conference:x" class="org.ofbiz.openim.jabber.iq.conference.XImpl"/>
+    <!--
+    <event name="jabber:server:iq" class="net.java.dev.openim.jabber.server.IqImpl"/>
+    <event name="jabber:server:presence" class="net.java.dev.openim.jabber.server.PresenceImpl"/>
+    <event name="jabber:server:message" class="net.java.dev.openim.jabber.server.MessageImpl"/>
+    <event name="jabber:server:show" class="net.java.dev.openim.jabber.server.ShowImpl"/>
+    <event name="jabber:server:priority" class="net.java.dev.openim.jabber.server.PriorityImpl"/>
+    <event name="jabber:server:status" class="net.java.dev.openim.jabber.server.StatusImpl"/>
+    <event name="jabber:server:error" class="net.java.dev.openim.jabber.server.ErrorImpl"/>
+    <event name="jabber:server:subject" class="net.java.dev.openim.jabber.server.SubjectImpl"/>
+    <event name="jabber:server:body" class="net.java.dev.openim.jabber.server.BodyImpl"/>
+    <event name="jabber:server:thread" class="net.java.dev.openim.jabber.server.ThreadImpl"/>
+    <event name="jabber:server:dialback:result" class="net.java.dev.openim.jabber.server.dialback.ResultImpl"/>
+    <event name="jabber:server:dialback:verify" class="net.java.dev.openim.jabber.server.dialback.VerifyImpl"/>
+    -->
+</jabber-events>

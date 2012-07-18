@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<entity-engine-xml>
+    <Party partyId="DemoChatUser1" partyTypeId="PERSON"/>
+    <Party partyId="DemoChatUser2" partyTypeId="PERSON"/>
+    <Party partyId="DemoChatUser3" partyTypeId="PERSON"/>
+    
+    <Party partyId="DemoChatRoom1" partyTypeId="PARTY_GROUP"/>
+    <Party partyId="DemoChatRoom2" partyTypeId="PARTY_GROUP"/>
+    <Party partyId="DemoChatRoom3" partyTypeId="PARTY_GROUP"/>
+    
+    <Person partyId="DemoChatUser1" firstName="Demo Chat" lastName="User 1"/>
+    <Person partyId="DemoChatUser2" firstName="Demo Chat" lastName="User 2"/>
+    <Person partyId="DemoChatUser3" firstName="Demo Chat" lastName="User 3"/>
+    
+    <PartyGroup partyId="DemoChatRoom1" groupName="Demo Chat Room 1"/>
+    <PartyGroup partyId="DemoChatRoom2" groupName="Demo Chat Room 2"/>
+    <PartyGroup partyId="DemoChatRoom3" groupName="Demo Chat Room 3"/>
+    
+    <PartyRole partyId="DemoChatRoom1" roleTypeId="CHAT_ROOM"/>
+    <PartyRole partyId="DemoChatRoom2" roleTypeId="CHAT_ROOM"/>
+    <PartyRole partyId="DemoChatRoom3" roleTypeId="CHAT_ROOM"/>
+    
+    <UserLogin userLoginId="demoChatUser1" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatUser1"/>
+    <UserLogin userLoginId="demoChatUser2" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatUser2"/>
+    <UserLogin userLoginId="demoChatUser3" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatUser3"/>
+    <UserLogin userLoginId="demoChatRoom1" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatRoom1"/>
+    <UserLogin userLoginId="demoChatRoom2" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatRoom2"/>
+    <UserLogin userLoginId="demoChatRoom3" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatRoom3"/>
+    
+    <PartyRelationship partyIdTo="DemoChatUser1" partyIdFrom="DemoChatUser2" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
+    <PartyRelationship partyIdTo="DemoChatUser1" partyIdFrom="DemoChatUser3" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
+    <PartyRelationship partyIdTo="DemoChatUser2" partyIdFrom="DemoChatUser1" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
+    <PartyRelationship partyIdTo="DemoChatUser2" partyIdFrom="DemoChatUser3" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
+    <PartyRelationship partyIdTo="DemoChatUser3" partyIdFrom="DemoChatUser1" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
+    <PartyRelationship partyIdTo="DemoChatUser3" partyIdFrom="DemoChatUser2" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
+</entity-engine-xml>
