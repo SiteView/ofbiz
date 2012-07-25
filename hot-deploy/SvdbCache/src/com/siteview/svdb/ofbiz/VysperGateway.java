@@ -7,6 +7,7 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import javolution.util.FastList;
 
@@ -46,6 +47,9 @@ import org.ofbiz.base.util.Debug;
 import org.ofbiz.base.util.FileUtil;
 import org.ofbiz.base.util.StringUtil;
 
+import com.siteview.ecc.util.ObjectTransformation;
+import com.siteview.svdb.queue.EccLogQueue;
+
 public class VysperGateway implements Container, MessageListener, Serializable {
 
 	/**
@@ -64,10 +68,15 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 	public static String MONITOR_LOG_USERNAMES;
 	public static String MONITOR_LOG_PASSWORDS;
 	private static List<String> MONITOR_LOG_USERNAME_LIST;
+	public static int delay = 0;//读取频率
+	public static int buffer = 0;
 
 	public static XMPPConnection connection;
 	public static Roster roster;
 	public static InetAddress ipaddr = null;
+	public EccLogQueue logQueue = new EccLogQueue();
+
+	int indexLogger = 0;
 
 	public void xmppLogin(String userName, String password)
 			throws XMPPException {
@@ -146,11 +155,11 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 
 		XMPP_USERNAME = cfg.getProperty("xmpp_username").value;
 		if (XMPP_USERNAME == null)
-			XMPP_USERNAME = "erlangnode";
+			XMPP_USERNAME = "datasender";
 
 		XMPP_PASSWORD = cfg.getProperty("xmpp_password").value;
 		if (XMPP_PASSWORD == null)
-			XMPP_PASSWORD = "ofbiz";
+			XMPP_PASSWORD = "siteview";
 
 		MONITOR_LOG_USERNAMES = cfg.getProperty("monitor_logger_usernames").value;
 		MONITOR_LOG_PASSWORDS = cfg.getProperty("monitor_logger_passwords").value;
@@ -170,13 +179,14 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 			final List<String> pwdList = StringUtil.split(
 					MONITOR_LOG_PASSWORDS, ",");
 			int i = 0;
+			buffer = Integer
+					.parseInt(cfg.getProperty("monitor_logger_buffer").value);
+			delay = Integer
+					.parseInt(cfg.getProperty("monitor_logger_delay").value);
 			for (i = 0; i < MONITOR_LOG_USERNAME_LIST.size(); i++) {
 				MonitorLoggers logger = new MonitorLoggers(XMPP_SERVER,
 						XMPP_SERVER_PORT, MONITOR_LOG_USERNAME_LIST.get(i),
-						pwdList.get(i), XMPP_USERNAME, Integer.parseInt(cfg
-								.getProperty("monitor_logger_buffer").value),
-						Integer.parseInt(cfg
-								.getProperty("monitor_logger_delay").value));
+						pwdList.get(i), XMPP_USERNAME, buffer, delay);
 				new Thread(logger).start();
 			}
 		} catch (XMPPException e1) {
@@ -193,7 +203,7 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 	}
 
 	public void serve(ContainerConfig.Container cfg) {
-		// int indexLogger = 0;
+		int indexLogger = 0;
 		while (true) {
 			// reconnect if lost connection to the server
 			while (!connection.isConnected()) {
@@ -204,19 +214,25 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 				}
 			}
 
-			// indexLogger = (indexLogger == loggerChat.size()) ? 0:
-			// indexLogger;
-			// if ("LogMonitor".equalsIgnoreCase(message.getRequestType())){
-			// List<Object> list = FastList.newInstance();
-			// list.add(message.getAction());
-			// list.add(message.getOfbizParams());
-			// loggerChat.get(indexLogger).sendMessage(ObjectTransformation.OToS(list));
-			// indexLogger++;
-			// }
-			// else {
-			// Debug.logError("Unknown action type from erlang, allowed types are LogMonitor, OfbizService or UpdateMonitor.",
-			// module);
-			// };
+			indexLogger = (indexLogger == loggerChat.size()) ? 0 : indexLogger;
+			try {
+				Thread.sleep(delay);//发送时间间隔
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			Debug.logInfo("/*************读取数据频率: "+delay+" ms;执行一次读取操作,此时队列中还剩下  "+EccLogQueue.listMap.size()+" 条消息等待读取*************/", module);
+			Map<String, String> data = logQueue.getFirst();// 从缓存队列取出第一个元素
+			if (data != null) {
+				try {
+					loggerChat.get(indexLogger).sendMessage(
+							ObjectTransformation.OToS(data));
+				} catch (XMPPException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			indexLogger++;
 
 		}
 

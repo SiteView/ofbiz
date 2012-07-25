@@ -7,6 +7,7 @@ import java.util.Map;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
+import org.ofbiz.base.util.Debug;
 import org.ofbiz.base.util.UtilMisc;
 import org.ofbiz.entity.Delegator;
 import org.ofbiz.entity.GenericValue;
@@ -24,6 +25,7 @@ import com.siteview.ecc.util.ArrayTool;
  * 
  */
 public class LogServices {
+	public static final String module = LogServices.class.getName();
 	/**
 	 * query monitor logs
 	 * 
@@ -71,7 +73,7 @@ public class LogServices {
 		fieldsToSelect.add("description");
 		dve.addMemberEntity("OperLog", tablename);
 		dve.addAliasAll("OperLog", "");
-		List<String> orderBy = UtilMisc.toList("logTime");
+		List<String> orderBy = UtilMisc.toList("logTime DESC");
 		Delegator delegator = dctx.getDelegator();
 		EntityListIterator resultiterator = delegator
 				.findListIteratorByCondition(dve, condition, null,
@@ -89,14 +91,14 @@ public class LogServices {
 		String latestCreateTime = "";
 		String latestDstr = "";
 		String latestStatus = "";
+		Debug.logInfo(">>>>监测器ID: "+monitorId+" 查询出 "+result.size()+" 条数据", module);
 		// 开始解析封装数据
-		System.err.println("-------------------监测器ID: "+monitorId+" 查询出 "+result.size()+" 条数据-------------------------");
 		for (int j = 0; j < result.size(); j++) {
 			GenericValue genericValue = result.get(j);
 			String category = genericValue.get("category").toString();
 			if (category.equals("ok")) {
 				goodCount++;
-			}else if(category.equals("Error")){
+			}else if(category.equals("ERROR")){
 				errorCount++;
 			}else if(category.equals("WARNING")){
 				warnCount++;
@@ -106,12 +108,13 @@ public class LogServices {
 					valueStr.length() - 1);
 			monitorName = genericValue.get("name").toString();
 			String logTime = genericValue.get("logTime").toString();
+			logTime = logTime.substring(0,logTime.lastIndexOf("."));
 			if (latestCreateTime.equals("")) {
 				latestCreateTime = logTime;
 				latestStatus = category;
 				latestDstr = reportDataValue;
 			}
-			descArray[j] = logTime+"&"+valueStr;
+			descArray[j] = logTime+"&"+reportDataValue+"#"+category;
 			String[] dataValue = reportDataValue.split(",");
 			for (int g = 0; g < dataValue.length; g++) {
 				String indexDataValue = dataValue[g];// 如：包成功率(%)=83.33
@@ -180,8 +183,16 @@ public class LogServices {
 				String descKey = "(dstr)"+monitorId;
 				for (String desc : descArray) {
 					String logTime = desc.substring(0, desc.indexOf("&"));
-					String descValue = desc.substring(desc.indexOf("&")+1, desc.length());
-					descMap.put(logTime, descValue);
+					String descValue = desc.substring(desc.indexOf("&")+1, desc.indexOf("#"));
+					String category = desc.substring(desc.indexOf("#")+1, desc.length());
+					if (category.equals("ERROR")||category.equals("BAD")) {
+						category="error";
+					}else if(category.equals("WARNING")){
+						category="warning";
+					}else if(category.equals("OK")){
+						category="ok";
+					}
+					descMap.put(logTime, category+" "+descValue);
 				}
 				descMap.put("MonitorName", monitorName);
 				fmap.put(descKey, descMap);
