@@ -283,8 +283,9 @@
         <property name="xmpp_password" value="siteview"/>  
         <property name="monitor_logger_usernames" value="logger1,logger2,logger3"/>  <!--can be multiple, the format is "logger1,logger2, logger3"-->
         <property name="monitor_logger_passwords" value="siteview,siteview,siteview"/>  <!--can be multiple, the format is "pwd1,pwd2, pwd3"-->
+        <property name="monitor_logger_readcount" value="15"/>  <!-- number of logs to read in a batch -->
         <property name="monitor_logger_buffer" value="10"/>  <!-- number of logs to write in a batch -->
-        <property name="monitor_logger_delay" value="2000"/> <!-- max delay in milli-seconds to write into entity, 'OR' work with buffer -->
+        <property name="monitor_logger_delay" value="10000"/> <!-- max delay in milli-seconds to write into entity, 'OR' work with buffer -->
         <property name="debug_usernames" value=""/>  <!--can be multiple, the format is "debugger1,debugger2, debugger3"-->        
 	</container>
     

@@ -69,7 +69,8 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 	public static String MONITOR_LOG_PASSWORDS;
 	private static List<String> MONITOR_LOG_USERNAME_LIST;
 	public static int delay = 0;//读取频率
-	public static int buffer = 0;
+	public static int buffer = 0;//缓冲池大小
+	public static int readcount = 0;//批量读取数量
 
 	public static XMPPConnection connection;
 	public static Roster roster;
@@ -147,7 +148,7 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 		XMPP_SERVER = cfg.getProperty("xmpp").value;
 		if (XMPP_SERVER == null)
 			XMPP_SERVER = ipaddr.getHostName();
-
+		readcount = Integer.parseInt(cfg.getProperty("monitor_logger_readcount").value);
 		XMPP_DEBUG = Boolean.getBoolean(cfg.getProperty("xmpp_debug").value);
 		String server_port = cfg.getProperty("xmpp_port").value;
 		XMPP_SERVER_PORT = (server_port != null) ? Integer
@@ -221,12 +222,23 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			Debug.logInfo("/*************读取数据频率: "+delay+" ms;执行一次读取操作,此时队列中还剩下  "+EccLogQueue.listMap.size()+" 条消息等待读取*************/", module);
-			Map<String, String> data = logQueue.getFirst();// 从缓存队列取出第一个元素
-			if (data != null) {
+//			Map<String, String> data = logQueue.getFirst();// 从缓存队列取出第一个元素
+//			if (data != null) {
+//				try {
+//					loggerChat.get(indexLogger).sendMessage(
+//							ObjectTransformation.OToS(data));
+//				} catch (XMPPException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			}
+			//----------------------批量读取数据------------------------------
+			List<Map<String, String>> batchMap = logQueue.getBatchMap(readcount);
+			if (batchMap != null) {
+				Debug.logInfo("/*************读取数据频率: "+delay+" ms;批量读取出 "+batchMap.size()+" 条数据,此时队列中还剩下  "+EccLogQueue.listMap.size()+" 条数据等待读取*************/", module);
 				try {
 					loggerChat.get(indexLogger).sendMessage(
-							ObjectTransformation.OToS(data));
+							ObjectTransformation.OToS(batchMap));
 				} catch (XMPPException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

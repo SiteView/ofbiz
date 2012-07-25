@@ -5,6 +5,8 @@ receive the monitor log from erlangnode,  reduce the large number insert operati
 
 package com.siteview.svdb.ofbiz;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -118,17 +120,25 @@ public class MonitorLoggers implements Runnable {
 				// Process message
 				if (packet instanceof Message) {
 					Message msg = (Message) packet;
-					Map<String, String> data = (Map<String, String>) ObjectTransformation
-							.SToO(msg.getBody());// 取出接收到的数据
-					Map<String, Object> context = FastMap.newInstance();
-					context.put("operationId", data.get("MonitorID"));
-					context.put("MonitorName", "");
-					context.put("category", data.get("MonitorStatus"));
-					context.put("description", data.get("MonitorDescription"));
-					context.put("measurement", data.get("MonitorStatus") + " "
-							+data.get("MonitorDescription"));
+					List<Map<String, String>> batchData = (List<Map<String, String>>) ObjectTransformation
+					.SToO(msg.getBody());
+					List<Map<String, Object>> contextList = new ArrayList<Map<String,Object>>();
+					Map<String, Object>  contextmap = new HashMap<String, Object>();
+					for (Map<String, String> data : batchData) {
+						Map<String, Object> context = FastMap.newInstance();
+						context.put("operationId", data.get("MonitorID"));
+						context.put("MonitorName", "");
+						context.put("category", data.get("MonitorStatus"));
+						context.put("description", data.get("MonitorDescription"));
+						context.put("measurement", data.get("MonitorStatus") + " "
+								+data.get("MonitorDescription"));
+						contextList.add(context);
+					}
+					contextmap.put("contextList", contextList);
+//					Map<String, String> data = (Map<String, String>) ObjectTransformation
+//							.SToO(msg.getBody());// 取出接收到的数据
 					try {
-						dispatcher.runSync("InsertMonitorLogService", context);
+						dispatcher.runSync("InsertMonitorLogService", contextmap);
 					} catch (GenericServiceException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
