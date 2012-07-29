@@ -670,6 +670,7 @@ under the License.
     <service name="updatePortletSeqDragDrop" engine="simple" auth="true"
         location="component://common/script/org/ofbiz/common/PortalPageServices.xml" invoke="updatePortletSeqDragDrop">
         <attribute name="o_portalPageId" mode="IN" type="String" ></attribute>
+        <attribute name="o_superPortalPageId" mode="IN" type="String" ></attribute>
         <attribute name="o_portalPortletId" mode="IN" type="String"></attribute>
         <attribute name="o_portletSeqId" mode="IN" type="String"></attribute>
 

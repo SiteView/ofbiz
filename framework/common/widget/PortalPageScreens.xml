@@ -80,7 +80,22 @@ under the License.
                     <decorator-section name="body">
                         <container id="portalContainerId">
                             <include-portal-page id="${parameters.portalPageId}" conf-mode="${parameters.confMode}" use-private="${parameters.usePrivate}"/>
-                        </container>
+                        </container>                        
+                        
+                        <section>
+                        	<condition>
+                                <if-has-permission permission="CONTENTMGR" action="ADMIN"/>
+                            </condition>
+                            <widgets>
+                                <container style="button-bar">
+                        			<link target="showPortalPage" text="${uiLabelMap.BIGITMenuSetting}" style="buttontext">
+                                		<parameter param-name="portalPageId" from-field="parameters.portalPageId"/>
+                                		<parameter param-name="confMode" from-field="true"/>
+                                		<parameter param-name="usePrivate" from-field="parameters.usePrivate"/>
+                            		</link>
+                        		</container>
+                            </widgets>
+                        </section>
                     </decorator-section>
                 </decorator-screen>
             </widgets>

@@ -237,10 +237,11 @@ ${menuString}
   </td>
 </#macro>
 
-<#macro renderPortalPagePortletBegin originalPortalPageId portalPageId portalPortletId portletSeqId prevPortletId="" prevPortletSeqId="" nextPortletId="" nextPortletSeqId="" columnSeqId="" prevColumnSeqId="" nextColumnSeqId="" confMode="false" delPortletHint="Remove this portlet" editAttribute="false" editAttributeHint="Edit portlet parameters">
+<#macro renderPortalPagePortletBegin originalPortalPageId portalPageId superPortalPageId portalPortletId portletSeqId prevPortletId="" prevPortletSeqId="" nextPortletId="" nextPortletSeqId="" columnSeqId="" prevColumnSeqId="" nextColumnSeqId="" confMode="false" delPortletHint="Remove this portlet" editAttribute="false" editAttributeHint="Edit portlet parameters">
   <#assign portletKey = portalPageId+portalPortletId+portletSeqId>
-  <#assign portletKeyFields = '<input name="portalPageId" value="' + portalPageId + '" type="hidden"/><input name="portalPortletId" value="' + portalPortletId + '" type="hidden"/><input name="portletSeqId" value="' + portletSeqId  + '" type="hidden"/>'>
-  <div id="PP_${portletKey}" name="portalPortlet" class="noClass" portalPageId="${portalPageId}" portalPortletId="${portalPortletId}" columnSeqId="${columnSeqId}" portletSeqId="${portletSeqId}">
+  <#assign portletKeyFields = '<input name="portalPageId" value="' + portalPageId + '" type="hidden"/><input name="portalPortletId" value="' + portalPortletId + '" type="hidden"/><input name="portletSeqId" value="' + portletSeqId  + '" type="hidden"/>
+  	<input name="superPortalPageId" value="' + superPortalPageId + '" type="hidden"/>'>
+  <div id="PP_${portletKey}" name="portalPortlet" class="noClass" portalPageId="${portalPageId}" superPortalPageId="${superPortalPageId}" portalPortletId="${portalPortletId}" columnSeqId="${columnSeqId}" portletSeqId="${portletSeqId}">
     <#if confMode == "true">
       <div class="portlet-config" id="PPCFG_${portletKey}">
         <div class="portlet-config-title-bar">
@@ -264,6 +265,7 @@ ${menuString}
               <li class="move-left">
                 <form method="post" action="updatePortletSeqDragDrop" name="movePortletLeft_${portletKey}">
                   <input name="o_portalPageId" value="${portalPageId}" type="hidden"/>
+                  <input name="o_superPortalPageId" value="${superPortalPageId}" type="hidden"/>
                   <input name="o_portalPortletId" value="${portalPortletId}" type="hidden"/>
                   <input name="o_portletSeqId" value="${portletSeqId}" type="hidden"/>
                   <input name="destinationColumn" value="${prevColumnSeqId}" type="hidden"/>
@@ -275,6 +277,7 @@ ${menuString}
               <li class="move-right">
                 <form method="post" action="updatePortletSeqDragDrop" name="movePortletRight_${portletKey}">
                   <input name="o_portalPageId" value="${portalPageId}" type="hidden"/>
+                  <input name="o_superPortalPageId" value="${superPortalPageId}" type="hidden"/>
                   <input name="o_portalPortletId" value="${portalPortletId}" type="hidden"/>
                   <input name="o_portletSeqId" value="${portletSeqId}" type="hidden"/>
                   <input name="destinationColumn" value="${nextColumnSeqId}" type="hidden"/>
@@ -286,6 +289,7 @@ ${menuString}
               <li class="move-up">
                 <form method="post" action="updatePortletSeqDragDrop" name="movePortletUp_${portletKey}">
                   <input name="o_portalPageId" value="${portalPageId}" type="hidden"/>
+                  <input name="o_superPortalPageId" value="${superPortalPageId}" type="hidden"/>
                   <input name="o_portalPortletId" value="${portalPortletId}" type="hidden"/>
                   <input name="o_portletSeqId" value="${portletSeqId}" type="hidden"/>
                   <input name="d_portalPageId" value="${portalPageId}" type="hidden"/>
@@ -299,6 +303,7 @@ ${menuString}
               <li class="move-down">
                 <form method="post" action="updatePortletSeqDragDrop" name="movePortletDown_${portletKey}">
                   <input name="o_portalPageId" value="${portalPageId}" type="hidden"/>
+                  <input name="o_superPortalPageId" value="${superPortalPageId}" type="hidden"/>
                   <input name="o_portalPortletId" value="${portalPortletId}" type="hidden"/>
                   <input name="o_portletSeqId" value="${portletSeqId}" type="hidden"/>
                   <input name="d_portalPageId" value="${portalPageId}" type="hidden"/>

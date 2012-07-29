@@ -278,18 +278,28 @@ under the License.
     <!-- update Portlet Seq with Drag & Drop -->
     <simple-method method-name="updatePortletSeqDragDrop" short-description="Updates a portlet Seq No for the Drag and Drop Feature">
         <set field="parameters.portalPageId" from-field="parameters.o_portalPageId"/>
-        <call-simple-method method-name="checkOwnerShip"/>
+        <log level="info" message=" **** portalPageId=${parameters.portalPageId}"/>
+        <log level="info" message=" **** parameters.o_portalPageId=${parameters.o_portalPageId}"/>        
+        <log level="info" message=" **** parameters.o_superPortalPageId=${parameters.o_superPortalPageId}"/>
+        <log level="info" message=" **** parameters.o_portalPortletId=${parameters.o_portalPortletId}"/>
+        <log level="info" message=" **** parameters.o_portletSeqId=${parameters.o_portletSeqId}"/>
+        
+		<call-simple-method method-name="checkOwnerShip"/>
 
-        <!-- origin Portlet -->
+        <!-- origin Portlet: get from the super portal page if existed -->
         <entity-one value-field="originPp" entity-name="PortalPagePortlet">
-            <field-map field-name="portalPageId" from-field="parameters.o_portalPageId"/>
+            <field-map field-name="portalPageId" from-field="parameters.o_superPortalPageId"/>
             <field-map field-name="portalPortletId" from-field="parameters.o_portalPortletId"/>
             <field-map field-name="portletSeqId" from-field="parameters.o_portletSeqId"/>
         </entity-one>
+        <log level="info" message=" *************************** originPp=${originPp.portalPageId}"/>
         <if-empty field="originPp">
-            <return response-code="error"/>
+        		<log level="error" message=" *************************** originPp empty error"/>
+            	<return response-code="error"/>
         </if-empty>
+        
         <set field="columnSeqId" from-field="parameters.destinationColumn" default-value="${originPp.columnSeqId}"/>
+        <log level="info" message=" *************************** columnSeqId=${columnSeqId}"/>
 
         <!-- destination Portlet -->
         <if-compare operator="contains" field="parameters.mode" value="DRAGDROPBEFORE">
@@ -298,7 +308,7 @@ under the License.
                 <field-map field-name="portalPortletId" from-field="parameters.d_portalPortletId"/>
                 <field-map field-name="portletSeqId" from-field="parameters.d_portletSeqId"/>
             </entity-one>
-
+        <log level="info" message=" *************************** columnSeqId=${columnSeqId}"/>
             <entity-condition list="modifyPpList" entity-name="PortalPagePortlet">
              <condition-list combine="and">
                 <condition-expr field-name="portalPageId" operator="equals" from-field="parameters.portalPageId"/>
@@ -308,9 +318,11 @@ under the License.
              </condition-list>
              <order-by field-name="sequenceNum"/>
             </entity-condition>
+
             <set field="increase" value="1" type="Long"/>
             <set field="newSequenceNo" from-field="destiPp.sequenceNum"/>
         </if-compare>
+        <log level="info" message=" *************************** columnSeqId=${columnSeqId}"/>
 
         <if-compare operator="equals" field="parameters.mode" value="DRAGDROPAFTER">
             <entity-one value-field="destiPp" entity-name="PortalPagePortlet">

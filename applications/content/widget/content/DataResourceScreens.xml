@@ -363,6 +363,8 @@ under the License.
                 <set field="headerItem" value="DataResource"/>
                 <set field="tabButtonItem" value="editElectronicText"/>
                 <entity-one entity-name="DataResource" value-field="currentValue"/>
+                <set field="dataResourceId" from-field="parameters.dataResourceId"/>
+                <set field="dataResource" from-field="currentValue"/>
             </actions>
             <widgets>
                 <decorator-screen name="commonDataResourceDecorator" location="${parameters.mainDecoratorLocation}">
@@ -370,6 +372,17 @@ under the License.
                         <screenlet title="${uiLabelMap.PageTitleEditElectronicText}">
                             <include-form name="EditElectronicText" location="component://content/widget/content/DataResourceForms.xml"/>
                         </screenlet>
+                        <section>
+                            <condition>
+                                <not><if-empty field="currentValue"/></not>
+                            </condition>
+                            <widgets>
+                                <include-screen name="DataResourceViewLink"/>
+                                <screenlet title="${uiLabelMap.PageTitleEditDataResource}">
+                                    <include-form name="ListContentsAssociatedToDataResource" location="component://content/widget/content/DataResourceForms.xml"/>
+                                </screenlet>
+                            </widgets>
+                        </section>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -455,6 +468,8 @@ under the License.
                 <set field="headerItem" value="DataResource"/>
                 <set field="tabButtonItem" value="editHtmlText"/>
                 <entity-one entity-name="DataResource" value-field="currentValue"/>
+                <set field="dataResourceId" from-field="parameters.dataResourceId"/>
+                <set field="dataResource" from-field="currentValue"/>
             </actions>
             <widgets>
                 <decorator-screen name="commonDataResourceDecorator" location="${parameters.mainDecoratorLocation}">
@@ -462,6 +477,17 @@ under the License.
                         <screenlet title="${uiLabelMap.PageTitleEditHtmlText}">
                             <include-form name="EditHtmlText" location="component://content/widget/content/DataResourceForms.xml"/>
                         </screenlet>
+                        <section>
+                            <condition>
+                                <not><if-empty field="currentValue"/></not>
+                            </condition>
+                            <widgets>
+                                <include-screen name="DataResourceViewLink"/>
+                                <screenlet title="${uiLabelMap.PageTitleEditDataResource}">
+                                    <include-form name="ListContentsAssociatedToDataResource" location="component://content/widget/content/DataResourceForms.xml"/>
+                                </screenlet>
+                            </widgets>
+                        </section>
                     </decorator-section>
                 </decorator-screen>
             </widgets>

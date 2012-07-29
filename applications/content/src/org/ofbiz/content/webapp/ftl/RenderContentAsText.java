@@ -41,6 +41,7 @@ import org.ofbiz.base.util.UtilValidate;
 import org.ofbiz.base.util.template.FreeMarkerWorker;
 import org.ofbiz.content.content.ContentWorker;
 import org.ofbiz.entity.Delegator;
+import org.ofbiz.entity.GenericValue;
 import org.ofbiz.service.LocalDispatcher;
 import org.ofbiz.webapp.control.RequestHandler;
 
@@ -149,11 +150,16 @@ public class RenderContentAsText implements TemplateTransformModel {
                 if (Debug.verboseOn()) {
                     Debug.logVerbose("Render close, globalNodeTrail(2a):" + ContentWorker.nodeTrailToCsv(globalNodeTrail), "");
                 }
-                renderSubContent();
+                try {
+					renderSubContent();
+				} catch (GeneralException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
                 //if (Debug.verboseOn()) Debug.logVerbose("in Render(2), globalNodeTrail ." + getWrapped(env, "globalNodeTrail") , module);
             }
 
-            public void renderSubContent() throws IOException {
+            public void renderSubContent() throws IOException, GeneralException {
                 String mimeTypeId = (String) templateRoot.get("mimeTypeId");
                 Object localeObject = templateRoot.get("locale");
                 Locale locale = null;
@@ -224,7 +230,7 @@ public class RenderContentAsText implements TemplateTransformModel {
                 out.write(divStr);
             }
 
-            public void closeEditWrap(Writer out, String editRequestName) throws IOException {
+            public void closeEditWrap(Writer out, String editRequestName) throws IOException, GeneralException {
                 if (Debug.infoOn()) {
                     Debug.logInfo("in RenderSubContent, contentId(3):" + templateRoot.get("contentId"), module);
                     Debug.logInfo("in RenderSubContent, subContentId(3):" + templateRoot.get("subContentId"), module);
@@ -234,15 +240,18 @@ public class RenderContentAsText implements TemplateTransformModel {
                 contentId = (String)templateRoot.get("subContentId");
                 String delim = "?";
                 if (UtilValidate.isNotEmpty(contentId)) {
-                    fullRequest += delim + "contentId=" + contentId;
+                	GenericValue content = ContentWorker.findContentForRendering(delegator, contentId, null, null, null, true);
+//                    fullRequest += delim + "contentId=" + contentId;
+                    fullRequest += delim + "dataResourceId=" + content.get("dataResourceId");
                     delim = "&";
                 }
 
                 out.write("<a href=\"");
                 ServletContext servletContext = request.getSession().getServletContext();
                 RequestHandler rh = (RequestHandler) servletContext.getAttribute("_REQUEST_HANDLER_");
-                out.append(rh.makeLink(request, response, "/" + fullRequest, false, false, true));
-                out.write("\">Edit</a>");
+                out.append(fullRequest);
+//                out.append(rh.makeLink(request, response, "/" + fullRequest, false, false, true));
+                out.write("\" target=\"_blank\"> EDIT</a>");
                 out.write("</div>");
             }
 

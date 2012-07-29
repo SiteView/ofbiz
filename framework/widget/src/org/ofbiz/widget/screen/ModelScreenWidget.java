@@ -1823,6 +1823,10 @@ public abstract class ModelScreenWidget extends ModelWidget {
         public String getActualPortalPageId() {
             return this.actualPortalPageId;
         }
+        
+        public String getSuperPortalPageId() {
+            return this.superPortalPageId;
+        }
 
         public String getConfMode(Map<String, Object> context) {
             return this.confModeExdr.expandString(context);

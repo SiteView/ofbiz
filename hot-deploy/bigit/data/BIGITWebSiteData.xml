@@ -41,13 +41,13 @@
 	<SubMenu menuId="products" subMenuId="dm" menuName="DM: 桌面终端管理" title="DM: 桌面终端管理" description="全面管控终端，建立资产库，集中自动部署软件，实现远程技术支持" sequenceNum="40"/>
 	<SubMenu menuId="products" subMenuId="eim" menuName="EIM: 上网行为管理" title="EIM: 上网行为管理" description="把控互联网接入网关，提升带宽使用效率" sequenceNum="50"/>
 	
-    <Menu menuId="products" menuName="产品" description="覆盖网络设备、服务器、软件应用、桌面终端、和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" sequenceNum="20"/>
-    <Menu menuId="home" menuName="首页"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="10"/>
-    <Menu menuId="solutions" menuName="解决方案"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="30"/>
-    <Menu menuId="cases" menuName="成功案例"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="40"/>
-    <Menu menuId="supports" menuName="技术支持"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="50"/>
-	<Menu menuId="downloads" menuName="免费下载"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="60"/>
-    <Menu menuId="news" menuName="新闻动态"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="70"/>
-	<Menu menuId="aboutus" menuName="关于我们"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  sequenceNum="80"/>
+	<Menu menuId="BigitWeb" menuName="首页"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" superPortalPage="IBMMAIN" sequenceNum="10"/>
+    <Menu menuId="products" menuName="产品" description="覆盖网络设备、服务器、软件应用、桌面终端、和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" superPortalPage="IBM3COL"sequenceNum="20"/>
+    <Menu menuId="solutions" menuName="解决方案"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  superPortalPage="IBM3COL" sequenceNum="30"/>
+    <Menu menuId="cases" menuName="成功案例"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  superPortalPage="IBM3COL" sequenceNum="40"/>
+    <Menu menuId="supports" menuName="技术支持"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  superPortalPage="IBM3COL" sequenceNum="50"/>
+	<Menu menuId="downloads" menuName="免费下载"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" superPortalPage="IBM3COL" sequenceNum="60"/>
+    <Menu menuId="news" menuName="新闻动态"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" superPortalPage="IBM3COL" sequenceNum="70"/>
+	<Menu menuId="aboutus" menuName="关于我们"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" superPortalPage="IBM3COL" sequenceNum="80"/>
 		
 </entity-engine-xml>

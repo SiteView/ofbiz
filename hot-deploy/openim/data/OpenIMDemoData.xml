@@ -38,17 +38,19 @@ under the License.
     <PartyRole partyId="DemoChatRoom2" roleTypeId="CHAT_ROOM"/>
     <PartyRole partyId="DemoChatRoom3" roleTypeId="CHAT_ROOM"/>
     
-    <UserLogin userLoginId="demoChatUser1" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatUser1"/>
-    <UserLogin userLoginId="demoChatUser2" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatUser2"/>
-    <UserLogin userLoginId="demoChatUser3" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatUser3"/>
-    <UserLogin userLoginId="demoChatRoom1" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatRoom1"/>
-    <UserLogin userLoginId="demoChatRoom2" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatRoom2"/>
-    <UserLogin userLoginId="demoChatRoom3" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" partyId="DemoChatRoom3"/>
-    
-    <PartyRelationship partyIdTo="DemoChatUser1" partyIdFrom="DemoChatUser2" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
+    <UserLogin userLoginId="demoChatUser1" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" partyId="DemoChatUser1"/>
+    <UserLogin userLoginId="demoChatUser2" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" partyId="DemoChatUser2"/>
+    <UserLogin userLoginId="demoChatUser3" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" partyId="DemoChatUser3"/>
+    <UserLogin userLoginId="demoChatRoom1" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" partyId="DemoChatRoom1"/>
+    <UserLogin userLoginId="demoChatRoom2" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" partyId="DemoChatRoom2"/>
+    <UserLogin userLoginId="demoChatRoom3" currentPassword="{SHA}47b56994cbc2b6d10aa1be30f70165adb305a41a" partyId="DemoChatRoom3"/>
+
+    <!-- 
+    <PartyRelationship partyIdFrom="DemoChatUser2" partyIdTo="DemoChatUser1" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
     <PartyRelationship partyIdTo="DemoChatUser1" partyIdFrom="DemoChatUser3" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
     <PartyRelationship partyIdTo="DemoChatUser2" partyIdFrom="DemoChatUser1" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
-    <PartyRelationship partyIdTo="DemoChatUser2" partyIdFrom="DemoChatUser3" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
+    <PartyRelationship partyIdTo="DemoChatUser2" partyIdFrom="DemoChatUser3" partyReplationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
     <PartyRelationship partyIdTo="DemoChatUser3" partyIdFrom="DemoChatUser1" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
     <PartyRelationship partyIdTo="DemoChatUser3" partyIdFrom="DemoChatUser2" partyRelationshipTypeId="FRIEND" roleTypeIdFrom="_NA_" roleTypeIdTo="_NA_" fromDate="2001-01-01 12:00:00.0"/>
+     -->
 </entity-engine-xml>

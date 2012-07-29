@@ -902,6 +902,7 @@ public class MacroScreenRenderer implements ScreenStringRenderer {
 
     public void renderPortalPagePortletBegin(Appendable writer, Map<String, Object> context, ModelScreenWidget.PortalPage portalPage, GenericValue portalPortlet) throws GeneralException, IOException {
         String portalPageId = portalPage.getActualPortalPageId();
+        String superPortalPageId = portalPage.getSuperPortalPageId();
         String originalPortalPageId = portalPage.getOriginalPortalPageId();
         String portalPortletId = portalPortlet.getString("portalPortletId");
         String portletSeqId = portalPortlet.getString("portletSeqId");
@@ -933,6 +934,8 @@ public class MacroScreenRenderer implements ScreenStringRenderer {
         sr.append(originalPortalPageId);
         sr.append("\" portalPageId=\"");
         sr.append(portalPageId);
+        sr.append("\" superPortalPageId=\"");
+        sr.append(superPortalPageId);
         sr.append("\" portalPortletId=\"");
         sr.append(portalPortletId);
         sr.append("\" portletSeqId=\"");

@@ -4811,6 +4811,16 @@
         <value xml:lang="zh-CN">登录</value>
         <value xml:lang="zh-TW">登入</value>
     </property>
+    <property key="CommonQQLogin">
+        <value xml:lang="en">QQ Login</value>
+        <value xml:lang="zh">QQ登录</value>
+        <value xml:lang="zh-CN">QQ登录</value>
+    </property>
+    <property key="CommonWeiboLogin">
+        <value xml:lang="en">Sina Weibo Login</value>
+        <value xml:lang="zh">新浪微博登录</value>
+        <value xml:lang="zh-CN">新浪微博登录</value>
+    </property>
     <property key="CommonLoginHere">
         <value xml:lang="ar">أدخل من هنا</value>
         <value xml:lang="cs">Přihlaste se prosíme zde</value>
