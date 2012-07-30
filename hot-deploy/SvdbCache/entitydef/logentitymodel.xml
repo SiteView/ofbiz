@@ -1,0 +1,1697 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/entitymodel.xsd">
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201207" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201208" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201209" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201210" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201211" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201212" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201301" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201302" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201303" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201304" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201305" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201306" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201307" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201308" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201309" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201310" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201311" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201312" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201401" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201402" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201403" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201404" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201405" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201406" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201407" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201408" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201409" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201410" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201411" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201412" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201501" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201502" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201503" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201504" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201505" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201506" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201507" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201508" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201509" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201510" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201511" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201512" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201601" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201602" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201603" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201604" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201605" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201606" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201607" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201608" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201609" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201610" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201611" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201612" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201701" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201702" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201703" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201704" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201705" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201706" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201707" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201708" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201709" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201710" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201711" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201712" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201801" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201802" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201803" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201804" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201805" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201806" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201807" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201808" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201809" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201810" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201811" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201812" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201901" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201902" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201903" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201904" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201905" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201906" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201907" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201908" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201909" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201910" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201911" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog201912" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202001" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202002" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202003" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202004" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202005" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202006" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202007" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202008" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202009" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202010" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202011" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202012" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202101" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202102" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202103" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202104" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202105" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202106" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202107" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202108" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202109" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202110" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202111" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202112" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202201" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202202" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202203" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202204" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202205" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202206" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+<entity default-resource-name="EccEntityLabels" entity-name="OperationAttributeLog202207" package-name="com.siteview.ecc.operation" title="Operation Attribute Time Series Log Entity">
+<description>Used to store the info for each measurement, the actual value is stored in related OperationAttributeLogValues entity.</description>
+<field name="logId" type="id"/>
+<field name="operationId" type="id"/>
+<field name="name" type="object"/>
+<field name="logTime" type="date-time"/>
+<field name="category" type="very-short"/>
+<field name="description" type="object"/>
+<field name="measurement" type="object"/>
+<prim-key field="logId"/>
+<relation fk-name="MONITOR_LOG_VALUE" rel-entity-name="OperationAttributeLogValues" type="many">
+<key-map field-name="logId"/>
+</relation>
+</entity>
+</entitymodel>

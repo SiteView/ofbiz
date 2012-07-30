@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityPermission description="View operations in the SocialAuth Component." permissionId="SOCIALAUTH_VIEW"/>
+    <SecurityPermission description="Create operations in the SocialAuth Component." permissionId="SOCIALAUTH_CREATE"/>
+    <SecurityPermission description="Update operations in the SocialAuth Component." permissionId="SOCIALAUTH_UPDATE"/>
+    <SecurityPermission description="Delete operations in the SocialAuth Component." permissionId="SOCIALAUTH_DELETE"/>
+    <SecurityPermission description="ALL operations in the SocialAuth Component." permissionId="SOCIALAUTH_ADMIN"/>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="SOCIALAUTH_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="SOCIALAUTH_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="SOCIALAUTH_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="SOCIALAUTH_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="SOCIALAUTH_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="SOCIALAUTH_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="SOCIALAUTH_ADMIN"/>
+</entity-engine-xml>

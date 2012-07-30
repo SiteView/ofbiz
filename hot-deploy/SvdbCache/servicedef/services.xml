@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+	<description>SvdbCache Services</description>
+	<vendor>Dragonflow Networks, Inc.</vendor>
+	<version>1.0</version>
+	<!-- insert monitor logs service-->
+	<service name="InsertMonitorLogService" engine="java" export="true"
+		validate="false" require-new-transaction="true"
+		location="com.siteview.svdb.ofbiz.MonitorLogServices"
+		invoke="insertLogData">
+		<description>insert monitor logs</description>
+		<attribute name="from"  mode="IN"  type="Integer"/>
+		<attribute name="to"  mode="IN" type="Integer" />
+	</service>
+</services>

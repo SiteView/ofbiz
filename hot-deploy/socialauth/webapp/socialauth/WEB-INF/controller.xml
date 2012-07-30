@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/site-conf.xsd">
+    <!-- The controller elements that are common to all OFBiz components
+         can be found in the following xml file. A component can override the
+         elements found in the common-controller.xml file. -->
+    <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
+
+    <description>SocialAuth Component Site Configuration File</description>
+
+    <!-- Events to run on every request before security (chains exempt) -->
+    <!--
+    <preprocessor>
+    </preprocessor>
+    -->
+    <!-- Events to run on every request after all other processing (chains exempt) -->
+    <!--
+    <postprocessor>
+        <event name="test" type="java" path="org.ofbiz.webapp.event.TestEvent" invoke="test"/>
+    </postprocessor>
+    -->
+
+    <!-- Request Mappings -->
+    <request-map uri="main"><security https="true" auth="true"/><response name="success" type="view" value="main"/></request-map>
+    <request-map uri="socialAuth">
+        <event type="java" path="com.auth.actions.SocialAuthSuccessAction" invoke="execute"/>
+        <response name="success" type="view" value="main"/>
+        <response name="error" type="view" value="main"/>
+    </request-map>
+    
+  
+    <view-map name="main" type="screen" page="component://socialauth/widget/SocialAuthScreens.xml#main"/>
+      <!-- View Mappings 
+    		<action path="/socialAuth" type="com.auth.actions.SocialAuthenticationAction" name="authForm" scope="session">
+			<forward name="failure" path="/jsp/error.jsp" />
+			<forward name="home" path="/index.jsp" />
+		</action>
+		
+		<action path="/socialAuthSuccessAction" type="com.auth.actions.SocialAuthSuccessAction" name="authForm" scope="session">
+			<forward name="success" path="/jsp/authSuccess.jsp" />
+			<forward name="failure" path="/jsp/error.jsp" />
+		</action>
+		<action path="/socialAuthUpdateStatusAction" type="com.auth.actions.SocialAuthUpdateStatusAction" name="authForm" scope="session">
+			<forward name="success" path="/jsp/statusSuccess.jsp" />
+			<forward name="failure" path="/jsp/statusSuccess.jsp" />
+		</action>
+	-->
+</site-conf>

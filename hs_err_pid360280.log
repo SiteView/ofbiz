@@ -1,0 +1,104 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 65552 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:317), pid=360280, tid=365916
+#
+# JRE version: 6.0_30-b12
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.5-b03 mixed mode windows-amd64 compressed oops)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000063fc800):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=365916, stack(0x00000000073e0000,0x00000000074e0000)]
+
+Stack: [0x00000000073e0000,0x00000000074e0000]
+
+Current CompileTask:
+C2:  17603 1675      freemarker.core.FMParserTokenManager.TokenLexicalActions(Lfreemarker/core/Token;)V (7658 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000000c3b4000 JavaThread "ReferenceCleaner" daemon [_thread_blocked, id=367264, stack(0x0000000011cd0000,0x0000000011dd0000)]
+  0x000000000c3b3800 JavaThread "http-bio-0.0.0.0-8080-exec-6" daemon [_thread_in_native, id=367220, stack(0x0000000011bd0000,0x0000000011cd0000)]
+  0x000000000a9a2800 JavaThread "http-bio-0.0.0.0-8080-exec-5" daemon [_thread_in_native, id=367216, stack(0x0000000011ad0000,0x0000000011bd0000)]
+  0x000000000a9a4800 JavaThread "http-bio-0.0.0.0-8080-exec-4" daemon [_thread_in_native, id=365776, stack(0x00000000119d0000,0x0000000011ad0000)]
+  0x000000000a9a1800 JavaThread "http-bio-0.0.0.0-8080-exec-3" daemon [_thread_in_native, id=367204, stack(0x00000000118d0000,0x00000000119d0000)]
+  0x000000000a9a1000 JavaThread "http-bio-0.0.0.0-8080-exec-2" daemon [_thread_in_native, id=367200, stack(0x00000000117d0000,0x00000000118d0000)]
+  0x000000000a9a3800 JavaThread "http-bio-0.0.0.0-8080-exec-1" daemon [_thread_in_native, id=367196, stack(0x00000000116d0000,0x00000000117d0000)]
+  0x000000000a9a3000 JavaThread "DestroyJavaVM" [_thread_blocked, id=333296, stack(0x00000000025b0000,0x00000000026b0000)]
+  0x000000000a9a0000 JavaThread "http-bio-0.0.0.0-8443-AsyncTimeout" daemon [_thread_blocked, id=344608, stack(0x00000000115d0000,0x00000000116d0000)]
+  0x000000000a99f800 JavaThread "http-bio-0.0.0.0-8443-Acceptor-0" daemon [_thread_in_native, id=367112, stack(0x00000000114d0000,0x00000000115d0000)]
+  0x000000000a99e800 JavaThread "http-bio-0.0.0.0-8080-AsyncTimeout" daemon [_thread_blocked, id=365792, stack(0x00000000113d0000,0x00000000114d0000)]
+  0x000000000a99e000 JavaThread "http-bio-0.0.0.0-8080-Acceptor-0" daemon [_thread_in_native, id=362972, stack(0x00000000112d0000,0x00000000113d0000)]
+  0x000000000b2bf800 JavaThread "ajp-bio-0.0.0.0-8009-AsyncTimeout" daemon [_thread_blocked, id=367024, stack(0x00000000111d0000,0x00000000112d0000)]
+  0x000000000b2be800 JavaThread "ajp-bio-0.0.0.0-8009-Acceptor-0" daemon [_thread_in_native, id=345220, stack(0x00000000110d0000,0x00000000111d0000)]
+  0x000000000b2be000 JavaThread "ContainerBackgroundProcessor[StandardEngine[default-server]]" daemon [_thread_blocked, id=102580, stack(0x0000000010fd0000,0x00000000110d0000)]
+  0x000000000b2bd000 JavaThread "ContainerBackgroundProcessor[StandardEngine[default-server].StandardHost[0.0.0.0]]" daemon [_thread_blocked, id=299704, stack(0x0000000010ed0000,0x0000000010fd0000)]
+  0x000000000b2bc800 JavaThread "pool-1-thread-1" [_thread_blocked, id=367164, stack(0x0000000010dd0000,0x0000000010ed0000)]
+  0x000000000b2bc000 JavaThread "RMI TCP Connection(2)-192.168.1.3" daemon [_thread_in_native, id=367152, stack(0x0000000010cd0000,0x0000000010dd0000)]
+  0x000000000b2bb000 JavaThread "RMI RenewClean-[192.168.1.3:57956]" daemon [_thread_blocked, id=367148, stack(0x0000000010bd0000,0x0000000010cd0000)]
+  0x000000000b2ba800 JavaThread "RMI Scheduler(0)" daemon [_thread_blocked, id=367144, stack(0x0000000010630000,0x0000000010730000)]
+  0x000000000b2b9800 JavaThread "RMI TCP Connection(1)-127.0.0.1" daemon [_thread_in_native, id=367140, stack(0x0000000010ad0000,0x0000000010bd0000)]
+  0x000000000b2b9000 JavaThread "GC Daemon" daemon [_thread_blocked, id=360924, stack(0x00000000109d0000,0x0000000010ad0000)]
+  0x000000000b2b8000 JavaThread "RMI Reaper" [_thread_blocked, id=342220, stack(0x00000000108d0000,0x00000000109d0000)]
+  0x000000000c4fd000 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=367020, stack(0x00000000107d0000,0x00000000108d0000)]
+  0x000000000c4fc800 JavaThread "jackrabbit-pool-2" daemon [_thread_blocked, id=364076, stack(0x0000000010530000,0x0000000010630000)]
+  0x000000000c4fb800 JavaThread "ObservationManager" daemon [_thread_blocked, id=269640, stack(0x0000000010430000,0x0000000010530000)]
+  0x000000000c4fb000 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=219108, stack(0x0000000010330000,0x0000000010430000)]
+  0x000000000c4fa000 JavaThread "ObservationManager" daemon [_thread_blocked, id=356400, stack(0x0000000010230000,0x0000000010330000)]
+  0x000000000c4f9800 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=363896, stack(0x0000000010130000,0x0000000010230000)]
+  0x000000000c4f8800 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=264980, stack(0x0000000010030000,0x0000000010130000)]
+  0x000000000c4f8000 JavaThread "jackrabbit-pool-1" daemon [_thread_blocked, id=364552, stack(0x000000000fc60000,0x000000000fd60000)]
+  0x000000000c4f7000 JavaThread "RMI TCP Accept-1099" daemon [_thread_in_native, id=358164, stack(0x000000000fa10000,0x000000000fb10000)]
+  0x000000000c4f6800 JavaThread "org.ofbiz.service.jms.JmsListenerFactory@3f9f4d1d" [_thread_blocked, id=367084, stack(0x000000000ff30000,0x0000000010030000)]
+  0x000000000c4f6000 JavaThread "org.ofbiz.service.job.JobPoller@4f03738b" [_thread_blocked, id=367080, stack(0x000000000fe30000,0x000000000ff30000)]
+  0x0000000008036800 JavaThread "Thread-30" daemon [_thread_blocked, id=365908, stack(0x000000000f910000,0x000000000fa10000)]
+  0x0000000008036000 JavaThread "default-invoker-Thread-29" [_thread_blocked, id=310296, stack(0x000000000f810000,0x000000000f910000)]
+  0x0000000008035000 JavaThread "default-invoker-Thread-28" [_thread_blocked, id=361040, stack(0x000000000f710000,0x000000000f810000)]
+  0x0000000008034800 JavaThread "default-invoker-Thread-27" [_thread_blocked, id=364172, stack(0x000000000f610000,0x000000000f710000)]
+  0x0000000008033800 JavaThread "default-invoker-Thread-26" [_thread_blocked, id=367040, stack(0x000000000f510000,0x000000000f610000)]
+  0x0000000008033000 JavaThread "default-invoker-Thread-25" [_thread_blocked, id=367036, stack(0x000000000f410000,0x000000000f510000)]
+  0x0000000008030800 JavaThread "entity-datasource(localderby)-0" daemon [_thread_blocked, id=367004, stack(0x000000000f310000,0x000000000f410000)]
+  0x0000000008031800 JavaThread "entity-datasource(localderbyolap)-0" daemon [_thread_blocked, id=367000, stack(0x000000000f210000,0x000000000f310000)]
+  0x0000000008032000 JavaThread "entity-datasource(localderbytenant)-0" daemon [_thread_blocked, id=344388, stack(0x000000000f110000,0x000000000f210000)]
+  0x0000000008030000 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=366952, stack(0x000000000f010000,0x000000000f110000)]
+  0x000000000802f800 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=366904, stack(0x000000000ee80000,0x000000000ef80000)]
+  0x000000000802e800 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=366896, stack(0x000000000ed80000,0x000000000ee80000)]
+  0x000000000802e000 JavaThread "Timer-1" daemon [_thread_blocked, id=366900, stack(0x000000000ea30000,0x000000000eb30000)]
+  0x000000000802d000 JavaThread "Timer-0" daemon [_thread_blocked, id=366892, stack(0x000000000ebd0000,0x000000000ecd0000)]
+  0x000000000802c800 JavaThread "ExecutionPoolPulseWorker(7)" daemon [_thread_blocked, id=357912, stack(0x000000000e4f0000,0x000000000e5f0000)]
+  0x000000000802b800 JavaThread "ExecutionPoolPulseWorker(6)" daemon [_thread_blocked, id=366772, stack(0x000000000e3f0000,0x000000000e4f0000)]
+  0x000000000802b000 JavaThread "ExecutionPoolPulseWorker(5)" daemon [_thread_blocked, id=366244, stack(0x000000000e2f0000,0x000000000e3f0000)]
+  0x000000000802a000 JavaThread "ExecutionPoolPulseWorker(4)" daemon [_thread_blocked, id=366332, stack(0x000000000e1f0000,0x000000000e2f0000)]
+  0x0000000008029800 JavaThread "ExecutionPoolPulseWorker(3)" daemon [_thread_blocked, id=366876, stack(0x000000000e0f0000,0x000000000e1f0000)]
+  0x0000000008029000 JavaThread "ExecutionPoolPulseWorker(2)" daemon [_thread_blocked, id=366868, stack(0x000000000dff0000,0x000000000e0f0000)]
+  0x0000000008028000 JavaThread "ExecutionPoolPulseWorker(1)" daemon [_thread_blocked, id=366864, stack(0x000000000def0000,0x000000000dff0000)]
+  0x000000000bff9000 JavaThread "ExecutionPoolPulseWorker(0)" daemon [_thread_blocked, id=366860, stack(0x000000000ddf0000,0x000000000def0000)]
+  0x000000000bc97000 JavaThread "ofbiz-config-7" daemon [_thread_blocked, id=366856, stack(0x000000000dcf0000,0x000000000ddf0000)]
+  0x000000000bc96000 JavaThread "ofbiz-config-6" daemon [_thread_blocked, id=366852, stack(0x000000000dbf0000,0x000000000dcf0000)]
+  0x000000000ad92000 JavaThread "ofbiz-config-5" daemon [_thread_blocked, id=366880, stack(0x000000000daf0000,0x000000000dbf0000)]
+  0x000000000ad91800 JavaThread "ofbiz-config-4" daemon [_thread_blocked, id=366872, stack(0x000000000d9f0000,0x000000000daf0000)]
+  0x000000000ba99800 JavaThread "ofbiz-config-3" daemon [_thread_blocked, id=366744, stack(0x000000000c890000,0x000000000c990000)]
+  0x000000000ba99000 JavaThread "ofbiz-config-2" daemon [_thread_blocked, id=366180, stack(0x000000000c790000,0x000000000c890000)]
+  0x000000000ab8d000 JavaThread "ofbiz-config-1" daemon [_thread_blocked, id=366588, stack(0x000000000c690000,0x000000000c790000)]
+  0x000000000a7fe800 JavaThread "ofbiz-config-0" daemon [_thread_blocked, id=218736, stack(0x000000000b580000,0x000000000b680000)]
+  0x0000000007fd0000 JavaThread "AsyncAppender-Dispatcher-Thread-3" daemon [_thread_blocked, id=149264, stack(0x0000000008510000,0x0000000008610000)]
+  0x0000000006521000 JavaThread "AdminPortThread" [_thread_in_native, id=365228, stack(0x0000000007c10000,0x0000000007d10000)]
+  0x0000000006404000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=323944, stack(0x00000000074e0000,0x00000000075e0000)]
+=>0x00000000063fc800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=365916, stack(0x00000000073e0000,0x00000000074e0000)]
+  0x00000000063af000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=344036, stack(0x00000000072e0000,0x00000000073e0000)

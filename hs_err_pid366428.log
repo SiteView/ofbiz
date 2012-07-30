@@ -1,0 +1,221 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 316176 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:317), pid=366428, tid=366260
+#
+# JRE version: 6.0_30-b12
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.5-b03 mixed mode windows-amd64 compressed oops)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000063e1800):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=366260, stack(0x0000000007310000,0x0000000007410000)]
+
+Stack: [0x0000000007310000,0x0000000007410000]
+
+Current CompileTask:
+C2:  22754 1770      freemarker.core.TemplateElement.prevTerminalNode()Lfreemarker/core/TemplateElement; (31 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000000ba26800 JavaThread "ReferenceCleaner" daemon [_thread_blocked, id=366748, stack(0x0000000011750000,0x0000000011850000)]
+  0x000000000ba27000 JavaThread "DestroyJavaVM" [_thread_blocked, id=364832, stack(0x0000000002530000,0x0000000002630000)]
+  0x000000000835b800 JavaThread "http-bio-0.0.0.0-8080-exec-12" daemon [_thread_blocked, id=366636, stack(0x0000000012a50000,0x0000000012b50000)]
+  0x000000000835b000 JavaThread "http-bio-0.0.0.0-8080-exec-11" daemon [_thread_blocked, id=366632, stack(0x0000000012950000,0x0000000012a50000)]
+  0x000000000cb08000 JavaThread "http-bio-0.0.0.0-8080-exec-10" daemon [_thread_blocked, id=366628, stack(0x0000000012850000,0x0000000012950000)]
+  0x000000000cb07800 JavaThread "http-bio-0.0.0.0-8080-exec-9" daemon [_thread_blocked, id=366624, stack(0x0000000012750000,0x0000000012850000)]
+  0x000000000cb06800 JavaThread "http-bio-0.0.0.0-8080-exec-8" daemon [_thread_blocked, id=366620, stack(0x0000000012650000,0x0000000012750000)]
+  0x000000000cb06000 JavaThread "http-bio-0.0.0.0-8080-exec-7" daemon [_thread_blocked, id=366616, stack(0x0000000012550000,0x0000000012650000)]
+  0x000000000cb05800 JavaThread "http-bio-0.0.0.0-8080-exec-6" daemon [_thread_in_native, id=366612, stack(0x0000000012450000,0x0000000012550000)]
+  0x000000000cb04800 JavaThread "http-bio-0.0.0.0-8080-exec-5" daemon [_thread_in_native, id=366608, stack(0x0000000012350000,0x0000000012450000)]
+  0x000000000cb04000 JavaThread "http-bio-0.0.0.0-8080-exec-4" daemon [_thread_in_native, id=366604, stack(0x0000000012250000,0x0000000012350000)]
+  0x000000000cb03000 JavaThread "http-bio-0.0.0.0-8080-exec-3" daemon [_thread_in_native, id=366600, stack(0x0000000012150000,0x0000000012250000)]
+  0x000000000cb01000 JavaThread "http-bio-0.0.0.0-8080-exec-2" daemon [_thread_in_native, id=364436, stack(0x0000000011e50000,0x0000000011f50000)]
+  0x000000000ba28800 JavaThread "http-bio-0.0.0.0-8080-exec-1" daemon [_thread_in_native, id=360280, stack(0x0000000011b50000,0x0000000011c50000)]
+  0x000000000ba25000 JavaThread "http-bio-0.0.0.0-8443-AsyncTimeout" daemon [_thread_blocked, id=362016, stack(0x0000000011650000,0x0000000011750000)]
+  0x000000000ba24000 JavaThread "http-bio-0.0.0.0-8443-Acceptor-0" daemon [_thread_in_native, id=338764, stack(0x0000000011550000,0x0000000011650000)]
+  0x000000000ba23800 JavaThread "http-bio-0.0.0.0-8080-AsyncTimeout" daemon [_thread_blocked, id=131776, stack(0x0000000011450000,0x0000000011550000)]
+  0x000000000ba23000 JavaThread "http-bio-0.0.0.0-8080-Acceptor-0" daemon [_thread_in_native, id=359500, stack(0x0000000011350000,0x0000000011450000)]
+  0x0000000008067800 JavaThread "ajp-bio-0.0.0.0-8009-AsyncTimeout" daemon [_thread_blocked, id=363264, stack(0x0000000011250000,0x0000000011350000)]
+  0x0000000008067000 JavaThread "ajp-bio-0.0.0.0-8009-Acceptor-0" daemon [_thread_in_native, id=359936, stack(0x0000000011150000,0x0000000011250000)]
+  0x0000000008066000 JavaThread "ContainerBackgroundProcessor[StandardEngine[default-server]]" daemon [_thread_blocked, id=366176, stack(0x0000000011050000,0x0000000011150000)]
+  0x0000000008065800 JavaThread "ContainerBackgroundProcessor[StandardEngine[default-server].StandardHost[0.0.0.0]]" daemon [_thread_blocked, id=364932, stack(0x0000000010f50000,0x0000000011050000)]
+  0x0000000008064800 JavaThread "pool-1-thread-1" [_thread_blocked, id=346088, stack(0x0000000010bb0000,0x0000000010cb0000)]
+  0x0000000008064000 JavaThread "RMI TCP Connection(2)-192.168.1.3" daemon [_thread_in_native, id=343388, stack(0x0000000010e50000,0x0000000010f50000)]
+  0x0000000008063000 JavaThread "RMI RenewClean-[192.168.1.3:57897]" daemon [_thread_blocked, id=327512, stack(0x0000000010d50000,0x0000000010e50000)]
+  0x0000000008062800 JavaThread "RMI Scheduler(0)" daemon [_thread_blocked, id=362628, stack(0x00000000108e0000,0x00000000109e0000)]
+  0x0000000008062000 JavaThread "RMI TCP Connection(1)-127.0.0.1" daemon [_thread_in_native, id=366312, stack(0x0000000010ab0000,0x0000000010bb0000)]
+  0x0000000008061000 JavaThread "GC Daemon" daemon [_thread_blocked, id=366548, stack(0x00000000107e0000,0x00000000108e0000)]
+  0x0000000008060800 JavaThread "RMI Reaper" [_thread_blocked, id=365660, stack(0x0000000010530000,0x0000000010630000)]
+  0x000000000805f800 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=346876, stack(0x00000000106e0000,0x00000000107e0000)]
+  0x000000000805f000 JavaThread "jackrabbit-pool-2" daemon [_thread_blocked, id=4388, stack(0x0000000010430000,0x0000000010530000)]
+  0x000000000805e000 JavaThread "ObservationManager" daemon [_thread_blocked, id=366488, stack(0x0000000010330000,0x0000000010430000)]
+  0x000000000805d800 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=322376, stack(0x0000000010230000,0x0000000010330000)]
+  0x000000000805c800 JavaThread "ObservationManager" daemon [_thread_blocked, id=365604, stack(0x0000000010130000,0x0000000010230000)]
+  0x000000000805c000 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=364820, stack(0x000000000fe10000,0x000000000ff10000)]
+  0x000000000805b800 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=364512, stack(0x000000000fd10000,0x000000000fe10000)]
+  0x000000000805a800 JavaThread "jackrabbit-pool-1" daemon [_thread_blocked, id=363372, stack(0x000000000fc10000,0x000000000fd10000)]
+  0x0000000009b9b800 JavaThread "RMI TCP Accept-1099" daemon [_thread_in_native, id=324120, stack(0x000000000fb10000,0x000000000fc10000)]
+  0x000000000805a000 JavaThread "org.ofbiz.service.jms.JmsListenerFactory@3e06dc14" [_thread_blocked, id=362932, stack(0x0000000010030000,0x0000000010130000)]
+  0x0000000008059000 JavaThread "org.ofbiz.service.job.JobPoller@4c25dfaf" [_thread_blocked, id=241028, stack(0x000000000ff30000,0x0000000010030000)]
+  0x0000000008058800 JavaThread "Thread-30" daemon [_thread_blocked, id=362692, stack(0x000000000fa10000,0x000000000fb10000)]
+  0x0000000009b9f800 JavaThread "default-invoker-Thread-29" [_thread_blocked, id=363476, stack(0x000000000f910000,0x000000000fa10000)]
+  0x0000000009b9f000 JavaThread "default-invoker-Thread-28" [_thread_blocked, id=222316, stack(0x000000000f810000,0x000000000f910000)]
+  0x0000000009b9e800 JavaThread "default-invoker-Thread-27" [_thread_blocked, id=323888, stack(0x000000000f710000,0x000000000f810000)]
+  0x0000000009b9d800 JavaThread "default-invoker-Thread-26" [_thread_blocked, id=366128, stack(0x000000000f610000,0x000000000f710000)]
+  0x0000000009b9d000 JavaThread "default-invoker-Thread-25" [_thread_blocked, id=365324, stack(0x000000000f510000,0x000000000f610000)]
+  0x0000000009b9c000 JavaThread "entity-datasource(localderby)-0" daemon [_thread_blocked, id=163644, stack(0x000000000f410000,0x000000000f510000)]
+  0x0000000009b9a800 JavaThread "entity-datasource(localderbyolap)-0" daemon [_thread_blocked, id=366344, stack(0x000000000f310000,0x000000000f410000)]
+  0x0000000009b99000 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=294396, stack(0x000000000f210000,0x000000000f310000)]
+  0x0000000009b98800 JavaThread "entity-datasource(localderbytenant)-0" daemon [_thread_blocked, id=363728, stack(0x000000000f110000,0x000000000f210000)]
+  0x0000000009b98000 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=366204, stack(0x000000000ee50000,0x000000000ef50000)]
+  0x0000000009b97000 JavaThread "derby.rawStoreDaemon" daemon [_thread_blocked, id=363600, stack(0x000000000ed50000,0x000000000ee50000)]
+  0x0000000009b96800 JavaThread "Timer-1" daemon [_thread_blocked, id=359680, stack(0x000000000f010000,0x000000000f110000)]
+  0x0000000009b95800 JavaThread "Timer-0" daemon [_thread_blocked, id=366572, stack(0x000000000eb90000,0x000000000ec90000)]
+  0x0000000009b95000 JavaThread "ExecutionPoolPulseWorker(7)" daemon [_thread_blocked, id=2948, stack(0x000000000e570000,0x000000000e670000)]
+  0x0000000009b94000 JavaThread "ExecutionPoolPulseWorker(6)" daemon [_thread_blocked, id=360668, stack(0x000000000e470000,0x000000000e570000)]
+  0x0000000009b93800 JavaThread "ExecutionPoolPulseWorker(5)" daemon [_thread_blocked, id=365612, stack(0x000000000e370000,0x000000000e470000)]
+  0x0000000009b92800 JavaThread "ExecutionPoolPulseWorker(4)" daemon [_thread_blocked, id=4408, stack(0x000000000e270000,0x000000000e370000)]
+  0x0000000009b92000 JavaThread "ExecutionPoolPulseWorker(3)" daemon [_thread_blocked, id=365380, stack(0x000000000e170000,0x000000000e270000)]
+  0x0000000009b91000 JavaThread "ExecutionPoolPulseWorker(2)" daemon [_thread_blocked, id=364828, stack(0x000000000e070000,0x000000000e170000)]
+  0x0000000009b90800 JavaThread "ExecutionPoolPulseWorker(1)" daemon [_thread_blocked, id=366452, stack(0x000000000df70000,0x000000000e070000)]
+  0x000000000ccfc000 JavaThread "ExecutionPoolPulseWorker(0)" daemon [_thread_blocked, id=366272, stack(0x000000000de70000,0x000000000df70000)]
+  0x000000000b15e800 JavaThread "ofbiz-config-7" daemon [_thread_blocked, id=260152, stack(0x000000000dd70000,0x000000000de70000)]
+  0x000000000abe4000 JavaThread "ofbiz-config-6" daemon [_thread_blocked, id=366320, stack(0x000000000dc70000,0x000000000dd70000)]
+  0x0000000009d7b800 JavaThread "ofbiz-config-5" daemon [_thread_blocked, id=359764, stack(0x000000000db70000,0x000000000dc70000)]
+  0x000000000a515000 JavaThread "ofbiz-config-4" daemon [_thread_blocked, id=350688, stack(0x000000000da70000,0x000000000db70000)]
+  0x0000000009b07800 JavaThread "ofbiz-config-3" daemon [_thread_blocked, id=362792, stack(0x000000000c8b0000,0x000000000c9b0000)]
+  0x000000000caf8000 JavaThread "ofbiz-config-2" daemon [_thread_blocked, id=366276, stack(0x000000000c7b0000,0x000000000c8b0000)]
+  0x000000000bc7d800 JavaThread "ofbiz-config-1" daemon [_thread_blocked, id=364316, stack(0x000000000c6b0000,0x000000000c7b0000)]
+  0x000000000bf35000 JavaThread "ofbiz-config-0" daemon [_thread_blocked, id=361020, stack(0x000000000c5b0000,0x000000000c6b0000)]
+  0x0000000007f22800 JavaThread "AsyncAppender-Dispatcher-Thread-3" daemon [_thread_blocked, id=366236, stack(0x0000000008570000,0x0000000008670000)]
+  0x000000000658a800 JavaThread "AdminPortThread" [_thread_in_native, id=365780, stack(0x0000000007c70000,0x0000000007d70000)]
+  0x0000000006434000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=366064, stack(0x0000000007510000,0x0000000007610000)]
+  0x000000000642c800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=364580, stack(0x0000000007410000,0x0000000007510000)]
+=>0x00000000063e1800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=366260, stack(0x0000000007310000,0x0000000007410000)]
+  0x00000000063e0800 JavaThread "Attach Listener" daemon [_thread_blocked, id=364044, stack(0x0000000007210000,0x0000000007310000)]
+  0x00000000063df800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=365528, stack(0x0000000007110000,0x0000000007210000)]
+  0x00000000063c8800 JavaThread "Finalizer" daemon [_thread_blocked, id=360216, stack(0x0000000007010000,0x0000000007110000)]
+  0x00000000063c8000 JavaThread "Reference Handler" daemon [_thread_blocked, id=362088, stack(0x0000000006f10000,0x0000000007010000)]
+
+Other Threads:
+  0x00000000063be800 VMThread [stack: 0x0000000006e10000,0x0000000006f10000] [id=362508]
+  0x0000000006434800 WatcherThread [stack: 0x0000000007610000,0x0000000007710000] [id=216876]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 138816K, used 55510K [0x00000000f5560000, 0x0000000100000000, 0x0000000100000000)
+  eden space 109440K, 25% used [0x00000000f5560000,0x00000000f711a6f8,0x00000000fc040000)
+  from space 29376K, 92% used [0x00000000fe350000,0x00000000ffdcb158,0x0000000100000000)
+  to   space 32640K, 0% used [0x00000000fc040000,0x00000000fc040000,0x00000000fe020000)
+ PSOldGen        total 163840K, used 87463K [0x00000000e0000000, 0x00000000ea000000, 0x00000000f5560000)
+  object space 163840K, 53% used [0x00000000e0000000,0x00000000e5569ff0,0x00000000ea000000)
+ PSPermGen       total 93696K, used 54422K [0x00000000c0000000, 0x00000000c5b80000, 0x00000000e0000000)
+  object space 93696K, 58% used [0x00000000c0000000,0x00000000c35259c8,0x00000000c5b80000)
+
+Code Cache  [0x0000000002630000, 0x0000000002c20000, 0x0000000005630000)
+ total_blobs=2186 nmethods=1589 adapters=549 free_code_cache=44239872 largest_free_block=15040
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042f000 	c:\Program Files\Java\jdk1.6.0_30\jre\bin\java.exe
+0x0000000077b00000 - 0x0000000077ca9000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00000000778e0000 - 0x00000000779ff000 	C:\Windows\system32\kernel32.dll
+0x000007fefe110000 - 0x000007fefe17c000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefe5e0000 - 0x000007fefe6bb000 	C:\Windows\system32\ADVAPI32.dll
+0x000007feff990000 - 0x000007feffa2f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefe8f0000 - 0x000007fefe90f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefe7c0000 - 0x000007fefe8ed000 	C:\Windows\system32\RPCRT4.dll
+0x000000006d8b0000 - 0x000000006e068000 	c:\Program Files\Java\jdk1.6.0_30\jre\bin\server\jvm.dll
+0x0000000077a00000 - 0x0000000077afa000 	C:\Windows\system32\USER32.dll
+0x000007fefe6c0000 - 0x000007fefe727000 	C:\Windows\system32\GDI32.dll
+0x000007fefe730000 - 0x000007fefe73e000 	C:\Windows\system32\LPK.dll
+0x000007feffd40000 - 0x000007feffe09000 	C:\Windows\system32\USP10.dll
+0x000007fefbf60000 - 0x000007fefbf9b000 	C:\Windows\system32\WINMM.dll
+0x000007fefe960000 - 0x000007fefe98e000 	C:\Windows\system32\IMM32.DLL
+0x000007feffc10000 - 0x000007feffd19000 	C:\Windows\system32\MSCTF.dll
+0x000007fefdf20000 - 0x000007fefdf5c000 	C:\Windows\system32\nvinitx.dll
+0x000000000f000000 - 0x000000000f006000 	C:\Program Files\NVIDIA Corporation\CoProcManager\_etoured.dll
+0x000007fefa6d0000 - 0x000007fefa714000 	C:\Program Files\NVIDIA Corporation\CoProcManager\nvd3d9wrapx.dll
+0x000007fefe9a0000 - 0x000007fefeb77000 	C:\Windows\system32\SETUPAPI.dll
+0x000007fefe0b0000 - 0x000007fefe0e6000 	C:\Windows\system32\CFGMGR32.dll
+0x000007feffb30000 - 0x000007feffc07000 	C:\Windows\system32\OLEAUT32.dll
+0x000007fefe3d0000 - 0x000007fefe5d3000 	C:\Windows\system32\ole32.dll
+0x000007fefe0f0000 - 0x000007fefe10a000 	C:\Windows\system32\DEVOBJ.dll
+0x000007fefa680000 - 0x000007fefa6c2000 	C:\Program Files\NVIDIA Corporation\CoProcManager\nvdxgiwrapx.dll
+0x000000006d820000 - 0x000000006d82e000 	c:\Program Files\Java\jdk1.6.0_30\jre\bin\verify.dll
+0x000000006d450000 - 0x000000006d477000 	c:\Program Files\Java\jdk1.6.0_30\jre\bin\java.dll
+0x000000006d870000 - 0x000000006d882000 	c:\Program Files\Java\jdk1.6.0_30\jre\bin\zip.dll
+0x000000006d6b0000 - 0x000000006d6c7000 	C:\Program Files\Java\jdk1.6.0_30\jre\bin\net.dll
+0x000007fefe910000 - 0x000007fefe95d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe990000 - 0x000007fefe998000 	C:\Windows\system32\NSI.dll
+0x000007fefd770000 - 0x000007fefd7c5000 	C:\Windows\system32\mswsock.dll
+0x000007fefd9f0000 - 0x000007fefd9f7000 	C:\Windows\System32\wship6.dll
+0x000007fefcba0000 - 0x000007fefcba7000 	C:\Windows\System32\wshtcpip.dll
+0x000000006d5f0000 - 0x000000006d5fa000 	C:\Program Files\Java\jdk1.6.0_30\jre\bin\management.dll
+0x000007fefc290000 - 0x000007fefc2a5000 	C:\Windows\system32\NLAapi.dll
+0x000007fef42f0000 - 0x000007fef4305000 	C:\Windows\system32\napinsp.dll
+0x000007fef4310000 - 0x000007fef4329000 	C:\Windows\system32\pnrpnsp.dll
+0x000007fefd5b0000 - 0x000007fefd60b000 	C:\Windows\system32\DNSAPI.dll
+0x000007fef9d80000 - 0x000007fef9d8b000 	C:\Windows\System32\winrnr.dll
+0x000007fef4ff0000 - 0x000007fef5000000 	C:\Windows\system32\wshbth.dll
+0x000007fef8c20000 - 0x000007fef8c4f000 	C:\Program Files\Common Files\Microsoft Shared\Windows Live\WLIDNSP.DLL
+0x0000000077cd0000 - 0x0000000077cd7000 	C:\Windows\system32\PSAPI.DLL
+0x000007fefe740000 - 0x000007fefe7b1000 	C:\Windows\system32\SHLWAPI.dll
+0x0000000071dc0000 - 0x0000000071de6000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x000007fefb700000 - 0x000007fefb727000 	C:\Windows\system32\Iphlpapi.DLL
+0x000007fefb6f0000 - 0x000007fefb6fb000 	C:\Windows\system32\WINNSI.DLL
+0x000007fef8c10000 - 0x000007fef8c18000 	C:\Windows\system32\rasadhlp.dll
+0x000007fefb530000 - 0x000007fefb583000 	C:\Windows\System32\fwpuclnt.dll
+0x000000006d6d0000 - 0x000000006d6db000 	C:\Program Files\Java\jdk1.6.0_30\jre\bin\nio.dll
+0x000007fefd7d0000 - 0x000007fefd7e7000 	C:\Windows\system32\CRYPTSP.dll
+0x000007fefd4c0000 - 0x000007fefd507000 	C:\Windows\system32\rsaenh.dll
+0x000007fefcce0000 - 0x000007fefccfe000 	C:\Windows\system32\USERENV.dll
+0x000007fefdf60000 - 0x000007fefdf6f000 	C:\Windows\system32\profapi.dll
+0x000007fefde50000 - 0x000007fefde5f000 	C:\Windows\system32\CRYPTBASE.dll
+0x000000006d750000 - 0x000000006d756000 	C:\Program Files\Java\jdk1.6.0_30\jre\bin\rmi.dll
+
+VM Arguments:
+jvm_args: -Xms128M -Xmx512M -XX:MaxPermSize=512m 
+java_command: c:\Users\John\git\ofbiz\ofbiz.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=c:\Program Files\Java\jdk1.6.0_30
+PATH=C:\Program Files\Oracle\JavaFX 2.1 Runtime\bin;c:\Program Files\Java\jdk1.6.0_30\bin;c:\tools\apache-maven-3.0.4\bin;F:\cygwin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ThinkPad\Bluetooth Software\;C:\Program Files\ThinkPad\Bluetooth Software\syswow64;C:\Program Files\Broadcom\WHL\;C:\Program Files\Broadcom\WHL\syswow64;C:\Program Files\Broadcom\WHL\SysWow64\;C:\Program Files\Broadcom\WHL\SysWow64\syswow64;C:\Program Files (x86)\Common Files\Lenovo;C:\Program Files (x86)\Common Files\Ulead Systems\MPEG;C:\Program Files\Common Files\Lenovo;C:\Program Files (x86)\Windows Live\Shared;C:\SWTOOLS\ReadyApps;C:\Program Files (x86)\Intel\Services\IPT\;C:\Program Files (x86)\Symantec\VIP Access Client\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Tencent\QQPCMgr\6.6.2156.401;C:\Program Files\erl5.9\bin;C:\Program Files (x86)\Tencent\QQPCMgr\6.6.2156.401;e:\gradle-1.0-milestone-9\bin
+USERNAME=John
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 16657648k(454304k free), swap 29589052k(5464k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.5-b03) for windows-amd64 JRE (1.6.0_30-b12), built on Nov 10 2011 01:49:46 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Wed Jun 13 11:33:14 2012
+elapsed time: 22 seconds
+

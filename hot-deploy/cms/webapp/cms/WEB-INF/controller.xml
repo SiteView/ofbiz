@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/site-conf.xsd">
+    <!-- The controller elements that are common to all OFBiz components
+         can be found in the following xml file. A component can override the
+         elements found in the common-controller.xml file. -->
+    <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
+
+    <description>CMS Component Site Configuration File</description>
+
+    <!-- Events to run on every request before security (chains exempt) -->
+    <!--
+    <preprocessor>
+    </preprocessor>
+    -->
+    <!-- Events to run on every request after all other processing (chains exempt) -->
+    <!--
+    <postprocessor>
+        <event name="test" type="java" path="org.ofbiz.webapp.event.TestEvent" invoke="test"/>
+    </postprocessor>
+    -->
+
+    <!-- Request Mappings -->
+    <request-map uri="main"><security https="true" auth="true"/><response name="success" type="view" value="main"/></request-map>
+     <request-map uri="CreateWebSite">
+        <security https="false" auth="true"/>
+        <response name="success" type="view" value="CreateWebSite"/>
+    </request-map>
+       
+
+    
+    <!-- ======================= Content Requests: Forums/Content/Articles ======================= -->
+
+    <!-- used in new forum -->
+    <request-map uri="showforum">
+        <security https="false" auth="false"/>
+        <response name="success" type="view" value="Showforum"/>
+    </request-map>
+    <request-map uri="ViewForumMessage">
+        <security https="false" auth="false"/>
+        <response name="success" type="view" value="ViewForumMessage"/>
+    </request-map>
+    <request-map uri="AddForumThread">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="AddForumThread"/>
+    </request-map>
+    <request-map uri="createForumMessage">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createArticleContent"/>
+        <response name="success" type="view" value="Showforum"/>
+        <response name="error" type="view" value="AddForumThread"/>
+    </request-map>
+
+    <request-map uri="updateForumMessage">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="persistContentAndAssoc"/>
+        <response name="success" type="view" value="Showforum"/>
+        <response name="error" type="view" value="AddForumThread"/>
+    </request-map>
+
+
+    <!-- used in blog -->
+    <request-map uri="MainBlog">
+        <security https="false" auth="false"/>
+        <response name="success" type="view" value="MainBlog"/>
+    </request-map>
+
+    <request-map uri="ViewBlogArticle">
+        <security https="false" auth="false"/>
+        <response name="success" type="view" value="ViewBlogArticle"/>
+    </request-map>
+
+    <request-map uri="ViewBlogRss">
+        <security https="false" auth="false"/>
+        <event type="rome" invoke="generateBlogRssFeed"/>
+        <response name="success" type="none"/>
+        <response name="error" type="view" value="error"/>
+    </request-map>
+
+    <request-map uri="ViewResponse">
+        <security https="false" auth="false"/>
+        <response name="success" type="view" value="ViewResponse"/>
+    </request-map>
+
+    <request-map uri="LatestResponses">
+        <security https="false" auth="false"/>
+        <response name="success" type="view" value="LatestResponses"/>
+    </request-map>
+
+    <request-map uri="NewBlogArticle">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="NewBlogArticle"/>
+    </request-map>
+    <request-map uri="EditBlogArticle">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="EditBlogArticle"/>
+    </request-map>
+
+    <!--request-map uri="EditBlogImage">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="EditBlogImage"/>
+    </request-map>
+
+    <request-map uri="EditBlogText">
+        <security https="false" auth="true"/>
+        <response name="success" type="view" value="EditBlogText"/>
+    </request-map-->
+
+    <request-map uri="RespondBlog">
+        <security https="false" auth="true"/>
+        <response name="success" type="view" value="RespondBlog"/>
+    </request-map>
+
+    <request-map uri="createBlogArticle">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createBlogEntry"/>
+        <response name="success" type="view" value="ViewBlogArticle"/>
+        <response name="error" type="view" value="EditBlogArticle"/>
+    </request-map>
+
+    <request-map uri="updateBlogArticle">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateBlogEntry"/>
+        <response name="success" type="view" value="ViewBlogArticle"/>
+        <response name="error" type="view" value="EditBlogArticle"/>
+    </request-map>
+
+    <!--request-map uri="persistBlogSummary">
+        <security https="false" auth="true"/>
+        <event type="service" invoke="persistContentAndAssoc"/>
+        <response name="success" type="view" value="EditBlog"/>
+        <response name="error" type="view" value="EditBlog"/>
+    </request-map>
+
+    <request-map uri="persistBlogText">
+        <security https="false" auth="true"/>
+        <event type="service" invoke="persistContentAndAssoc"/>
+        <response name="success" type="view" value="EditBlog"/>
+        <response name="error" type="view" value="EditBlog"/>
+    </request-map>
+
+    <request-map uri="persistBlogImage">
+        <security https="false" auth="true"/>
+        <event type="service" invoke="persistContentAndAssoc"/>
+        <response name="success" type="view" value="EditBlog"/>
+        <response name="error" type="view" value="EditBlog"/>
+    </request-map-->
+
+    <request-map uri="createBlogResponse">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createTextContent"/>
+        <response name="success" type="view" value="ViewResponse"/>
+        <response name="error" type="view" value="ViewResponse"/>
+    </request-map>
+    <request-map uri="updateBlogResponse">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateTextContent"/>
+        <response name="success" type="view" value="ViewResponse"/>
+        <response name="error" type="view" value="ViewResponse"/>
+    </request-map>
+    <request-map uri="defaultcontent">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="defaultcontent"/>
+    </request-map>
+    <request-map uri="showcontenttree">
+        <security https="false" auth="false"/>
+        <response name="success" type="view" value="showcontenttree"/>
+    </request-map>
+    <request-map uri="viewcontent">
+        <security https="false" auth="false"/>
+        <response name="success" type="view" value="viewcontent"/>
+    </request-map>
+    <request-map uri="img">
+        <security auth="false" https="false"/>
+        <event type="java" path="org.ofbiz.content.data.DataEvents" invoke="serveImage"/>
+        <response name="success" type="none"/>
+        <response name="error" type="view" value="main"/>
+    </request-map>
+
+    <request-map uri="searchContent">
+        <security https="true" auth="false"/>
+        <response name="success" type="view" value="searchContent"/>
+    </request-map>
+
+    <request-map uri="EditElectronicText">
+        <security auth="true" https="false"/>
+        <response name="success" type="view" value="EditElectronicText"/>
+    </request-map>
+    
+    
+    
+
+    <!-- View Mappings -->
+    <view-map name="main" type="screen" page="component://cms/widget/CMSScreens.xml#main"/>
+    <view-map name="EditElectronicText" type="screen" page="component://cms/widget/CMSScreens.xml#EditElectronicText"/>
+    
+    <view-map name="CreateWebSite" type="screen" page="component://cms/widget/ContentScreens.xml#createWebSite"/>
+
+    <!-- Forum Views -->
+    <!-- new -->
+    <view-map name="Showforum" type="screen" page="component://cms/widget/ForumScreens.xml#Showforum"/>
+    <view-map name="AddForumThread" page="component://cms/widget/ForumScreens.xml#AddForumThread" type="screen"/>
+    <view-map name="ViewForumMessage" type="screen" page="component://cms/widget/ForumScreens.xml#ViewForumMessage"/>
+
+    <!-- Blog Views -->
+    <view-map name="MainBlog" type="screen" page="component://bigit/widget/blog/BlogScreens.xml#MainBlog"/>
+    <view-map name="ViewBlogArticle" type="screen" page="component://bigit/widget/blog/BlogScreens.xml#ViewArticle"/>
+    <view-map name="NewBlogArticle" type="screen" page="component://bigit/widget/blog/BlogScreens.xml#NewArticle"/>
+    <view-map name="EditBlogArticle" type="screen" page="component://bigit/widget/blog/BlogScreens.xml#EditArticle"/>
+    <view-map name="ViewResponse" type="screen" page="component://bigit/widget/blog/BlogScreens.xml#ViewResponse"/>
+    <view-map name="RespondBlog" type="screen" page="component://bigit/widget/blog/BlogScreens.xml#AddBlogResponse"/>
+    <view-map name="EditBlogText" type="screen" page="component://bigit/widget/blog/BlogScreens.xml#EditBlogResponse"/>
+    <view-map name="EditBlogImage" type="screen" page="component://bigit/widget/blog/BlogScreens.xml#EditBlogResponse"/>
+    <view-map name="EditBlog" type="screen" page="component://bigit/widget/blog/BlogScreens.xml#EditBlogResponse"/>
+    <view-map name="LatestResponses" type="screen" page="component://bigit/widget/blog/BlogScreens.xml#LatestResponses"/>
+        
+    
+</site-conf>

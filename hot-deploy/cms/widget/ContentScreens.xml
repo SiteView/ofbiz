@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+
+    <!-- Column Included Screens -->
+    <screen name="minipoll">
+        <section>
+            <actions>
+                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
+            </actions>
+
+            <widgets>
+                <platform-specific><html><html-template location="component://cms/webapp/cms/content/minipoll.ftl"/></html></platform-specific>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="portalPageContentList">
+        <section>
+        	<actions>
+        		<set field="portalPageId" from-field="parameters.portalPageId"/>
+                <entity-one entity-name="PortalPage" value-field="portalPage"/>
+                <set field="contentId" value="${parameters.contentId==null?'${portalPage.rootContentId}':'${parameters.contentId}'}"/>                
+        	</actions>
+            <widgets>
+                <platform-specific><html><html-template location="component://cms/webapp/cms/content/portalPageContentList.ftl"/></html></platform-specific>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="subPortalPageHead">
+        <section>
+        	<actions>
+        		<set field="portalPageId" from-field="parameters.portalPageId"/>
+                <entity-one entity-name="PortalPage" value-field="portalPage"/>                
+                <script location="component://cms/script/getPortalPages.groovy"/>
+        	</actions>
+            <widgets>
+                <platform-specific><html><html-template location="component://cms/webapp/cms/content/subPortalPageHead.ftl"/></html></platform-specific>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="createWebSite">
+        <section>
+        	<actions>
+                <script location="component://cms/script/createWebSite.groovy"/>
+        	</actions>
+            <widgets>
+                <platform-specific><html><html-template location="component://cms/webapp/cms/content/createWebSite.ftl"/></html></platform-specific>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="subPortalPageOverview">
+        <section>
+        	<actions>
+        		<set field="portalPageId" from-field="parameters.portalPageId"/>
+                <entity-one entity-name="PortalPage" value-field="portalPage"/>                
+                <script location="component://cms/script/getPortalPages.groovy"/>
+        	</actions>
+            <widgets>
+                <platform-specific><html><html-template location="component://cms/webapp/cms/content/subPortalPageOverview.ftl"/></html></platform-specific>
+            </widgets>
+        </section>
+    </screen>    
+
+    
+    <screen name="subPortalPageList">
+        <section>
+        	<actions>
+        		<set field="portalPageId" from-field="parameters.portalPageId"/>
+                <entity-one entity-name="PortalPage" value-field="portalPage"/>
+                <set field="portalPages" value="${groovy:org.ofbiz.widget.PortalPageWorker.getPortalPages(parameters.portalPageId,context)}"/>              
+        	</actions>
+            <widgets>
+                <platform-specific><html><html-template location="component://cms/webapp/cms/content/subPortalPageList.ftl"/></html></platform-specific>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="ShowContentPortlet">
+        <section>
+             <actions>
+                <set field="contentId" from-field="parameters.contentId" default-value="${contentId}"/>
+                <set field="forumId" from-field="parameters.forumId"/>
+            </actions>
+            <widgets>
+                <content content-id="${contentId}"/>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="ShowForumPortlet">
+        <section>
+             <actions>
+                <set field="forumId" from-field="parameters.forumId"/>
+            </actions>
+            <widgets>
+                <content content-id="${contentId}"/>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="factoids">
+        <section>
+            <widgets>
+                <platform-specific><html><html-template location="component://cms/webapp/cms/content/factoids.ftl"/></html></platform-specific>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="recentlyviewed">
+        <section>
+            <actions>
+                <script location="component://bigit/webapp/bigit/WEB-INF/actions/content/Mrv.groovy"/>
+            </actions>
+            <widgets>
+                <platform-specific><html><html-template location="component://cms/webapp/cms/content/recentlyviewed.ftl"/></html></platform-specific>
+            </widgets>
+        </section>
+    </screen>
+
+    <!-- =========== Top-Level and Stand-Alone Screens =========== -->
+
+    <screen name="defaultcontent">
+        <section>
+            <actions>
+                <set field="leftbarScreenName" value="leftbar"/>
+                <set field="MainColumnStyle" value="leftonly"/>
+
+                <set field="titleProperty" value="PageTitleContentPage"/>
+                <set field="headerItem" value="main"/>
+                <script location="component://bigit/webapp/bigit/WEB-INF/actions/Main.groovy"/>
+                <script location="component://bigit/webapp/bigit/WEB-INF/actions/content/ContentPrep.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific><html><html-template location="component://cms/webapp/cms/content/defaultcontent.ftl"/></html></platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="showcontenttree">
+        <section>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific><html><html-template location="component://cms/webapp/cms/content/showcontenttree.ftl"/></html></platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="searchContent">
+        <section>
+            <actions>
+                <set field="leftbarScreenName" value="leftbar"/>
+                <set field="rightbarScreenName" value="rightbar"/>
+                <set field="MainColumnStyle" value="center"/>
+
+                <set field="titleProperty" value="PageTitleShoppingCart"/>
+                <set field="headerItem" value="ContentMenu"/>
+                <set field="formDefFile" value="component://bigit/widget/ContentForms.xml"/>
+                <set field="entityName" value=""/>
+                <set field="permission" value="CONTENTMGR"/>
+                <set field="permissionType" value="simple"/>
+                <set field="queryFormName" value="searchQuery"/>
+                <set field="listFormName" value="searchList"/>
+                <set field="defaultSiteId" value="WebStoreCONTENT"/>
+                <script location="component://bigit/webapp/bigit/WEB-INF/actions/content/AdvancedSearchPrep.groovy"/>
+                <script location="component://bigit/webapp/bigit/WEB-INF/actions/content/Search.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific><html><html-template location="component://cms/webapp/cms/content/searchContent.ftl"/></html></platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="viewcontent">
+        <section>
+            <actions>
+                <set field="leftbarScreenName" value="leftbar"/>
+                <set field="rightbarScreenName" value="rightbar"/>
+                <set field="MainColumnStyle" value="center"/>
+
+                <set field="titleProperty" value="PageTitleViewContent"/>
+                <set field="headerItem" value="Content"/>
+                <set field="entityName" value="ContentAssocDataResourceViewFrom"/>
+                <set field="permissionType" value="none"/>
+                <script location="component://bigit/webapp/bigit/WEB-INF/actions/forum/NodeTrailPrep.groovy"/>
+                <script location="component://bigit/webapp/bigit/WEB-INF/actions/includes/MruAdd.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific><html><html-template location="component://cms/webapp/cms/content/viewcontent.ftl"/></html></platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+</screens>

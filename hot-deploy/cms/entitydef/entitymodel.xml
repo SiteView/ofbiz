@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/entitymodel.xsd">
+    <!-- ========================================================= -->
+    <!-- ======================== Defaults ======================= -->
+    <!-- ========================================================= -->
+    <title>Entity of CMS Component</title>
+    <description>None</description>
+    <copyright></copyright>
+    <version></version>
+
+    <entity entity-name="Menu"
+            package-name="org.ofbiz.bigit.content"
+            title="Menu Entity">
+      <field name="menuId" type="id-ne"></field>
+      <field name="menuName" type="name"></field>
+      <field name="superPortalPage" type="name"></field>
+      <field name="sequenceNum" type="numeric"></field>
+      <field name="description" type="description"></field>
+      <field name="title" type="description"></field>
+      <prim-key field="menuId"/>
+      <relation type="many" fk-name="Sub" title="include" rel-entity-name="SubMenu">
+            <key-map field-name="menuId"/>
+      </relation>
+<!--       <relation type="one" fk-name="Content" rel-entity-name="MenuContent">
+            <key-map field-name="menuId"/>
+      </relation> -->
+    </entity>
+    <entity entity-name="MenuContent"
+            package-name="org.ofbiz.bigit.content"
+            title="Content for Menu Entity">
+      <field name="contentName" type="name"></field>
+      <field name="menuId" type="id-ne"></field>
+      <field name="sequenceNum" type="numeric"></field>
+      <field name="description" type="description"></field>
+      <prim-key field="menuId"/>
+    </entity>
+    <entity entity-name="SubMenu"
+            package-name="org.ofbiz.bigit.content"
+            title="Menu Entity">
+      <field name="subMenuId" type="id-ne"></field>
+      <field name="menuId" type="id-ne"></field>
+      <field name="menuName" type="name"></field>
+      <field name="parentMenuName" type="name"></field>
+      <field name="sequenceNum" type="numeric"></field>
+      <field name="description" type="description"></field>
+      <field name="title" type="description"></field>
+      <prim-key field="menuId"/>
+      <prim-key field="subMenuId"/>
+      <relation type="many" fk-name="Content" title="include" rel-entity-name="SubMenuContent">
+            <key-map field-name="subMenuId"/>
+      </relation>
+    </entity>
+    <entity entity-name="SubMenuContent"
+            package-name="org.ofbiz.bigit.content"
+            title="Content for Menu Entity">
+      <field name="contentName" type="name"></field>
+      <field name="subMenuId" type="id-ne"></field>
+      <field name="contentId" type="id-ne"></field>
+      <field name="sequenceNum" type="numeric"></field>
+      <field name="description" type="description"></field>
+      <prim-key field="subMenuId"/>
+      <prim-key field="contentName"/>
+    </entity>
+</entitymodel>

@@ -184,6 +184,11 @@
 	<classpathentry excluding="org/ofbiz/accounting/thirdparty/cybersource/**|org/ofbiz/accounting/thirdparty/verisign/**|org/ofbiz/accounting/thirdparty/worldpay/**|org/ofbiz/accounting/thirdparty/paypal/PayPalServices.java|org/ofbiz/accounting/thirdparty/orbital/**|org/ofbiz/accounting/thirdparty/securepay/**|org/ofbiz/accounting/thirdparty/ideal/**" kind="src" path="applications/accounting/src"/>
 	<classpathentry kind="src" path="specialpurpose/crowd/src"/>
 	<classpathentry kind="src" path="hot-deploy/socialauth/src"/>
+	<classpathentry kind="src" path="hot-deploy/SvdbCache/src"/>
+	<classpathentry kind="src" path="framework/jcr/src"/>
+	<classpathentry kind="src" path="framework/base/cert"/>
+	<classpathentry kind="src" path="framework/base/config"/>
+	<classpathentry kind="src" path="framework/base/dtd"/>
 	<classpathentry kind="src" path="hot-deploy/bigit/src"/>
 	<classpathentry kind="src" path="hot-deploy/openim/src"/>
 	<classpathentry kind="src" path="hot-deploy/cms/src"/>
@@ -207,7 +212,6 @@
 	<classpathentry excluding="org/ofbiz/entity/connection/XaPoolConnectionFactory.java" kind="src" path="framework/entity/src"/>
 	<classpathentry kind="src" path="framework/entityext/src"/>
 	<classpathentry kind="src" path="framework/geronimo/src"/>
-	<classpathentry kind="src" path="framework/jcr/src"/>
 	<classpathentry kind="src" path="framework/jetty/src"/>
 	<classpathentry kind="src" path="framework/minilang/src"/>
 	<classpathentry kind="src" path="framework/security/src"/>
@@ -251,5 +255,11 @@
 	<classpathentry kind="lib" path="hot-deploy/socialauth/lib/json-20080701.jar"/>
 	<classpathentry kind="lib" path="hot-deploy/socialauth/lib/socialauth-2.3.jar"/>
 	<classpathentry kind="lib" path="hot-deploy/socialauth/lib/socialauth-filter-2.2.jar"/>
+	<classpathentry kind="lib" path="framework/entity/lib/jdbc/derby-10.8.2.2.jar"/>
+	<classpathentry kind="lib" path="framework/service/lib/oscache-2.4.1.jar"/>
+	<classpathentry kind="lib" path="hot-deploy/openim/lib/smack.jar"/>
+	<classpathentry kind="lib" path="hot-deploy/openim/lib/smackx.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/VysperLib"/>
+
 	<classpathentry kind="output" path="bin"/>
 </classpath>
