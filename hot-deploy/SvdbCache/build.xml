@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="OFBiz - erlang node Component" default="jar" basedir=".">
+<project name="OFBiz - svdbcache Component" default="jar" basedir=".">
     <import file="../../common.xml"/>
 
     <!-- ================================================================== -->
@@ -19,8 +19,8 @@
     <property name="class.dir" value="build/classes"/>
 
     <path id="local.class.path">
-        <fileset dir="${lib.dir}" includes="*.jar"/>
-    	<fileset dir="${lib.dir}/vysper" includes="*.jar"/>
+        <fileset dir="./lib" includes="*.jar"/>
+		<fileset dir="./lib/vysper" includes="*.jar"/>
         <fileset dir="../../framework/base/lib" includes="*.jar"/>
         <fileset dir="../../framework/base/lib/j2eespecs" includes="*.jar"/>
         <fileset dir="../../framework/base/build/lib" includes="*.jar"/>
@@ -34,7 +34,7 @@
         <fileset dir="../../framework/webapp/lib" includes="*.jar"/>
         <fileset dir="../../framework/webapp/build/lib" includes="*.jar"/>
         <fileset dir="../../framework/catalina/lib" includes="*.jar"/>
-    	<fileset dir="./lib" includes="*.jar"/>
+
     </path>
 	<mkdir dir="build/classes"></mkdir>
 	<javac srcdir="${src.dir}" destdir="${class.dir}" debug="yes">  

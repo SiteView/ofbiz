@@ -11,7 +11,7 @@ import org.apache.commons.logging.LogFactory;
 import com.siteview.svdb.SvdbApiImpl;
 
 /**
- * 缓存WebSersvice接收的数据
+ * 缓存WebSersvice接收的数�?
  * 
  * @author zhongping.wang
  * 
@@ -24,7 +24,7 @@ public class EccLogQueue {
 		listMap = new ArrayList<Map<String, String>>();
 	}
 
-	// 获取队列第一个元素
+	// 获取队列第一个元�?
 	public Map<String, String> getFirst() {
 		if (!listMap.isEmpty()) {
 			Map<String, String> firstMap = listMap.get(0);
@@ -41,7 +41,7 @@ public class EccLogQueue {
 		if (!listMap.isEmpty()) {
 			int listSize = listMap.size();
 			if (listSize < mapCount) {
-				log.info("队列中不够 "+mapCount+" 条数据,所有取队列的所有数据 "+listSize+" 条");
+				log.info("队列中不�?"+mapCount+" 条数�?�?��取队列的�?��数据 "+listSize+" �?);
 				mapCount = listSize;
 			}
 			for (int i = 0; i < mapCount; i++) {
@@ -54,7 +54,7 @@ public class EccLogQueue {
 		return null;
 	}
 
-	// 在队列末尾加入元素
+	// 在队列末尾加入元�?
 	public void insertLast(Map<String, String> map) {
 		listMap.add(map);
 		System.out.println(listMap.size());

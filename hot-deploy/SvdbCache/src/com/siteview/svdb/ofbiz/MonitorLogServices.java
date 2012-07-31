@@ -131,10 +131,10 @@ public class MonitorLogServices {
 	// delegator.makeValue("OperationAttributeLog"+entityIndex, fields);
 	// delegator.create(log);
 	// if (response.get("responseMessage").toString().equals("success")) {
-	// Debug.logInfo("/******插入一条日志数据到数据库表  OperationAttributeLog"+entityIndex+" 中操作成功,日志ID: "+logId+" ******/",
+	// Debug.logInfo("/******插入�?��日志数据到数据库�? OperationAttributeLog"+entityIndex+" 中操作成�?日志ID: "+logId+" ******/",
 	// module);
 	// }else{
-	// Debug.logInfo("/******插入一条日志数据到数据库表  OperationAttributeLog"+entityIndex+" 中操作失败,日志ID: "+logId+" ******/",
+	// Debug.logInfo("/******插入�?��日志数据到数据库�? OperationAttributeLog"+entityIndex+" 中操作失�?日志ID: "+logId+" ******/",
 	// module);
 	// }
 	// return response;
@@ -173,10 +173,10 @@ public class MonitorLogServices {
 		}
 		delegator.storeAll(values);
 		 if (response.get("responseMessage").toString().equals("success")) {
-		 Debug.logInfo("/******批量插入 "+contextList.size()+" 条日志数据到数据库表  OperationAttributeLog"+entityIndex+" 中操作成功,日志ID分别为: "+sbf.toString()+" ******/",
+		 Debug.logInfo("/******批量插入 "+contextList.size()+" 条日志数据到数据库表  OperationAttributeLog"+entityIndex+" 中操作成�?日志ID分别�? "+sbf.toString()+" ******/",
 		 module);
 		 }else{
-		 Debug.logInfo("/******批量插入 "+contextList.size()+" 条日志数据到数据库表  OperationAttributeLog"+entityIndex+" 中操作失败,日志ID分别为: "+sbf.toString()+" ******/",
+		 Debug.logInfo("/******批量插入 "+contextList.size()+" 条日志数据到数据库表  OperationAttributeLog"+entityIndex+" 中操作失�?日志ID分别�? "+sbf.toString()+" ******/",
 		 module);
 		 }
 		return response;
@@ -235,7 +235,7 @@ public class MonitorLogServices {
 					+ reportDataValue + "#" + monitorStatus;
 			datalist.add(monitorLog);
 		}
-		System.out.println("查询出< " + datalist.size() + " >条数据");
+		System.out.println("查询�? " + datalist.size() + " >条数�?);
 		response.put("queryMap", datalist);
 		return response;
 	}
@@ -279,7 +279,7 @@ public class MonitorLogServices {
 	 * 字符串转换成日期 如果转换格式为空，则利用默认格式进行转换操作
 	 * 
 	 * @param str
-	 *            字符串
+	 *            字符�?
 	 * @param format
 	 *            日期格式
 	 * @return 日期
@@ -289,7 +289,7 @@ public class MonitorLogServices {
 		if (null == str || "".equals(str)) {
 			return null;
 		}
-		// 如果没有指定字符串转换的格式，则用默认格式进行转换
+		// 如果没有指定字符串转换的格式，则用默认格式进行转�?
 		if (null == format || "".equals(format)) {
 			format = DEFAULT_FORMAT;
 		}

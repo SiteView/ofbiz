@@ -21,7 +21,7 @@ import org.ofbiz.service.ServiceUtil;
 import com.siteview.ecc.util.ArrayTool;
 
 /**
- * @author zhongping.wang 监测器日志查询服务
+ * @author zhongping.wang 监测器日志查询服�?
  * 
  */
 public class LogServices {
@@ -81,7 +81,7 @@ public class LogServices {
 		List<GenericValue> result = resultiterator.getPartialList(from, to
 				- from);
 		Map<String, Map<String, String>> fmap = new FastMap<String, Map<String, String>>();
-		String[] str = new String[20];//时间戳=值 数组
+		String[] str = new String[20];//时间�?�?数组
 		String[] str2 = new String[20];//ReturnName数组
 		String[] descArray = new String[result.size()];
 		String monitorName = "";
@@ -91,8 +91,8 @@ public class LogServices {
 		String latestCreateTime = "";
 		String latestDstr = "";
 		String latestStatus = "";
-		Debug.logInfo(">>>>监测器ID: "+monitorId+" 查询出 "+result.size()+" 条数据", module);
-		// 开始解析封装数据
+		Debug.logInfo(">>>>监测器ID: "+monitorId+" 查询�?"+result.size()+" 条数�?, module);
+		// �?��解析封装数据
 		for (int j = 0; j < result.size(); j++) {
 			GenericValue genericValue = result.get(j);
 			String category = genericValue.get("category").toString();
@@ -147,9 +147,9 @@ public class LogServices {
 					}
 					dArray[i] = Double.parseDouble(val);
 				}
-				double max = ArrayTool.getDoubleArrayMax(dArray);//计算最大值
-				double average = ArrayTool.getDoubleArrayAvg(dArray);//计算平均值
-				double min = ArrayTool.getDoubleArrayMin(dArray);//计算最小值
+				double max = ArrayTool.getDoubleArrayMax(dArray);//计算�?���?
+				double average = ArrayTool.getDoubleArrayAvg(dArray);//计算平均�?
+				double min = ArrayTool.getDoubleArrayMin(dArray);//计算�?���?
 				for (String indexstr : dataStrArray) {
 					String val = indexstr.substring(indexstr.indexOf("=")+1,indexstr.length()); 
 					if (whenMax.equals("")&&val.equals(String.valueOf(max)+"0")) {
@@ -204,12 +204,12 @@ public class LogServices {
 				}
 				endMap.put("MonitorName", monitorName);
 				endMap.put("errorCondition", "?");
-				endMap.put("errorPercent", ArrayTool.percent(errorCount, result.size()));//错误百分比
+				endMap.put("errorPercent", ArrayTool.percent(errorCount, result.size()));//错误百分�?
 				endMap.put("latestCreateTime", latestCreateTime);
 				endMap.put("latestDstr", latestDstr);
 				endMap.put("latestStatus", latestStatus);
-				endMap.put("okPercent", ArrayTool.percent(goodCount, result.size()));//正确百分比
-				endMap.put("warnPercent", ArrayTool.percent(warnCount, result.size()));//危险百分比
+				endMap.put("okPercent", ArrayTool.percent(goodCount, result.size()));//正确百分�?
+				endMap.put("warnPercent", ArrayTool.percent(warnCount, result.size()));//危险百分�?
 				fmap.put(monitorId, endMap);
 				if (result.size()==0) {
 					fmap.clear();

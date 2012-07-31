@@ -70,13 +70,13 @@ public class SvdbApiImpl implements SvdbApi {
 			String monitorDesc = decodeText.substring(0,indexofRecordState);
 			String monitorStatusValue = decodeText.substring(indexofRecordState+12, decodeText.length()-1);
 //			log.info("received data>>> MonitorID:"+decodeId+" MonitorStatus:"+monitorStatusValue+" MonitorDescription:"+monitorDesc);
-			//----------------------将数据缓存进入队列  由Vpsper定时读取实现类是VysperGateway.java------------------
+			//----------------------将数据缓存进入队�? 由Vpsper定时读取实现类是VysperGateway.java------------------
 			Map<String, String>  dataMap = new HashMap<String, String>(); 
 			dataMap.put("MonitorID", decodeId);
 			dataMap.put("MonitorStatus", monitorStatusValue);
 			dataMap.put("MonitorDescription", monitorDesc);
 			EccLogQueue.listMap.add(dataMap);
-			log.info("/*************加入一条消息到队列中,此时队列中还有 "+EccLogQueue.listMap.size()+" 条消息等待读取*************/");
+			log.info("/*************加入�?��消息到队列中,此时队列中还�?"+EccLogQueue.listMap.size()+" 条消息等待读�?************/");
 			
 			//---------------------直接用ofbiz服务写入数据--------------------
 			/** Map<String, Object> context = FastMap.newInstance();
