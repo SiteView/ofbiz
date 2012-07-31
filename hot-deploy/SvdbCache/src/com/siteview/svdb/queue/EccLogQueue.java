@@ -5,10 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.siteview.svdb.SvdbApiImpl;
+//import org.apache.commons.logging.Log;
 
 /**
  * 缓存WebSersvice接收的数据
@@ -17,7 +14,7 @@ import com.siteview.svdb.SvdbApiImpl;
  * 
  */
 public class EccLogQueue {
-	private static final Log log = LogFactory.getLog(EccLogQueue.class);
+//	private static final Log log = LogFactory.getLog(EccLogQueue.class);
 	public static ArrayList<Map<String, String>> listMap;
 
 	public EccLogQueue() {
@@ -41,7 +38,7 @@ public class EccLogQueue {
 		if (!listMap.isEmpty()) {
 			int listSize = listMap.size();
 			if (listSize < mapCount) {
-				log.info("队列中不够 "+mapCount+" 条数据,所有取队列的所有数据 "+listSize+" 条");
+//				log.info("队列中不够 "+mapCount+" 条数据,读取队列的所有数据 "+listSize+" 条");
 				mapCount = listSize;
 			}
 			for (int i = 0; i < mapCount; i++) {

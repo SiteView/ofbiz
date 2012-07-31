@@ -76,7 +76,7 @@ public class SvdbApiImpl implements SvdbApi {
 			dataMap.put("MonitorStatus", monitorStatusValue);
 			dataMap.put("MonitorDescription", monitorDesc);
 			EccLogQueue.listMap.add(dataMap);
-			log.info("/*************加入一条消息到队列中,此时队列中还有 "+EccLogQueue.listMap.size()+" 条消息等待读取*************/");
+//			log.info("/*************加入一条消息到队列中,此时队列中还有 "+EccLogQueue.listMap.size()+" 条消息等待读取*************/");
 			
 			//---------------------直接用ofbiz服务写入数据--------------------
 			/** Map<String, Object> context = FastMap.newInstance();

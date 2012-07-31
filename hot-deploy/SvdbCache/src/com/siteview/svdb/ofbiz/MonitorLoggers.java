@@ -26,7 +26,6 @@ import org.jivesoftware.smack.packet.Message;
 import org.jivesoftware.smack.packet.Packet;
 import org.jivesoftware.smack.packet.Presence;
 import org.ofbiz.base.util.Debug;
-import org.ofbiz.base.util.UtilMisc;
 import org.ofbiz.entity.Delegator;
 import org.ofbiz.entity.DelegatorFactory;
 import org.ofbiz.service.GenericDispatcher;
@@ -135,8 +134,6 @@ public class MonitorLoggers implements Runnable {
 						contextList.add(context);
 					}
 					contextmap.put("contextList", contextList);
-//					Map<String, String> data = (Map<String, String>) ObjectTransformation
-//							.SToO(msg.getBody());// 取出接收到的数据
 					try {
 						dispatcher.runSync("InsertMonitorLogService", contextmap);
 					} catch (GenericServiceException e) {

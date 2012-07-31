@@ -235,7 +235,7 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 			//----------------------批量读取数据------------------------------
 			List<Map<String, String>> batchMap = logQueue.getBatchMap(readcount);
 			if (batchMap != null) {
-				Debug.logInfo("/*************读取数据频率: "+delay+" ms;批量读取出 "+batchMap.size()+" 条数据,此时队列中还剩下  "+EccLogQueue.listMap.size()+" 条数据等待读取*************/", module);
+//				Debug.logInfo("/*************读取数据频率: "+delay+" ms;批量读取出 "+batchMap.size()+" 条数据,此时队列中还剩下  "+EccLogQueue.listMap.size()+" 条数据等待读取*************/", module);
 				try {
 					loggerChat.get(indexLogger).sendMessage(
 							ObjectTransformation.OToS(batchMap));
