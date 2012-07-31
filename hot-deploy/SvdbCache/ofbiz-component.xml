@@ -15,6 +15,7 @@
     <classpath type="dir" location="build/classes"/>
     <classpath type="jar" location="build/lib/*"/>
     <classpath type="jar" location="lib/*"/>
+	<classpath type="jar" location="lib/vysper/*"/>
 
     <webapp name="SvdbCache"
         title="SvdbCache"
