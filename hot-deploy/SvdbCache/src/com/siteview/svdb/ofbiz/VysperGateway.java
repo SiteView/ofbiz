@@ -69,7 +69,7 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 	public static String MONITOR_LOG_PASSWORDS;
 	private static List<String> MONITOR_LOG_USERNAME_LIST;
 	public static int delay = 0;//读取频率
-	public static int buffer = 0;//缓冲池大�?
+	public static int buffer = 0;//缓冲池大小
 	public static int readcount = 0;//批量读取数量
 
 	public static XMPPConnection connection;
@@ -217,12 +217,12 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 
 			indexLogger = (indexLogger == loggerChat.size()) ? 0 : indexLogger;
 			try {
-				Thread.sleep(delay);//发�?时间间隔
+				Thread.sleep(delay);//发送时间间隔
 			} catch (InterruptedException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-//			Map<String, String> data = logQueue.getFirst();// 从缓存队列取出第�?��元素
+//			Map<String, String> data = logQueue.getFirst();// 从缓存队列取出第一个元素
 //			if (data != null) {
 //				try {
 //					loggerChat.get(indexLogger).sendMessage(
@@ -235,7 +235,7 @@ public class VysperGateway implements Container, MessageListener, Serializable {
 			//----------------------批量读取数据------------------------------
 			List<Map<String, String>> batchMap = logQueue.getBatchMap(readcount);
 			if (batchMap != null) {
-				Debug.logInfo("/*************读取数据频率: "+delay+" ms;批量读取�?"+batchMap.size()+" 条数�?此时队列中还剩下  "+EccLogQueue.listMap.size()+" 条数据等待读�?************/", module);
+//				Debug.logInfo("/*************读取数据频率: "+delay+" ms;批量读取出 "+batchMap.size()+" 条数据,此时队列中还剩下  "+EccLogQueue.listMap.size()+" 条数据等待读取*************/", module);
 				try {
 					loggerChat.get(indexLogger).sendMessage(
 							ObjectTransformation.OToS(batchMap));

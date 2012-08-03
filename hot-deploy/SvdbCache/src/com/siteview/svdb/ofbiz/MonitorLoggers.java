@@ -26,7 +26,6 @@ import org.jivesoftware.smack.packet.Message;
 import org.jivesoftware.smack.packet.Packet;
 import org.jivesoftware.smack.packet.Presence;
 import org.ofbiz.base.util.Debug;
-import org.ofbiz.base.util.UtilMisc;
 import org.ofbiz.entity.Delegator;
 import org.ofbiz.entity.DelegatorFactory;
 import org.ofbiz.service.GenericDispatcher;
@@ -126,17 +125,15 @@ public class MonitorLoggers implements Runnable {
 					Map<String, Object>  contextmap = new HashMap<String, Object>();
 					for (Map<String, String> data : batchData) {
 						Map<String, Object> context = FastMap.newInstance();
-						context.put("operationId", data.get("MonitorID"));
-						context.put("MonitorName", "");
+						context.put("operationId", data.get("MonitorId"));
+						context.put("MonitorName", data.get("MonitorName"));
 						context.put("category", data.get("MonitorStatus"));
-						context.put("description", data.get("MonitorDescription"));
+						context.put("description", data.get("MonitorStr"));
 						context.put("measurement", data.get("MonitorStatus") + " "
-								+data.get("MonitorDescription"));
+								+data.get("MonitorStr"));
 						contextList.add(context);
 					}
 					contextmap.put("contextList", contextList);
-//					Map<String, String> data = (Map<String, String>) ObjectTransformation
-//							.SToO(msg.getBody());// 取出接收到的数据
 					try {
 						dispatcher.runSync("InsertMonitorLogService", contextmap);
 					} catch (GenericServiceException e) {

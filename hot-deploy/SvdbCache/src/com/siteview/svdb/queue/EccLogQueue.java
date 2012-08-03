@@ -5,26 +5,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.siteview.svdb.SvdbApiImpl;
+//import org.apache.commons.logging.Log;
 
 /**
- * 缓存WebSersvice接收的数�?
+ * 缓存WebSersvice接收的数据
  * 
  * @author zhongping.wang
  * 
  */
 public class EccLogQueue {
-	private static final Log log = LogFactory.getLog(EccLogQueue.class);
+//	private static final Log log = LogFactory.getLog(EccLogQueue.class);
 	public static ArrayList<Map<String, String>> listMap;
 
 	public EccLogQueue() {
 		listMap = new ArrayList<Map<String, String>>();
 	}
 
-	// 获取队列第一个元�?
+	// 获取队列第一个元素
 	public Map<String, String> getFirst() {
 		if (!listMap.isEmpty()) {
 			Map<String, String> firstMap = listMap.get(0);
@@ -41,7 +38,7 @@ public class EccLogQueue {
 		if (!listMap.isEmpty()) {
 			int listSize = listMap.size();
 			if (listSize < mapCount) {
-				log.info("队列中不�?"+mapCount+" 条数�?�?��取队列的�?��数据 "+listSize+" �?);
+//				log.info("队列中不够 "+mapCount+" 条数据,读取队列的所有数据 "+listSize+" 条");
 				mapCount = listSize;
 			}
 			for (int i = 0; i < mapCount; i++) {
@@ -54,7 +51,7 @@ public class EccLogQueue {
 		return null;
 	}
 
-	// 在队列末尾加入元�?
+	// 在队列末尾加入元素
 	public void insertLast(Map<String, String> map) {
 		listMap.add(map);
 		System.out.println(listMap.size());
