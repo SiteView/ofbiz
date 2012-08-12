@@ -195,7 +195,7 @@
           <#if (content?has_content)>
             <tr>
                 <td class="label">${uiLabelMap.FormFieldTitle_contentId}</td>
-                <td>${content.contentId}</td>
+                <td><a href="<@ofbizUrl>editContent?contentId=${content.contentId}</@ofbizUrl>" target="_blank"</a><u>${content.contentId}</u></td>
             </tr>
           </#if>
           <tr>

@@ -111,6 +111,34 @@ under the License.
         </section>
     </screen>
 
+    <screen name="CreateWebsiteAllContents">
+        <section>
+            <actions>
+                <set field="titleProperty" value="ContentCreateWebsiteAllContents"/>
+                <set field="tabButtonItem" value="createWebSiteAllContents"/>
+                <set field="labelTitleProperty" value="ContentCreateWebsiteAllContents"/>
+                <set field="webSiteId" from-field="parameters.webSiteId"/>
+                <entity-one entity-name="WebSite" value-field="webSite"/>
+                <script location="component://cms/script/createWebsiteAllContents.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="CommonWebSiteDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <widgets>
+	                        <screenlet>
+	                            <platform-specific>
+	                                <html><html-template location="component://cms/webapp/cms/content/CreateWebsiteAllContents.ftl"/></html>
+	                            </platform-specific>
+	                        </screenlet>
+                            </widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
     <screen name="EditWebSiteParties">
         <section>
             <actions>

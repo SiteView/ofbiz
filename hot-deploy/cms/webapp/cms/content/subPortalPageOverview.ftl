@@ -32,7 +32,6 @@
 </div>
 
 
-
 <#list portalPages as page> 
 
 	<#if page.portalPageId != portalPageId>
@@ -55,8 +54,9 @@
 					</span><strong><a href="<@ofbizUrl>showPortalPage?portalPageId=${page.portalPageId}&contentId=${page.rootContentId}</@ofbizUrl>">${page.rootContentId}</a>
 					</strong><br>
 					<@loopSubContent contentId=page.rootContentId?if_exists viewIndex=0 viewSize=9999 contentAssocTypeId="SUMMARY" orderBy="sequenceNum">
+						${subContentId}, ${page.rootContentId}
                 		<#if (subContentId?has_content)>
-                    		<@renderContentAsText contentId="${subContentId}" ignoreTemplate="true" editRequestName="${editRequestName}"/> 
+                    		<@renderContentAsText contentId="${subContentId}" ignoreTemplate="true" editRequestName="${editRequestName}"/>
                		 	</#if>
       				</@loopSubContent>
       			</p>
@@ -73,7 +73,7 @@
 		<@loopSubContent contentId=portalPage.rootContentId?if_exists viewIndex=0 viewSize=9999 contentAssocTypeId="TREE_CHILD" mapKey="detail" orderBy="sequenceNum">
 	        <li>
 	            <#if (subContentId?has_content)>
-                    	<@renderContentAsText contentId="${subContentId}" ignoreTemplate="true" editRequestName="${editRequestName}"/>
+                    	<@renderContentAsText contentId="${subContentId}" ignoreTemplate="true" editRequestName="${editRequestName}"/> 
                	</#if>             
 	        </li>
       </@loopSubContent>

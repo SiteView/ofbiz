@@ -35,5 +35,5 @@
         server="default-server"
         location="webapp/cms"
         base-permission="OFBTOOLS,CMS"
-        mount-point="/cms"/>
+        mount-point="/bigcms"/>
 </ofbiz-component>

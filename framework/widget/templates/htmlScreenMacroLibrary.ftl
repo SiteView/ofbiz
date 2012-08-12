@@ -237,7 +237,7 @@ ${menuString}
   </td>
 </#macro>
 
-<#macro renderPortalPagePortletBegin originalPortalPageId portalPageId superPortalPageId portalPortletId portletSeqId prevPortletId="" prevPortletSeqId="" nextPortletId="" nextPortletSeqId="" columnSeqId="" prevColumnSeqId="" nextColumnSeqId="" confMode="false" delPortletHint="Remove this portlet" editAttribute="false" editAttributeHint="Edit portlet parameters">
+<#macro renderPortalPagePortletBegin originalPortalPageId portalPageId superPortalPageId portalPortletId portletAttributes portletSeqId prevPortletId="" prevPortletSeqId="" nextPortletId="" nextPortletSeqId="" columnSeqId="" prevColumnSeqId="" nextColumnSeqId="" confMode="false" delPortletHint="Remove this portlet" editAttribute="false" editAttributeHint="Edit portlet parameters">
   <#assign portletKey = portalPageId+portalPortletId+portletSeqId>
   <#assign portletKeyFields = '<input name="portalPageId" value="' + portalPageId + '" type="hidden"/><input name="portalPortletId" value="' + portalPortletId + '" type="hidden"/><input name="portletSeqId" value="' + portletSeqId  + '" type="hidden"/>
   	<input name="superPortalPageId" value="' + superPortalPageId + '" type="hidden"/>'>
@@ -246,7 +246,8 @@ ${menuString}
       <div class="portlet-config" id="PPCFG_${portletKey}">
         <div class="portlet-config-title-bar">
           <ul>
-            <li class="title">Portlet : [${portalPortletId}]</li>
+			<li class="title" title="${portletAttributes}"> Portlet : [${portalPortletId}]
+					</li>					
             <li class="remove">
               <form method="post" action="deletePortalPagePortlet" name="delPortlet_${portletKey}">
                 ${portletKeyFields}

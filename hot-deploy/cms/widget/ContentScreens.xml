@@ -30,6 +30,20 @@
         </section>
     </screen>
 
+    <screen name="subPortalPageList">
+        <section>
+        	<actions>
+        		<set field="portalPageId" from-field="parameters.portalPageId"/>
+                <entity-one entity-name="PortalPage" value-field="portalPage"/>
+                <set field="portalPages" value="${groovy:org.ofbiz.widget.PortalPageWorker.getPortalPages(parameters.portalPageId,context)}"/>              
+                <set field="contentId" value="${parameters.contentId==null?'${portalPage.rootContentId}':'${parameters.contentId}'}"/>                
+        	</actions>
+            <widgets>
+                <platform-specific><html><html-template location="component://cms/webapp/cms/content/subPortalPageList.ftl"/></html></platform-specific>
+            </widgets>
+        </section>
+    </screen>
+    
     <screen name="subPortalPageHead">
         <section>
         	<actions>
@@ -66,20 +80,6 @@
             </widgets>
         </section>
     </screen>    
-
-    
-    <screen name="subPortalPageList">
-        <section>
-        	<actions>
-        		<set field="portalPageId" from-field="parameters.portalPageId"/>
-                <entity-one entity-name="PortalPage" value-field="portalPage"/>
-                <set field="portalPages" value="${groovy:org.ofbiz.widget.PortalPageWorker.getPortalPages(parameters.portalPageId,context)}"/>              
-        	</actions>
-            <widgets>
-                <platform-specific><html><html-template location="component://cms/webapp/cms/content/subPortalPageList.ftl"/></html></platform-specific>
-            </widgets>
-        </section>
-    </screen>
 
     <screen name="ShowContentPortlet">
         <section>

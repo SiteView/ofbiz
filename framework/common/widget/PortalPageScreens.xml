@@ -161,8 +161,12 @@ under the License.
 
     <screen name="GenericPortalPage">
         <section>
-            <widgets>
-                <include-portal-page id="${pageId}"/>
+            <actions>
+                <set field="confMode" from-field="parameters.confMode"/>
+                <set field="conf-mode" from-field="parameters.confMode"/>
+            </actions>
+            <widgets>            	                        
+                <include-portal-page id="${pageId}" conf-mode="${parameters.confMode}" use-private="${parameters.usePrivate}"/>
             </widgets>
         </section>
     </screen>

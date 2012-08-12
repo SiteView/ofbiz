@@ -154,6 +154,11 @@ under the License.
                 <parameter param-name="webSiteId" from-field="parameters.webSiteId"/>
             </link>
         </menu-item>
+        <menu-item name="createWebSiteAllContents" title="${uiLabelMap.ContentCreateWebsiteAllContents}">
+            <link target="createWebSiteAllContents">
+                <parameter param-name="webSiteId" from-field="parameters.webSiteId"/>
+            </link>
+        </menu-item>
         <menu-item name="PathAlias" title="${uiLabelMap.ContentPathAlias}">
             <link target="WebSiteAliases">
                 <parameter param-name="webSiteId" from-field="parameters.webSiteId"/>

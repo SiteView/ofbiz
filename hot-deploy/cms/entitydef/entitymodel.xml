@@ -13,6 +13,7 @@
             package-name="org.ofbiz.bigit.content"
             title="Menu Entity">
       <field name="menuId" type="id-ne"></field>
+      <field name="webSiteId" type="id"></field>
       <field name="menuName" type="name"></field>
       <field name="superPortalPage" type="name"></field>
       <field name="sequenceNum" type="numeric"></field>
@@ -31,6 +32,7 @@
             title="Content for Menu Entity">
       <field name="contentName" type="name"></field>
       <field name="menuId" type="id-ne"></field>
+      <field name="superPortalPage" type="name"></field>      
       <field name="sequenceNum" type="numeric"></field>
       <field name="description" type="description"></field>
       <prim-key field="menuId"/>
@@ -39,8 +41,10 @@
             package-name="org.ofbiz.bigit.content"
             title="Menu Entity">
       <field name="subMenuId" type="id-ne"></field>
-      <field name="menuId" type="id-ne"></field>
+      <field name="menuId" type="id-ne"></field>      
+      <field name="portalPageId" type="id"></field>
       <field name="menuName" type="name"></field>
+      <field name="superPortalPage" type="name"></field>
       <field name="parentMenuName" type="name"></field>
       <field name="sequenceNum" type="numeric"></field>
       <field name="description" type="description"></field>
@@ -57,6 +61,7 @@
       <field name="contentName" type="name"></field>
       <field name="subMenuId" type="id-ne"></field>
       <field name="contentId" type="id-ne"></field>
+      <field name="superPortalPage" type="name"></field>
       <field name="sequenceNum" type="numeric"></field>
       <field name="description" type="description"></field>
       <prim-key field="subMenuId"/>

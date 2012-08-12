@@ -41,7 +41,7 @@
     }
 
     function cutNameLength(name) {
-        var leng = 27;
+        var leng = 100;
         return name.substring(0, leng);
     }
 

@@ -1,0 +1,105 @@
+<entity-engine-xml>
+
+ 	<WebSite webSiteId="SiteviewWebsite" productStoreId="9000" siteName="SITEVIEW Web Site" visualThemeSetId="BACKOFFICE"/> 
+	<Content contentId="SiteviewWebsiteRoot" contentTypeId="WEB_SITE_PUB_PT" contentName="SITEVIEW.COM  Content Root" description="SITEVIEW.COM Site Publish Point"/>
+    <WebSiteContent webSiteId="SiteviewWebsite" contentId="SiteviewWebsiteRoot" webSiteContentTypeId="PUBLISH_POINT" fromDate="2001-01-01 00:00:00"/>
+	
+	<SubMenuContent subMenuId="svecc" contentName="功能、好处和优势" contentId="feature" description="description"  superPortalPage="IBM3COL"  sequenceNum="10"/>
+	<SubMenuContent subMenuId="svecc" contentName="技术文档库" contentId="library" description="description"  superPortalPage="IBM3COL"  sequenceNum="20"/>
+	<SubMenuContent subMenuId="svecc" contentName="监测器列表" contentId="monitor" description="description"  superPortalPage="IBM3COL"  sequenceNum="20"/>
+	<SubMenuContent subMenuId="svecc" contentName="屏幕截图和录像" contentId="screen" description="description"  superPortalPage="IBM3COL"  sequenceNum="30"/>
+	<SubMenuContent subMenuId="svecc" contentName="下载和在线试用" contentId="download" description="description"  superPortalPage="IBM3COL"  sequenceNum="40"/>
+	<SubMenuContent subMenuId="svecc" contentName="常见问题和知识库" contentId="kb" description="description"  superPortalPage="IBM3COL"  sequenceNum="50"/>
+	<SubMenuContent subMenuId="svecc" contentName="技术支持服务" contentId="support" description="description"  superPortalPage="IBM3COL"  sequenceNum="60"/>
+	
+	<SubMenuContent subMenuId="svnnm" contentName="功能、好处和优势" contentId="feature" description="description"  superPortalPage="IBM3COL"  sequenceNum="10"/>
+	<SubMenuContent subMenuId="svnnm" contentName="技术文档库" contentId="library" description="description"  superPortalPage="IBM3COL"  sequenceNum="20"/>
+	<SubMenuContent subMenuId="svnnm" contentName="网络拓扑图" contentId="topology" description="description"  superPortalPage="IBM3COL"  sequenceNum="20"/>
+	<SubMenuContent subMenuId="svnnm" contentName="屏幕截图和录像" contentId="screen" description="description"  superPortalPage="IBM3COL"  sequenceNum="30"/>
+	<SubMenuContent subMenuId="svnnm" contentName="下载和在线试用" contentId="download" description="description"  superPortalPage="IBM3COL"  sequenceNum="40"/>
+	<SubMenuContent subMenuId="svnnm" contentName="常见问题和知识库" contentId="kb" description="description"  superPortalPage="IBM3COL"  sequenceNum="50"/>
+	<SubMenuContent subMenuId="svnnm" contentName="技术支持服务" contentId="support" description="description"  superPortalPage="IBM3COL"  sequenceNum="60"/>
+
+	<SubMenuContent subMenuId="svitsm" contentName="功能、好处和优势" contentId="feature" description="description"  superPortalPage="IBM3COL"  sequenceNum="10"/>
+	<SubMenuContent subMenuId="svitsm" contentName="技术文档库" contentId="library" description="description"  superPortalPage="IBM3COL"  sequenceNum="20"/>
+	<SubMenuContent subMenuId="svitsm" contentName="屏幕截图和录像" contentId="screen" description="description"  superPortalPage="IBM3COL"  sequenceNum="30"/>
+	<SubMenuContent subMenuId="svitsm" contentName="下载和在线试用" contentId="download" description="description"  superPortalPage="IBM3COL"  sequenceNum="40"/>
+	<SubMenuContent subMenuId="svitsm" contentName="常见问题和知识库" contentId="kb" description="description"  superPortalPage="IBM3COL"  sequenceNum="50"/>
+	<SubMenuContent subMenuId="svitsm" contentName="技术支持服务" contentId="support" description="description"  superPortalPage="IBM3COL"  sequenceNum="60"/>	    
+
+	<SubMenuContent subMenuId="svdm" contentName="功能、好处和优势" contentId="feature" description="description"  superPortalPage="IBM3COL"  sequenceNum="10"/>
+	<SubMenuContent subMenuId="svdm" contentName="技术文档库" contentId="library" description="description"  superPortalPage="IBM3COL"  sequenceNum="20"/>
+	<SubMenuContent subMenuId="svdm" contentName="屏幕截图和录像" contentId="screen" description="description"  superPortalPage="IBM3COL"  sequenceNum="30"/>
+	<SubMenuContent subMenuId="svdm" contentName="下载和在线试用" contentId="download" description="description"  superPortalPage="IBM3COL"  sequenceNum="40"/>
+	<SubMenuContent subMenuId="svdm" contentName="常见问题和知识库" contentId="kb" description="description"  superPortalPage="IBM3COL"  sequenceNum="50"/>
+	<SubMenuContent subMenuId="svdm" contentName="技术支持服务" contentId="support" description="description"  superPortalPage="IBM3COL"  sequenceNum="60"/>    
+
+	<SubMenuContent subMenuId="sveim" contentName="功能、好处和优势" contentId="feature" description="description" superPortalPage="IBM3COL" sequenceNum="10"/>
+	<SubMenuContent subMenuId="sveim" contentName="技术文档库" contentId="library" description="description" superPortalPage="IBM3COL" sequenceNum="20"/>
+	<SubMenuContent subMenuId="sveim" contentName="协议库" contentId="protocol" description="description" superPortalPage="IBM3COL" sequenceNum="20"/>
+	<SubMenuContent subMenuId="sveim" contentName="屏幕截图和录像" contentId="screen" description="description" superPortalPage="IBM3COL" sequenceNum="30"/>
+	<SubMenuContent subMenuId="sveim" contentName="下载和在线试用" contentId="download" description="description" superPortalPage="IBM3COL" sequenceNum="40"/>
+	<SubMenuContent subMenuId="sveim" contentName="常见问题和知识库" contentId="kb" description="description" superPortalPage="IBM3COL" sequenceNum="50"/>
+	<SubMenuContent subMenuId="sveim" contentName="技术支持服务" contentId="support" description="description" superPortalPage="IBM3COL" sequenceNum="60"/>   
+
+	<SubMenuContent subMenuId="svpanel" contentName="Oracle实时透视图" contentId="oracle" description="description" superPortalPage="IBM3COL" sequenceNum="10"/>
+	<SubMenuContent subMenuId="svpanel" contentName="MS SQL实时透视图" contentId="mssql" description="description" superPortalPage="IBM3COL" sequenceNum="20"/>
+	<SubMenuContent subMenuId="svpanel" contentName="DB2实时透视图" contentId="db2" description="description" superPortalPage="IBM3COL" sequenceNum="30"/>
+	<SubMenuContent subMenuId="svpanel" contentName="AIX实时透视图" contentId="aix" description="description" superPortalPage="IBM3COL" sequenceNum="40"/>
+	<SubMenuContent subMenuId="svpanel" contentName="LINUX实时透视图" contentId="linux" description="description" superPortalPage="IBM3COL" sequenceNum="50"/>
+	<SubMenuContent subMenuId="svpanel" contentName="WINDOWS实时透视图" contentId="windows" description="description" superPortalPage="IBM3COL" sequenceNum="60"/>
+
+	<SubMenuContent subMenuId="svsuite" contentName="管理基础平台" contentId="foundation" description="description" superPortalPage="IBM3COL" sequenceNum="10"/>
+	<SubMenuContent subMenuId="svsuite" contentName="技术文档库" contentId="library" description="description" superPortalPage="IBM3COL" sequenceNum="20"/>
+	
+	<SubMenu menuId="sv_products" subMenuId="svsuite" portalPageId="svsuite" menuName="SUITE: 一体化管理套件" title="SUITE: 一体化管理套件" description="IT资源管理和服务流程管理一体化" superPortalPage="IBM3COL" sequenceNum="10"/>
+	<SubMenu menuId="sv_products" subMenuId="svecc" portalPageId="svecc" menuName="ECC: 综合系统管理" title="ECC：综合系统管理" description="面向业务的监测平台，全面监测网络设备、服务器、软件应用和业务系统" superPortalPage="IBM3COL" sequenceNum="20"/>
+	<SubMenu menuId="sv_products" subMenuId="svpanel" portalPageId="svpanel" menuName="PANEL:实时透视图" title="PANEL: 实时透视图" description="让IT组件的复杂运行指标完全透明可见，迅速定位运行慢的问题" superPortalPage="IBM3COL" sequenceNum="30"/>
+	<SubMenu menuId="sv_products" subMenuId="svnnm" portalPageId="svnnm" menuName="NNM: 网络节点管理" title="NNM: 网络节点管理" description="自动发现网络拓扑图,展示全网物理拓扑图和网络流量" superPortalPage="IBM3COL" sequenceNum="40"/>
+	<SubMenu menuId="sv_products" subMenuId="svitsm" portalPageId="svitsm" menuName="ITSM: IT服务管理" title="ITSM: IT服务管理" description="符合ITILv3标准的服务管理，高可配置性，实现个性化管理流程" superPortalPage="IBM3COL" sequenceNum="50"/>
+	<SubMenu menuId="sv_products" subMenuId="svdm" portalPageId="svdm" menuName="DM: 桌面终端管理" title="DM: 桌面终端管理" description="全面管控终端，建立资产库，集中自动部署软件，实现远程技术支持" superPortalPage="IBM3COL" sequenceNum="60"/>
+	<SubMenu menuId="sv_products" subMenuId="sveim" portalPageId="sveim" menuName="EIM: 上网行为管理" title="EIM: 上网行为管理" description="把控互联网接入网关，提升带宽使用效率" superPortalPage="IBM3COL" sequenceNum="70"/>
+	
+	<SubMenu menuId="sv_solutions" subMenuId="sv_total" portalPageId="" menuName="集成一体化运维" title="集成一体化运维" description="无缝集成各个组件，形成浑圆一体的平台" superPortalPage="IBM3COL" sequenceNum="10"/>
+	<SubMenu menuId="sv_solutions" subMenuId="sv_apm" portalPageId="" menuName="系统监测和报警" title="系统监测和报警" description="面向业务的监测平台，全面监测网络设备、服务器、软件应用和业务系统" superPortalPage="IBM3COL" sequenceNum="15"/>
+	<SubMenu menuId="sv_solutions" subMenuId="sv_asset" portalPageId="" menuName="IT资产生命周期管理" title="IT资产生命周期管理" description="可视化IT资产生命周期管理" superPortalPage="IBM3COL" sequenceNum="20"/>
+	<SubMenu menuId="sv_solutions" subMenuId="sv_dist" portalPageId="" menuName="集中分布式解决方案" title="集中分布式解决方案" description="全面管控终端，建立资产库，集中自动部署软件，实现远程技术支持" superPortalPage="IBM3COL" sequenceNum="30"/>
+	<SubMenu menuId="sv_solutions" subMenuId="sv_telcom" portalPageId="" menuName="电信行业解决方案" title="电信行业解决方案" description="面向业务的监测平台，全面监测网络设备、服务器、软件应用和业务系统" superPortalPage="IBM3COL" sequenceNum="40"/>
+	<SubMenu menuId="sv_solutions" subMenuId="sv_gov" portalPageId="" menuName="政府行业解决方案" title="政府行业解决方案" description="自动发现网络拓扑图,展示全网物理拓扑图和网络流量" superPortalPage="IBM3COL" sequenceNum="50"/>
+	<SubMenu menuId="sv_solutions" subMenuId="sv_ent" portalPageId="" menuName="企业网管解决方案" title="企业网管解决方案" description="符合ITILv3标准的服务管理，高可配置性，实现个性化管理流程" superPortalPage="IBM3COL" sequenceNum="60"/>
+	<SubMenu menuId="sv_solutions" subMenuId="sv_website" portalPageId="" menuName="大型网站运维解决方案" title="大型网站运维解决方案" description="把控互联网接入网关，提升带宽使用效率" superPortalPage="IBM3COL" sequenceNum="70"/>
+
+	<SubMenu menuId="sv_cases" subMenuId="svtelc" portalPageId="svtelc" menuName="电信" title="SITEVIEW - 电信行业" description="电信业务和增值业务系统的运维监测案例" superPortalPage="IBM3COL" sequenceNum="10"/>
+	<SubMenu menuId="sv_cases" subMenuId="svgov" portalPageId="svgov" menuName="政府" title="SITEVIEW - 政府客户" description="面向业务的监测平台，全面监测网络设备、服务器、软件应用和业务系统" superPortalPage="IBM3COL" sequenceNum="20"/>
+	<SubMenu menuId="sv_cases" subMenuId="svent" portalPageId="svent" menuName="企业" title="SITEVIEW - 企业客户" description="让IT组件的复杂运行指标完全透明可见，迅速定位运行慢的问题" superPortalPage="IBM3COL" sequenceNum="30"/>
+	<SubMenu menuId="sv_cases" subMenuId="svfin" portalPageId="svfin" menuName="金融" title="SITEVIEW - 金融银行客户" description="自动发现网络拓扑图,展示全网物理拓扑图和网络流量" superPortalPage="IBM3COL" sequenceNum="40"/>
+	<SubMenu menuId="sv_cases" subMenuId="svheal" portalPageId="svheal" menuName="医疗卫生" title="SITEVIEW - 医院客户" description="自动发现网络拓扑图,展示全网物理拓扑图和网络流量" superPortalPage="IBM3COL" sequenceNum="40"/>
+
+	<SubMenu menuId="sv_downloads" subMenuId="svpanel" portalPageId="" menuName="PANEL:实时透视图" title="PANEL: 实时透视图" description="让IT组件的复杂运行指标完全透明可见，迅速定位运行慢的问题" superPortalPage="IBM3COL" sequenceNum="10"/>
+	<SubMenu menuId="sv_downloads" subMenuId="svecc" portalPageId="" menuName="ECC: 综合系统管理" title="ECC：综合系统管理" description="面向业务的监测平台，全面监测网络设备、服务器、软件应用和业务系统" superPortalPage="IBM3COL" sequenceNum="20"/>
+	<SubMenu menuId="sv_downloads" subMenuId="svnnm" portalPageId="" menuName="NNM: 网络节点管理" title="NNM: 网络节点管理" description="自动发现网络拓扑图,展示全网物理拓扑图和网络流量" superPortalPage="IBM3COL" sequenceNum="40"/>
+	<SubMenu menuId="sv_downloads" subMenuId="svdm" portalPageId="" menuName="DM: 桌面终端管理" title="DM: 桌面终端管理" description="全面管控终端，建立资产库，集中自动部署软件，实现远程技术支持" superPortalPage="IBM3COL" sequenceNum="60"/>
+	
+	<SubMenu menuId="sv_supports" subMenuId="ovvw" portalPageId="" menuName="服务承诺" title="服务承诺" description="基于自身的ITSM平台，为用户全方位的服务和快速响应" superPortalPage="IBM3COL" sequenceNum="10"/>
+	<SubMenu menuId="sv_supports" subMenuId="callcenter" portalPageId="" menuName="呼叫中心" title="呼叫中心" description="5x8的呼叫中心，提供高质量的快速响应" superPortalPage="IBM3COL" sequenceNum="20"/>
+	<SubMenu menuId="sv_supports" subMenuId="portal" portalPageId="" menuName="自助服务门户" title="自助服务门户" description="自助门户提供完善的产品文档、软件授权管理和知识库" superPortalPage="IBM3COL" sequenceNum="40"/>
+	<SubMenu menuId="sv_supports" subMenuId="faq" portalPageId="" menuName="FAQ常见问题" title="FAQ常见问题" description="" superPortalPage="IBM3COL" sequenceNum="60"/>
+	<SubMenu menuId="sv_supports" subMenuId="chat" portalPageId="" menuName="在线客服" title="QQ在线客服" description="自动利用QQ，提供在线支持" superPortalPage="IBM3COL" sequenceNum="60"/>
+
+	<SubMenu menuId="sv_aboutus" subMenuId="ovvw" portalPageId="" menuName="公司愿景" title="公司愿景" description="为用户提供一体化、容易使用的IT管理软件" superPortalPage="IBM3COL" sequenceNum="10"/>
+	<SubMenu menuId="sv_aboutus" subMenuId="milestone" portalPageId="" menuName="发展里程" title="发展里程" description="长期的技术创新和积累为持续高速发展奠定扎实的基础" superPortalPage="IBM3COL" sequenceNum="20"/>
+	<SubMenu menuId="sv_aboutus" subMenuId="awards" portalPageId="" menuName="荣誉和奖励" title="荣誉和奖励" description="技术创新，为社会做出贡献，得到广泛的认可" superPortalPage="IBM3COL" sequenceNum="20"/>
+	<SubMenu menuId="sv_aboutus" subMenuId="job" portalPageId="" menuName="工作机会" title="工作机会" description="IT管理软件的高速发展为职业精英提供广阔的成长空间" superPortalPage="IBM3COL" sequenceNum="40"/>
+	<SubMenu menuId="sv_aboutus" subMenuId="contacts" portalPageId="" menuName="联系我们" title="联系我们" description="" superPortalPage="IBM3COL" sequenceNum="60"/>
+
+	<Menu menuId="sv_home" menuName="首页"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" superPortalPage="IBMMAIN" webSiteId="SiteviewWebsite" sequenceNum="10"/>
+    <Menu menuId="sv_products" menuName="产品" description="覆盖网络设备、服务器、软件应用、桌面终端、和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" superPortalPage="IBM3COL" webSiteId="SiteviewWebsite" sequenceNum="20"/>
+    <Menu menuId="sv_solutions" menuName="解决方案"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  superPortalPage="IBM3COL" webSiteId="SiteviewWebsite" sequenceNum="30"/>
+    <Menu menuId="sv_cases" menuName="成功案例"  description="电信、政府、企业等各行各业大大小小的数千个客户的共同选择" title="SITEVIEW - 信息系统运行维护平台"  superPortalPage="IBM3COL" webSiteId="SiteviewWebsite" sequenceNum="40"/>
+    <Menu menuId="sv_supports" menuName="技术支持"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台"  superPortalPage="IBM3COL" webSiteId="SiteviewWebsite" sequenceNum="50"/>
+	<Menu menuId="sv_downloads" menuName="下载试用"  description="下载试用功能完整、30天有效期的产品和功能强大的免费工具" title="SITEVIEW - 信息系统运行维护平台" superPortalPage="IBM3COL" webSiteId="SiteviewWebsite" sequenceNum="60"/>
+    <Menu menuId="sv_news" menuName="博客和动态"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" superPortalPage="IBM3COL" webSiteId="SiteviewWebsite" sequenceNum="70"/>
+	<Menu menuId="sv_aboutus" menuName="关于我们"  description="覆盖网络设备、服务器、软件应用、桌面终端和服务的全方位IT运维平台" title="SITEVIEW - 信息系统运行维护平台" superPortalPage="IBM3COL" webSiteId="SiteviewWebsite" sequenceNum="80"/>
+	
+	
+</entity-engine-xml>

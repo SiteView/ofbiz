@@ -3,12 +3,13 @@
     <menu name="MainAppBar" default-menu-item-name="main" id="app-navigation" type="simple" title=""
         default-selected-style="selected" menu-container-style="button-bar tab-bar" selected-menuitem-context-field-name="headerItem">
 		<menu-item name="portalPage" parent-portal-page-value="${webSiteId}"/>
+		<menu-item name="portalPage" parent-portal-page-value="SiteviewWebsite"/>
         <menu-item name="Dashboard" title="${uiLabelMap.BIGITMenuSetting}" align-style="opposed">
             <condition>
                <if-has-permission permission="BIGIT_ADMIN"/>
             </condition>
             <link target="ManagePortalPages">
-                <parameter param-name="parentPortalPageId" value="${webSiteId}"/>
+                <parameter param-name="parentPortalPageId" value="SiteviewWebsite"/>
             </link>
         </menu-item>
     </menu>

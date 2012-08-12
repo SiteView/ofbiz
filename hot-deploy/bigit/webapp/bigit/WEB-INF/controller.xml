@@ -23,7 +23,7 @@ under the License.
 
     <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
     <include location="component://common/webcommon/WEB-INF/portal-controller.xml"/>
-    <include location="component://cms/webapp/WEB-INF/controller.xml"/>
+    <include location="component://cms/webapp/cms/WEB-INF/controller.xml"/>
             
     <description>OFBiz: BIGIT Controller Configuration File</description>
     <errorpage>/error/error.jsp</errorpage>
@@ -80,7 +80,12 @@ under the License.
 
     <!-- default request; call into CMS -->
     <default-request request-uri="cms"/>
-    
+
+    <request-map uri="showforum1">
+        <security https="false" auth="false"/>
+        <response name="success" type="view" value="Showforum"/>
+    </request-map>
+    <view-map name="Showforum" type="screen" page="component://cms/widget/ForumScreens.xml#Showforum"/>    
 
     <!-- Security Request Mappings -->
     <request-map uri="checkLogin" edit="false">
