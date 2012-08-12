@@ -70,7 +70,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:port binding="impl:SvdbApiImplSoapBinding" name="SvdbApiImpl">
 
-         <wsdlsoap:address location="http://localhost/SvdbCache/services/SvdbApiImpl"/>
+         <wsdlsoap:address location="http://localhost:8888/SvdbCache/services/SvdbApiImpl"/>
 
       </wsdl:port>
 

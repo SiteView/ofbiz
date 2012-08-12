@@ -11,8 +11,6 @@ import java.util.Map;
 
 import javolution.util.FastList;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.ofbiz.base.util.Debug;
 import org.ofbiz.base.util.UtilDateTime;
 import org.ofbiz.base.util.UtilMisc;
@@ -34,113 +32,8 @@ public class MonitorLogServices {
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
 	private static final String DEFAULT_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
-	//
-	// /**
-	// * insert monitor logs
-	// *
-	// * @param dctx
-	// * @param context
-	// * @return
-	// * @throws Exception
-	// */
-	// public static Map<String, Object> insertLogData(DispatchContext dctx,
-	// Map<String, ?> context) throws Exception {
-	// Map<String, Object> response = ServiceUtil.returnSuccess();
-	//
-	// Map<String, Map<String, String>> fmap = new FastMap<String, Map<String,
-	// String>>();
-	// Map<String, String> ndata = new FastMap<String, String>();
-	// StringBuilder estr = new StringBuilder();
-	// String monitorId = "1.27.1.1";
-	//
-	// // ndata.put("dowhat", "QueryReportData");
-	// // ndata.put("id", monitorId);
-	// // ndata.put("compress", "true");
-	// // ndata.put("dstrNeed", "true");
-	// // ndata.put("byCount", "50");
-	// ndata.put("dowhat", "QueryInfo");
-	// ndata.put("parentid", "sv_id,sv_monitortype,sv_name");
-	// ndata.put("needkey", "monitor");
-	// ndata.put("needtype", "default");
-	//
-	// boolean ret = Jsvapi.getInstance().GetUnivData(fmap, ndata, estr);
-	// if (!ret)
-	// throw new Exception(estr.toString());
-	// if (fmap.containsKey("return"))
-	// fmap.remove("return");
-	// System.out.println("从Svdb加载数据完毕<<<<<<<<<<<<<");
-	// // 解析dstr节点
-	// String mkey = "(dstr)" + monitorId;
-	// Map<String, String> descValueMap = fmap.get(mkey);
-	// String monitorName = descValueMap.get("MonitorName");
-	// Iterator it = descValueMap.entrySet().iterator();
-	// String entityIndex = sdf.format(new Date());// table index
-	// Delegator delegator = dctx.getDelegator();
-	// while (it.hasNext()) {
-	// Entry entry = (Entry) it.next();
-	// if (!entry.getKey().toString().equals("MonitorName")) {
-	// String logId = delegator.getNextSeqId("OperationAttributeLog"
-	// + entityIndex);
-	// Object descValue = entry.getValue();
-	// String category = descValue.toString().substring(0,
-	// descValue.toString().indexOf(" "));
-	// category = category.replaceAll("\\s*", "");
-	// String decription = descValue.toString();
-	// Timestamp logTime = str2Timestamp(entry.getKey().toString());
-	// Map<String, String> fields = UtilMisc.toMap("logId", logId,
-	// "operationId", monitorId, "logTime",
-	// logTime, "name", monitorName, "category", category,
-	// "description", decription, "measurement", decription);
-	//
-	// GenericValue log = delegator.makeValue("OperationAttributeLog"
-	// + entityIndex, fields);
-	// delegator.create(log);
-	// }
-	//
-	// }
-	//
-	// return response;
-	// }
-
-	// /**
-	// * insert monitor logs
-	// *
-	// * @param dctx
-	// * @param context
-	// * @return
-	// * @throws Exception
-	// */
-	// public static Map<String, Object> insertLogData(DispatchContext dctx,
-	// Map<String, Object> context) throws Exception {
-	// Map<String, Object> response = ServiceUtil.returnSuccess();
-	// //insert master data
-	// Delegator delegator = dctx.getDelegator();
-	// String entityIndex = sdf.format(new Date());// table index
-	// String logId =
-	// delegator.getNextSeqId("OperationAttributeLog"+entityIndex);
-	// String decription = context.get("description").toString();
-	// Map<String, String> fields = UtilMisc.toMap("logId", logId,
-	// "operationId",context.get("operationId"),
-	// "logTime",UtilDateTime.nowTimestamp(),
-	// "name",context.get("MonitorName").toString(),
-	// "category",context.get("category"),
-	// "description",decription,
-	// "measurement",context.get("measurement"));
-	//        
-	// GenericValue log =
-	// delegator.makeValue("OperationAttributeLog"+entityIndex, fields);
-	// delegator.create(log);
-	// if (response.get("responseMessage").toString().equals("success")) {
-	// Debug.logInfo("/******插入�?��日志数据到数据库�? OperationAttributeLog"+entityIndex+" 中操作成�?日志ID: "+logId+" ******/",
-	// module);
-	// }else{
-	// Debug.logInfo("/******插入�?��日志数据到数据库�? OperationAttributeLog"+entityIndex+" 中操作失�?日志ID: "+logId+" ******/",
-	// module);
-	// }
-	// return response;
-	// }
 	/**
-	 * insert monitor logs
+	 * 批量插入数据
 	 * 
 	 * @param dctx
 	 * @param context
@@ -172,13 +65,13 @@ public class MonitorLogServices {
 			values.add(log);
 		}
 		delegator.storeAll(values);
-		 if (response.get("responseMessage").toString().equals("success")) {
-		 Debug.logInfo("/******批量插入 "+contextList.size()+" 条日志数据到数据库表  OperationAttributeLog"+entityIndex+" 中操作成�?日志ID分别�? "+sbf.toString()+" ******/",
-		 module);
-		 }else{
-		 Debug.logInfo("/******批量插入 "+contextList.size()+" 条日志数据到数据库表  OperationAttributeLog"+entityIndex+" 中操作失�?日志ID分别�? "+sbf.toString()+" ******/",
-		 module);
-		 }
+//		 if (response.get("responseMessage").toString().equals("success")) {
+//		 Debug.logInfo("/******批量插入 "+contextList.size()+" 条日志数据到数据库表  OperationAttributeLog"+entityIndex+" 中操作成功,日志ID分别为: "+sbf.toString()+" ******/",
+//		 module);
+//		 }else{
+//		 Debug.logInfo("/******批量插入 "+contextList.size()+" 条日志数据到数据库表  OperationAttributeLog"+entityIndex+" 中操作失败,日志ID分别为: "+sbf.toString()+" ******/",
+//		 module);
+//		 }
 		return response;
 	}
 
@@ -235,7 +128,7 @@ public class MonitorLogServices {
 					+ reportDataValue + "#" + monitorStatus;
 			datalist.add(monitorLog);
 		}
-		System.out.println("查询�? " + datalist.size() + " >条数�?);
+		Debug.logInfo("/*******查询出< " + datalist.size() + " >条数据",module);
 		response.put("queryMap", datalist);
 		return response;
 	}
@@ -279,7 +172,7 @@ public class MonitorLogServices {
 	 * 字符串转换成日期 如果转换格式为空，则利用默认格式进行转换操作
 	 * 
 	 * @param str
-	 *            字符�?
+	 *            字符串
 	 * @param format
 	 *            日期格式
 	 * @return 日期
@@ -289,7 +182,7 @@ public class MonitorLogServices {
 		if (null == str || "".equals(str)) {
 			return null;
 		}
-		// 如果没有指定字符串转换的格式，则用默认格式进行转�?
+		// 如果没有指定字符串转换的格式，则用默认格式进行转换
 		if (null == format || "".equals(format)) {
 			format = DEFAULT_FORMAT;
 		}
