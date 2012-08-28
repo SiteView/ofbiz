@@ -17,7 +17,9 @@ import org.ofbiz.entity.model.DynamicViewEntity;
 import org.ofbiz.entity.util.EntityListIterator;
 import org.ofbiz.service.DispatchContext;
 import org.ofbiz.service.ServiceUtil;
+
 import com.siteview.ecc.util.ArrayTool;
+import com.siteview.jsvapi.Jsvapi;
 
 /**
  * @author zhongping.wang 监测器日志查询服务
@@ -275,20 +277,18 @@ public class LogServices {
 			String latestDstr = "";
 			String latestStatus = "";
 			Debug.logInfo(">>>>监测器ID: "+monitorId+" 查询出 "+result.size()+" 条数据", module);
-			/*************在这用jsvapi查询导致冲突 暂时由ZK前台调用jsvapi查询*********************/
-//			String monitorNameAndCondition = getMonitorNameAndCondition(monitorId);
-			String monitorName = "";//monitorNameAndCondition.substring(0,monitorNameAndCondition.indexOf("#"));
-//			String monitorCondition = ""; // monitorNameAndCondition.substring(monitorNameAndCondition.indexOf("#")+1,monitorNameAndCondition.length());
+			String monitorNameAndCondition = getMonitorNameAndCondition(monitorId);
+			String monitorName = monitorNameAndCondition.substring(0,monitorNameAndCondition.indexOf("#"));
+			String monitorCondition = monitorNameAndCondition.substring(monitorNameAndCondition.indexOf("#")+1,monitorNameAndCondition.length());
 			// 开始解析封装数据
 			for (int j = 0; j < result.size(); j++) {
 				GenericValue genericValue = result.get(j);
 				String category = genericValue.get("category").toString();
-				monitorName = genericValue.get("name").toString();
-				if (category.equals("ok")) {
+				if (category.equals("OK")) {
 					goodCount++;
-				}else if(category.equals("error")||category.equals("bad")){
+				}else if(category.equals("ERROR")||category.equals("BAD")){
 					errorCount++;
-				}else if(category.equals("warning")){
+				}else if(category.equals("WARNING")){
 					warnCount++;
 				}
 					String reportDataValue = genericValue.get("description").toString();
@@ -307,25 +307,21 @@ public class LogServices {
 						continue;
 					}
 					String[] dataValue  = null;
-					reportDataValue = reportDataValue.substring(0,reportDataValue.length()-1);
-					
 					if (reportDataValue.contains(",")) {
 						 dataValue = reportDataValue.split(",");
 					}
-					if (dataValue!=null) {
-						for (int g = 0; g < dataValue.length; g++) {
-							String indexDataValue = dataValue[g];// 如：包成功率(%)=83.33
-							String returnName = indexDataValue.substring(0, indexDataValue
-									.indexOf("="));// 如：包成功率(%)
-							String returnValue = indexDataValue.substring(indexDataValue
-									.indexOf("=") + 1, indexDataValue.length());// 如：83.33
-							String timeValueStr = logTime + "=" + returnValue + ",";
-							if (str[g] != null) {
-								str[g] = str[g] + timeValueStr;
-							} else {
-								str2[g] = returnName;
-								str[g] = timeValueStr;
-							}
+					for (int g = 0; g < dataValue.length; g++) {
+						String indexDataValue = dataValue[g];// 如：包成功率(%)=83.33
+						String returnName = indexDataValue.substring(0, indexDataValue
+								.indexOf("="));// 如：包成功率(%)
+						String returnValue = indexDataValue.substring(indexDataValue
+								.indexOf("=") + 1, indexDataValue.length());// 如：83.33
+						String timeValueStr = logTime + "=" + returnValue + ",";
+						if (str[g] != null) {
+							str[g] = str[g] + timeValueStr;
+						} else {
+							str2[g] = returnName;
+							str[g] = timeValueStr;
 						}
 					}
 			}
@@ -402,7 +398,7 @@ public class LogServices {
 					}
 //					String monitorCondition = getMonitorNameAndCondition(monitorId);
 					endMap.put("MonitorName", monitorName);
-//					endMap.put("errorCondition", monitorCondition);
+					endMap.put("errorCondition", monitorCondition);
 					endMap.put("errorPercent", ArrayTool.percent(errorCount, result.size()));//错误百分比
 					endMap.put("latestCreateTime", latestCreateTime);
 					endMap.put("latestDstr", latestDstr);
@@ -428,7 +424,6 @@ public class LogServices {
 	 * @param monitorid
 	 * @return
 	 */
-	/**
 	public static String getMonitorNameAndCondition(String monitorid){
 		Map<String, Map<String, String>> fmap = new FastMap<String, Map<String, String>>();
 		Map<String, String> ndata = new FastMap<String, String>();
@@ -439,6 +434,21 @@ public class LogServices {
 		ndata.put("compress","false");
 		ndata.put("dstrNeed", "false");
 		ndata.put("byCount", "2");
+		
+//		Calendar   cal   =   Calendar.getInstance();   
+//		ndata.put("begin_year","" + cal.get(Calendar.YEAR));
+//        ndata.put("begin_month","" + (cal.get(Calendar.MONTH) + 1));
+//        ndata.put("begin_day","" + cal.get(Calendar.DAY_OF_MONTH));
+//        ndata.put("begin_hour","" + cal.get(Calendar.HOUR_OF_DAY));
+//        ndata.put("begin_minute","" + cal.get(Calendar.MINUTE));
+//        ndata.put("begin_second","" + cal.get(Calendar.SECOND));
+//        
+//        ndata.put("end_year","" + cal.get(Calendar.YEAR));
+//        ndata.put("end_month","" + (cal.get(Calendar.MONTH) + 1));
+//        ndata.put("end_day","" + cal.get(Calendar.DAY_OF_MONTH));
+//        ndata.put("end_hour","" + cal.get(Calendar.HOUR_OF_DAY));
+//        ndata.put("end_minute","" + cal.get(Calendar.MINUTE));
+//        ndata.put("end_second","" + cal.get(Calendar.SECOND));
 		
 		Jsvapi.getInstance().GetUnivData(fmap, ndata, estr);
 		String condition = "";
@@ -456,5 +466,5 @@ public class LogServices {
 	}
 	public static void main(String[] args) {
 		LogServices.getMonitorNameAndCondition("1.9.23.1");
-	} **/
+	}
 }

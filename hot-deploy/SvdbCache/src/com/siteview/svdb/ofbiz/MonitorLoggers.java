@@ -125,12 +125,12 @@ public class MonitorLoggers implements Runnable {
 					Map<String, Object>  contextmap = new HashMap<String, Object>();
 					for (Map<String, String> data : batchData) {
 						Map<String, Object> context = FastMap.newInstance();
-						context.put("operationId", data.get("MonitorId"));
-						context.put("MonitorName", data.get("MonitorName"));
+						context.put("operationId", data.get("MonitorID"));
+						context.put("MonitorName", "");
 						context.put("category", data.get("MonitorStatus"));
-						context.put("description", data.get("MonitorStr"));
+						context.put("description", data.get("MonitorDescription"));
 						context.put("measurement", data.get("MonitorStatus") + " "
-								+data.get("MonitorStr"));
+								+data.get("MonitorDescription"));
 						contextList.add(context);
 					}
 					contextmap.put("contextList", contextList);

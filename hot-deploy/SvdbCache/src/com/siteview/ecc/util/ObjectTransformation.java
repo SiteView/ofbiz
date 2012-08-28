@@ -50,7 +50,7 @@ public class ObjectTransformation {
 			}
 		}
 		long end = System.currentTimeMillis();
-		System.out.println("Decode:" + (end - start));
+//		System.out.println("Decode:" + (end - start));
 		return out;
 	}
 }

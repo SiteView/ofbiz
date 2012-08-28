@@ -63,20 +63,18 @@ public class SvdbApiImpl implements SvdbApi {
 					}
 				}
 			}
-			//MonitorId=1.23.19.3.1#LogTime=2012-08-03 11:03:02#MonitorName=Ping#MonitorStatus=error#MonitorStr=包成功率(%)=0.00, 数据往返时间(ms)=0.00, 状态值(200表示成功 300表示出错)=300.00,
 			//--------------------解析数据-----------------------------
-			decodeText = decodeText.substring(0,decodeText.length()-1);
-			String[] retArray = decodeText.split("#");
-			Map<String, String>  dataMap = new HashMap<String, String>(); 
-			for(String indexStr : retArray){
-				String key = indexStr.substring(0, indexStr.indexOf("="));
-				String value = indexStr.substring(indexStr.indexOf("=")+1,indexStr.length());
-				dataMap.put(key, value);
-			}
+			decodeText = decodeText.replaceAll("#", ",");
+			decodeText = decodeText.replaceAll("\\s*", "");
+			int indexofRecordState = decodeText.indexOf("RecordState");
+			String monitorDesc = decodeText.substring(0,indexofRecordState);
+			String monitorStatusValue = decodeText.substring(indexofRecordState+12, decodeText.length()-1);
+//			log.info("received data>>> MonitorID:"+decodeId+" MonitorStatus:"+monitorStatusValue+" MonitorDescription:"+monitorDesc);
 			//----------------------将数据缓存进入队列  由Vpsper定时读取实现类是VysperGateway.java------------------
-//			dataMap.put("MonitorID", decodeId);
-//			dataMap.put("MonitorStatus", monitorStatusValue);
-//			dataMap.put("MonitorDescription", monitorDesc);
+			Map<String, String>  dataMap = new HashMap<String, String>(); 
+			dataMap.put("MonitorID", decodeId);
+			dataMap.put("MonitorStatus", monitorStatusValue);
+			dataMap.put("MonitorDescription", monitorDesc);
 			EccLogQueue.listMap.add(dataMap);
 //			log.info("/*************加入一条消息到队列中,此时队列中还有 "+EccLogQueue.listMap.size()+" 条消息等待读取*************/");
 			
