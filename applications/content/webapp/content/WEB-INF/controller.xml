@@ -310,6 +310,17 @@ under the License.
         <response name="success" type="view" value="WebSiteContent"/>
         <response name="error" type="view" value="WebSiteContent"/>
     </request-map>
+    <request-map uri="createWebSiteAllContents">
+		<security https="true" auth="true"/>
+        <response name="success" type="view" value="CreateWebSiteAllContents"/>
+        <response name="error" type="view" value="CreateWebSiteAllContents"/>
+    </request-map>
+    <request-map uri="createWebSiteAllContentsSvr">
+        <security https="true" auth="true"/>
+        <event type="service" path="" invoke="createWebSiteAllContentsSvr"/>
+        <response name="success" type="view" value="CreateWebSiteAllContents"/>
+        <response name="error" type="view" value="CreateWebSiteAllContents"/>
+    </request-map>
     <request-map uri="UpdateWebSiteContent">
         <security https="true" auth="true"/>
         <event type="service" invoke="updateWebSiteContent"/>
@@ -328,6 +339,7 @@ under the License.
         <response name="success" type="view" value="WebSiteContent"/>
         <response name="error" type="view" value="WebSiteContent"/>
     </request-map>
+
 
     <!-- ================ WebSite Parties Requests ================= -->
     <request-map uri="EditWebSiteParties">
@@ -1989,6 +2001,8 @@ under the License.
     <view-map name="EditWebSiteParties" page="component://content/widget/WebSiteScreens.xml#EditWebSiteParties" type="screen"/>
     <view-map name="WebSiteSEO" page="component://content/widget/WebSiteScreens.xml#WebSiteSEO" type="screen"/>
     <view-map name="WebSiteContactList" page="component://content/widget/WebSiteScreens.xml#WebSiteContactList" type="screen"/>
+    <view-map name="CreateWebSiteAllContents" page="component://content/widget/WebSiteScreens.xml#CreateWebsiteAllContents" type="screen"/>
+    
 
     <view-map name="EditContentPurpose" page="component://content/widget/content/ContentScreens.xml#EditContentPurpose" type="screen"/>
     <view-map name="EditContentRole" page="component://content/widget/content/ContentScreens.xml#EditContentRole" type="screen"/>

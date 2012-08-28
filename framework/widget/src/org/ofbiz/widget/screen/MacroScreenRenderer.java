@@ -25,6 +25,8 @@ import java.io.StringWriter;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Locale;
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -47,6 +49,7 @@ import org.ofbiz.base.util.UtilValidate;
 import org.ofbiz.base.util.template.FreeMarkerWorker;
 import org.ofbiz.entity.Delegator;
 import org.ofbiz.entity.GenericValue;
+import org.ofbiz.entity.condition.EntityCondition;
 import org.ofbiz.service.LocalDispatcher;
 import org.ofbiz.webapp.control.RequestHandler;
 import org.ofbiz.webapp.taglib.ContentUrlTag;
@@ -901,7 +904,8 @@ public class MacroScreenRenderer implements ScreenStringRenderer {
     }
 
     public void renderPortalPagePortletBegin(Appendable writer, Map<String, Object> context, ModelScreenWidget.PortalPage portalPage, GenericValue portalPortlet) throws GeneralException, IOException {
-        String portalPageId = portalPage.getActualPortalPageId();
+    	Delegator delegator = (Delegator) context.get("delegator");
+    	String portalPageId = portalPage.getActualPortalPageId();
         String superPortalPageId = portalPage.getSuperPortalPageId();
         String originalPortalPageId = portalPage.getOriginalPortalPageId();
         String portalPortletId = portalPortlet.getString("portalPortletId");
@@ -928,6 +932,24 @@ public class MacroScreenRenderer implements ScreenStringRenderer {
             editAttributeHint = uiLabelMap.get("CommonEditPortletAttributes");
         }
 
+        List<GenericValue> portletAttributes = null;    
+        StringBuilder portletAttributesStr=new StringBuilder();
+
+        portletAttributes = delegator.findList("PortletAttribute",
+                    EntityCondition.makeCondition(UtilMisc.toMap("portalPageId", superPortalPageId, "portalPortletId", portalPortletId, "portletSeqId", portletSeqId)),
+                    null, null, null, false);
+        ListIterator <GenericValue>attributesIterator = null;
+        attributesIterator = portletAttributes.listIterator();
+        int i=0;
+        while (attributesIterator.hasNext()) {
+            GenericValue attribute = attributesIterator.next();
+//            portletAttributesStr.append(attribute.getString("attrName"));
+//            portletAttributesStr.append(":");
+            i++;
+            portletAttributesStr.append(attribute.getString("attrValue"));
+            if (portletAttributes.size()>1 && (i != portletAttributes.size())) portletAttributesStr.append("#");
+        }
+
         StringWriter sr = new StringWriter();
         sr.append("<@renderPortalPagePortletBegin ");
         sr.append("originalPortalPageId=\"");
@@ -938,6 +960,8 @@ public class MacroScreenRenderer implements ScreenStringRenderer {
         sr.append(superPortalPageId);
         sr.append("\" portalPortletId=\"");
         sr.append(portalPortletId);
+        sr.append("\" portletAttributes=\"");
+        sr.append(portletAttributesStr);        
         sr.append("\" portletSeqId=\"");
         sr.append(portletSeqId);
         sr.append("\" prevPortletId=\"");

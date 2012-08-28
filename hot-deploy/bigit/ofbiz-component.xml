@@ -18,6 +18,7 @@
     <!-- <entity-resource type="eca" reader-name="main" loader="main" location="entitydef/eecas.xml"/>--> 
     <entity-resource type="data" reader-name="seed" loader="main" location="data/BIGITTypeData.xml"/>
     <entity-resource type="data" reader-name="seed" loader="main" location="data/BIGITSecurityData.xml"/>
+    <entity-resource type="data" reader-name="seed" loader="main" location="data/SiteviewWebSiteData.xml"/>
     <entity-resource type="data" reader-name="seed" loader="main" location="data/BIGITWebSiteData.xml"/>
     <entity-resource type="data" reader-name="seed" loader="main" location="data/SuperPortalPageData.xml"/>
     <entity-resource type="data" reader-name="demo" loader="main" location="data/BIGITDemoData.xml"/>
@@ -40,6 +41,6 @@
     	app-bar-display="true" 
         menu-name="secondary"
         location="webapp/bigit"
-        mount-point="/bigit"/>
+        mount-point="/public"/>
                 
 </ofbiz-component>

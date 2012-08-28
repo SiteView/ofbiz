@@ -265,24 +265,4 @@
          <property name="telnet-port" value="9991"/>
     </container>  -->
     
-	<!-- the vysper gateway container must be the last one -->
-	<container name="vyspergateway-container" class="com.siteview.svdb.ofbiz.VysperGateway">
-		<property name="node" value="ofbiz"/>
-        <property name="master" value=""/> <!-- if empty, the default is localhost machine name -->
-        <property name="cookie" value="3ren"/>
-        <property name="mailBox" value="eccadmin"/>    
-        <property name="NUMBER_OF_THREADS" value="50"/>
-        <property name="xmpp" value="localhost"/>  <!-- if empty, the default is localhost machine name -->
-        <property name="xmpp_debug"  value="true"/>
-        <property name="xmpp_port" value="5222"/> <!-- if empty, the default is 5222 -->
-        <property name="xmpp_username" value="datasender"/>
-        <property name="xmpp_password" value="siteview"/>  
-        <property name="monitor_logger_usernames" value="logger1,logger2,logger3"/>  <!--can be multiple, the format is "logger1,logger2, logger3"-->
-        <property name="monitor_logger_passwords" value="siteview,siteview,siteview"/>  <!--can be multiple, the format is "pwd1,pwd2, pwd3"-->
-        <property name="monitor_logger_readcount" value="15"/>  <!-- number of logs to read in a batch -->
-        <property name="monitor_logger_buffer" value="10"/>  <!-- number of logs to write in a batch -->
-        <property name="monitor_logger_delay" value="10000"/> <!-- max delay in milli-seconds to write into entity, 'OR' work with buffer -->
-        <property name="debug_usernames" value=""/>  <!--can be multiple, the format is "debugger1,debugger2, debugger3"-->        
-	</container>
-    
 </ofbiz-containers>

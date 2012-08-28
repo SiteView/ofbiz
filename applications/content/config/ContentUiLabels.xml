@@ -938,6 +938,55 @@
         <value xml:lang="zh">新建文件</value>
         <value xml:lang="zh_TW">新建文件</value>
     </property>
+    <property key="ContentCreateWebsiteAllContents">
+        <value xml:lang="en">Create Website All Contents</value>
+        <value xml:lang="zh">创建全网站内容</value>
+        <value xml:lang="zh_TW">创建全网站内容</value>
+    </property>
+    <property key="ContentImportText">
+        <value xml:lang="de">Text importieren</value>
+        <value xml:lang="en">Import Text</value>
+        <value xml:lang="fr">Importer le texte</value>
+        <value xml:lang="it">Importa testo</value>
+        <value xml:lang="pt">Importar Texto</value>
+        <value xml:lang="ro">Importa Text</value>
+        <value xml:lang="th">นำเข้าข้อความ</value>
+        <value xml:lang="zh">导入文本</value>
+        <value xml:lang="zh_TW">導入文本</value>
+    </property>
+    <property key="ContentResults">
+        <value xml:lang="de">Ergebnisse</value>
+        <value xml:lang="en">Results</value>
+        <value xml:lang="fr">Résultats</value>
+        <value xml:lang="it">Risultati</value>
+        <value xml:lang="pt">Resultados</value>
+        <value xml:lang="ro">Rezultate</value>
+        <value xml:lang="th">ผลลัพธ์</value>
+        <value xml:lang="zh">结果</value>
+        <value xml:lang="zh_TW">結果</value>
+    </property>
+    <property key="ContentXMLImportInfo">
+        <value xml:lang="de">Hier können zuvor exportierte Entitäten XML Dateien wieder in die Datenbank importiert werden. Diese Dokumente haben eine XML-root-tag "&lt;entity-engine-xml&gt;".</value>
+        <value xml:lang="en">This page can be used to import exported Entity Engine XML documents. These documents all have a root tag of "&lt;entity-engine-xml&gt;".</value>
+        <value xml:lang="fr">Cette page peut être utilisée pour importer des documents XML exportés par le moteur d'entité. Ces documents ont tous une balise racine de "&lt;entity-engine-xml&gt;".</value>
+        <value xml:lang="it">Questa pagina può essere usata per importare documenti XML contenenti export di Entita'. Tali documenti hanno un tag root "&lt;entity-engine-xml&gt;".</value>
+        <value xml:lang="pt">Esta pÃ¡gina pode ser utilizado para importaÃ§Ã£o e exportaÃ§Ã£o de documentos XML do Engine de Entidades. Estes documentos tÃªm um tag raiz de " &lt;entity-engine-xml&gt; ".</value>
+        <value xml:lang="ro">Aceasta pagina nu poate fi folosita pentru importarea exportarea documentelor XML de Entity Engine. Toate aceste documente au un root tag "&lt;entity-engine-xml&gt;".</value>
+        <value xml:lang="th">หน้านี้ใช้การนำเข้าข้อมูลที่มีการส่งออกเอนติตี้เอนจินเอกสาร XML โดยใช้คำสั่ง "&lt;entity-engine-xml&gt;".</value>
+        <value xml:lang="zh">本页面用于导入导出的实体引擎XML文档。这些文档都有一个根标签 "&lt;entity-engine-xml&gt;".</value>
+        <value xml:lang="zh_TW">本頁面用于導入導出的實體引擎XML文檔。這些文檔都有一個根標簽 "&lt;entity-engine-xml&gt;".</value>
+    </property>
+    <property key="ContentImportToDataSource">
+        <value xml:lang="de">XML-Import in DataSource(n)</value>
+        <value xml:lang="en">XML Import to DataSource(s)</value>
+        <value xml:lang="fr">Import XML vers la source de données</value>
+        <value xml:lang="it">Importazione XML in Datasource</value>
+        <value xml:lang="pt">Importar XML para DataSource(s)</value>
+        <value xml:lang="ro">Importa Sursa de Date din XML</value>
+        <value xml:lang="th">นำเข้า XML ไปยังแหล่งข้อมูล</value>
+        <value xml:lang="zh">把XML导入到数据源</value>
+        <value xml:lang="zh_TW">把XML導入到資料源</value>
+    </property>
     <property key="ContentCreateNewBlog">
         <value xml:lang="da">Opret ny blog</value>
         <value xml:lang="en">Create New Blog</value>

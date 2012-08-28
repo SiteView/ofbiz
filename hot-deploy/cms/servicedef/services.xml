@@ -10,5 +10,13 @@
             Dummy service to prevent empty files and syntax error - Remove when the 1st real service will be added here 
         </description>
     </service> 
+
+    <service name="createWebSiteAllContents" engine="groovy" auth="true"
+            location="component://cms/script/createWebsiteAllContents.groovy" invoke="">
+        <description>Create WebSite's all Content</description>
+        <permission-service service-name="contentManagerPermission" main-action="CREATE"/>
+        <attribute name="webSiteId" type="String" mode="IN" optional="false"/>
+        <attribute name="result" type="String" mode="OUT"/>
+    </service>    
     
 </services>
